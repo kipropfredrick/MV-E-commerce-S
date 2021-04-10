@@ -641,15 +641,22 @@
   margin:5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.responsive {
+  width: 100%;
+  height: auto;
+}
 
 
-        </style>
+</style>
+
+
              {{-- navbar extention --}}
              @include('body.navbar')
              <br>
     </head>
 
    <body>
+
     <div class="container">
         <div class="item">
             <nav>
@@ -891,23 +898,23 @@
                 </nav>
         </div>
               <!-- Section:  carousel aligned next to categories -->
-             <div class="item">
+             <div class="ite">
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner" role="listbox">
                       <div class="carousel-item active">
-                        <div class="img"><img class="d-block img-fluid" src="https://image.freepik.com/free-photo/beautiful-young-woman-with-shopping-bags-using-her-smart-phone-yellow-background_50889-43.jpg" alt="First slide"></div>
+                        <div class="img"><img class="d-block img-fluid responsive " src="https://image.freepik.com/free-photo/beautiful-young-woman-with-shopping-bags-using-her-smart-phone-yellow-background_50889-43.jpg" alt="First slide"></div>
                       </div>
                       <div class="carousel-item">
-                        <div class="img"><img class="d-block img-fluid" src="https://image.freepik.com/free-photo/studio-shot-pretty-black-woman-with-white-shopping-bag-standing-yellow-background-trendy-spring-fashionable-look_273443-10.jpg" alt="Second slide"></div>
+                        <div class="img"><img class="d-block img-fluid responsive " src="https://image.freepik.com/free-photo/studio-shot-pretty-black-woman-with-white-shopping-bag-standing-yellow-background-trendy-spring-fashionable-look_273443-10.jpg" alt="Second slide"></div>
                       </div>
                       <div class="carousel-item">
-                        <div class="img"><img class="d-block img-fluid" src="https://cdn.nohat.cc/thumb/f/720/3a351224580a4ddfa609.jpg" alt="Third slide"></div>
+                        <div class="img"><img class="d-block img-fluid responsive " src="https://cdn.nohat.cc/thumb/f/720/3a351224580a4ddfa609.jpg" alt="Third slide"></div>
                       </div>
                     </div>
                   </div>
             </div>
 
-            <div class="item">
+            <div class="ite" style="margin: 10px;">
                 <nav>
                         <ul class="mcd-menu">
                             <li>
@@ -930,25 +937,24 @@
                                     <strong>SELL ON SHOPI</strong>
                                 </a>
                             </li>
-                            <img src="https://camblycontent.files.wordpress.com/2017/02/advertising-word-block.jpg?w=640" alt="advertisement" width="250px;" height="298px;">
+                            <br><br>
+                            <img src="https://www.manilaonsale.com/wp-content/uploads/2018/08/Nike-Factory-Store-1.jpg" alt="Nature" class="responsive" width="600" height="">
                         </ul>
                     </nav>
                     </div>
 
          </section>
     </div>
-    <br>
       <div class="selling items">
         {{-- top selling items --}}
         @include('body.top_selling_items')
+    </body>
         <footer>
             @include('body.footer')
         </footer>
-     </div>
-     @include('body.3d_text')
+</div>
 
 
-    </body>
 
 
 

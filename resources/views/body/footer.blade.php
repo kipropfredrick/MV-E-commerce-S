@@ -25,7 +25,7 @@ border-top: 4px solid #b78c33; }
 footer.nb-footer .about {
 margin: 0 auto;
 margin-top: 40px;
-max-width: 1170px;
+max-width: 1000px;
 text-align: center; }
 footer.nb-footer .about p {
 font-size: 13px;
@@ -38,7 +38,7 @@ display: inline-block;
 width: 45px;
 height: 45px;
 line-height: 45px;
-border-radius: 50%;
+border-radius: 10%;
 font-size: 16px;
 color: #b78c33;
 border: 1px solid rgba(255, 255, 255, 0.3); }
@@ -53,7 +53,7 @@ color: #aaa;
 text-transform: uppercase;
 font-size: 16px;
 border-left: 4px solid #b78c33;
-padding-left: 5px; }
+padding-left: 2px; }
 footer.nb-footer .footer-info-single ul li a {
 display: block;
 color: #aaa;
@@ -70,14 +70,12 @@ background: #111;
 padding: 7px 0;
 color: #999; }
 footer.nb-footer .copyright p {
-margin: 0;
+margin: 20;
 padding: 0; }
 .nb-footer{
-    margin-right: 0%;
+
 }
 </style>
-
-
     <link href='//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet'/>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
@@ -87,8 +85,9 @@ padding: 0; }
             <span class="span-or">or</span>
     <hr class="hr-or">
     <hr class="hr-or">
+    <div class="conatiner">
     <footer class="nb-footer">
-    <div class="container">
+
     <div class="row">
     <div class="col-sm-12">
     <div class="about">
@@ -157,8 +156,9 @@ padding: 0; }
     <div class="container" style="Margin-left:40%;">
     <p>Copyright © 2017. Your Company.</p>
     </div>
-    </div>
+
     </section>
     </footer>
+    </div>
     </body>
 
