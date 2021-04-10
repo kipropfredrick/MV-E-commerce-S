@@ -218,19 +218,17 @@
                             <a href="{{ route('register') }}">
                             <input type="button" class="btn btn-primary btn-block" value="Register">
                         </a>
-                        @endif
-                      @guest
+                 @endif
                 @if (Route::has('login'))
                             <div class="or-seperator"><b>or</b></div>
                             <a href="{{ route('login') }}">
-                            <input type="button" class="btn btn-primary btn-block"   value=  "Login">
+                            <input type="button" class="btn btn-primary btn-block"value=  "Login">
                         </a>
                  @endif)
                         </form>
-
                     </div>
                     @else
-                          <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
@@ -246,17 +244,19 @@
                             @csrf
                         </form>
                 </div>
-                  <div class="carticon" >
-                        <a href="{{route('cart.index')}}">
-                            <i class="fa fa-shopping-cart" style="font-size:30px ;color:rgb(1, 5, 5); margin-top:10px;"></i>
-                            <span  class='badge badge-warning' id='lblCartCount' style="margin-top:3px;">{{Cart::getContent()->count()}}</span>
-                        </a>
 
-                        </a>
-                    </div>
             </div>
-           @endguest
 
-      </ul>
+           @endguest
+        </ul>
+      <div class="carticon" >
+        <a href="{{route('cart.index')}}">
+            <i class="fa fa-shopping-cart" style="font-size:26px ;color:rgb(1, 5, 5); margin-top:10px;"></i>
+            <span  class='badge badge-warning' id='lblCartCount' style="margin-top:3px;">{{Cart::getContent()->count()}}</span>
+        </a>
+
+        </a>
     </div>
+    </div>
+</div>
   </nav>

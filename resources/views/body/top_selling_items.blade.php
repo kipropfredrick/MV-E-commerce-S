@@ -108,13 +108,8 @@
               @endforeach
               </div>
               </div>
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 44c162c62a0f12453b45cf92d862e6cf10eb09ee
         <!-- Card 2 -->
-        <h5 style="font-family: 'Roboto', sans-serif; margin-left:100px;"><strong>Top Sales</strong></h5>
+        <h5 style="font-family: 'Roboto', sans-serif; margin-left:100px;"><strong>Products</strong></h5>
     <div class="container-row">
     <div class="row" style=";">
     <div class="shadow-sm p-3 mb-5 bg-white rounded " >
