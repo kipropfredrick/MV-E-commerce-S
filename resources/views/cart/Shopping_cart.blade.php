@@ -70,36 +70,57 @@
 						</tr>
 					</thead>
 					<tbody>
+                    <tr>
+                        @if(\Cart::getTotalQuantity()>0)
+                        <h4>Cart ({{ \Cart::getTotalQuantity()}}  item)</h4><br>
+                    @else
+                        <h4>No Item(s) In Your Cart</h4><br>
+                        <a href="/" class="btn btn-dark">Continue Shopping</a>
+                    @endif
+                    </tr>
+                    @foreach($cartCollection as $item)
 						<tr>
 							<td data-th="Product">
 								<div class="row">
-									<div class="col-sm-3 hidden-xs"><img src="https://cdn.geekwire.com/wp-content/uploads/2019/01/Sp19_BB_Nike_Adapt_20181218_NIKE0538_Detail5_rectangle_1600.jpg" alt="..." class="img-responsive"/></div>
+									<div class="col-sm-3 hidden-xs"><img src="/images/{{ $item->attributes->image }}"/></div>
 									<div class="col-sm-5">
-										<h4 class="nomargin">Product 1</h4>
+										<h4 class="nomargin">/shop/{{ $item->attributes->slug }}">{{ $item->name }}</h4>
 									</div>
 								</div>
 							</td>
-							<td data-th="Price">$1.99</td>
+							<td data-th="Price">${{ $item->price }}</td>
 							<td data-th="Quantity">
 								<input type="number" class="form-control text-center" value="1">
 							</td>
-							<td data-th="Subtotal" class="text-center">1.99</td>
-							<td class="actions" data-th="">
-								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-							</td>
+							<td data-th="Subtotal" class="text-center">${{ \Cart::get($item->id)->getPriceSum() }}</td>
+							@if(count($cartCollection)>0)
+                            <td class="actions" data-th="">
+                                <form action="{{ route('cart.clear') }}" method="POST">
+                                    {{ csrf_field() }}
+								<a><button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></a>
+                                <a href="{{ route('cart.clear') }}"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>
+							</form>
+                            <form action="{{ route('cart.update') }}" method="POST">
+                                {{ csrf_field() }}
+                            <a href=""><button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></a>
+                        </form>
+                            </td>
+                            @endif
 						</tr>
 					</tbody>
 					<tfoot>
+                        @if(count($cartCollection)>0)
 						<tr class="visible-xs">
-							<td class="text-center"><strong>Total 1.99</strong></td>
+							<td class="text-center"><strong>${{ \Cart::getTotal() }}</strong></td>
 						</tr>
 						<tr>
-							<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+							<td><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
 							<td colspan="2" class="hidden-xs"></td>
-							<td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
-							<td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+							<td class="hidden-xs text-center"><strong>${{ \Cart::getTotal() }}</strong></td>
+							<td><a href="/checkout" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
 						</tr>
+                        @endif
 					</tfoot>
 				</table>
+                @endforeach
 </div>
