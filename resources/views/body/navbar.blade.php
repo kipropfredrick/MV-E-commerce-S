@@ -70,8 +70,44 @@
         <input class="form-control mr-sm-3 col-9" type="search" placeholder= "Search for Products" aria-label="Search" >
         <button type="button" class="btn btn-warning"><i class="fa fa-search">Search</i></button>
       </form>
+      <div>
+        <ul class="navbar-nav ml-auto">
+            <!-- Authentication Links -->
+            @guest
+                @if (Route::has('login'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                @endif
+
+                @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                @endif
+            @else
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }}
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            @endguest
+        </ul>
+      </div>
       <div class="carticon">
-        <a href="#">
+        <a href="{{route('cart.index')}}">
         <i class="fa fa-shopping-cart" style="font-size:36px ;color:rgb(1, 5, 5)"></i>
         <span  class='badge badge-warning' id='lblCartCount'> {{Cart::getContent()->count()}} </span>
     </a>
