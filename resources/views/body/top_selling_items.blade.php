@@ -108,8 +108,6 @@
               @endforeach
               </div>
               </div>
-
-
         <!-- Card 2 -->
         <h5 style="font-family: 'Roboto', sans-serif; margin-left:100px;"><strong>Top Sales</strong></h5>
     <div class="container-row">

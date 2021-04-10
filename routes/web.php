@@ -30,4 +30,5 @@ Route::resource('orders', 'OrderController')->middleware('auth');
 //Route::post('/oders/store', 'OrderController@store')->name('orders.store');
 //ROUTES FOR PRODUCTS
 Route::get('/product/details', 'ProductController@productDetails')->name('product.details')->middleware('auth');
+Route::get('/cart/shopping', [App\Http\Controllers\HomeController::class, 'items'])->name('cart.Shopping');
 
