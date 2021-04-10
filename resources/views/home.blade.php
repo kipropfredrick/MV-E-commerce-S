@@ -13,7 +13,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are locx df a gged in!') }}
+                    {{ __('You are locx dxwecwecewf a gged in!') }}
                 </div>
             </div>
         </div>
