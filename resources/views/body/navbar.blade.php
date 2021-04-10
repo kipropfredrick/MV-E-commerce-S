@@ -73,7 +73,7 @@
       <div class="carticon">
         <a href="#">
         <i class="fa fa-shopping-cart" style="font-size:36px ;color:rgb(1, 5, 5)"></i>
-        <span  class='badge badge-warning' id='lblCartCount'> 5 </span>
+        <span  class='badge badge-warning' id='lblCartCount'> {{Cart::getContent()->count()}} </span>
     </a>
       </div>
 
