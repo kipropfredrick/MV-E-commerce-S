@@ -192,10 +192,6 @@
 }
 
 </style>
-
-
-
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -217,29 +213,50 @@
                     <div class="dropdown-menu action-form">
                         <form action="/examples/actions/confirmation.php" method="post">
                             <p class="hint-text">Sign in with your social media account</p>
-                            <a href="">
+                                  @guest
+                @if (Route::has('register'))
+                            <a href="{{ route('register') }}">
                             <input type="button" class="btn btn-primary btn-block" value="Register">
                         </a>
+                        @endif
+                      @guest
+                @if (Route::has('login'))
                             <div class="or-seperator"><b>or</b></div>
-                            <a href="">
+                            <a href="{{ route('login') }}">
                             <input type="button" class="btn btn-primary btn-block"   value=  "Login">
                         </a>
+                 @endif)
                         </form>
+
                     </div>
+                    @else
+                          <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }}
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                 </div>
                   <div class="carticon" >
-                        <a href="{{route('cart.Shopping')}}">
+                        <a href="{{route('cart.index')}}">
                             <i class="fa fa-shopping-cart" style="font-size:30px ;color:rgb(1, 5, 5); margin-top:10px;"></i>
-                            <span  class='badge badge-warning' id='lblCartCount' style="margin-top:3px;"> 5 </span>
+                            <span  class='badge badge-warning' id='lblCartCount' style="margin-top:3px;">{{Cart::getContent()->count()}}</span>
                         </a>
 
                         </a>
                     </div>
             </div>
-
+           @endguest
 
       </ul>
-
-
     </div>
   </nav>
