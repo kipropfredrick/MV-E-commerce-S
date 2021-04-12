@@ -21,7 +21,7 @@ class CartController extends Controller
     public function cart()  {
         $cartCollection = \Cart::getContent();
         //dd($cartCollection);
-        return view('cart.cart')->withTitle('SHOPILYV | SHOP')->with(['cartCollection' => $cartCollection]);;
+        return view('cart.shopping_cart')->withTitle('SHOPILYV | SHOP')->with(['cartCollection' => $cartCollection]);;
 }
 public function add(Request$request){
     \Cart::add(array(
