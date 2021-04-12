@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return view('product.product_category');
     }
     public function productDetails(){
         return view('product.product-details');

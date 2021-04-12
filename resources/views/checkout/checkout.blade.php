@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<h2>Checkout</h2>
+<div class="row">
+<div class="col-md-7">
+<div class="left border">
 <h3>Shipping Information</h3>
 <form action="{{route('orders.store')}}" method="post">
     @csrf
@@ -33,17 +35,8 @@
         <label for="">Mobile</label>
         <input type="text" name="shipping_phone" id="" class="form-control">
     </div>
+</div></div></div>
 
-    <h4>Payment option</h4>
-
-    <div class="form-check">
-        <label class="form-check-label">
-            <input type="radio" checked class="form-check-input" name="payment_method" id="" value="cash_on_delivery">
-            Cash on delivery
-
-        </label>
-
-    </div>
 
     {{-- <div class="form-check">
         <label class="form-check-label">
@@ -53,8 +46,8 @@
         </label>
 
     </div> --}}
+    <a href="{{route('product.index')}}"><button type="submit" class="btn btn-primary mt-3">Proceed to Payment</button></a>
 
-    <button type="submit" class="btn btn-primary mt-3">Place Order</button>
 
 </form>
 
