@@ -14,518 +14,291 @@
        <link rel="preconnect" href="https://fonts.gstatic.com">
        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
- <style>
-    * {
-    box-sizing: border-box
+<style>
+    body {
+    background-color: #eee
 }
 
-#search {
-    outline: none;
-    border: none;
-    display: inline-block
+.t-products {
+    background-image: linear-gradient(to right top, #5629c0, #5625cb, #5620d5, #551ae0, #5412eb);
+    color: #fff;
+    border-radius: 3px
 }
 
-#burgundy {
-    color: rgb(153, 40, 59)
+.processor {
+    background-color: #fff;
+    margin-top: 5px;
+    border-bottom: 1px solid #eee
 }
 
-#orange,
-select,
-.btn {
-    color: orange
+.brand {
+    background-color: #fff;
+    border-bottom: 1px solid #eee
 }
 
-.fa-search {
-    font-size: 20px;
-    padding: 10px;
-    margin-bottom: 3px;
-    padding-right: 20px
-}
-
-.search-nav-item {
-    height: 40px
-}
-
-nav {
-    padding: 0px 100px
-}
-
-.fa-user-o,
-.fa-shopping-cart {
-    font-size: 20px;
-    padding: 4px
-}
-
-.form-group {
-    margin-bottom: 5px
-}
-
-label {
-    padding-left: 10px
-}
-
-.form-group:last-child {
-    margin-bottom: 0
-}
-
-h6 {
-    margin-bottom: 0px
-}
-
-#sort {
-    outline: none;
-    border: none
-}
-
-.btn {
-    border: 1px solid orange;
-    border-radius: 10px;
+.type {
     background-color: #fff
 }
 
-.btn:hover {
-    color: #fff;
-    background-color: orange
-}
-
-.card-body {
-    padding: 8px
-}
-
-.sign {
-    width: 25px;
-    height: 25px
-}
-
-.discount {
-    border: 1px solid orange;
+.product {
+    padding: 10px;
+    background-color: #fff;
     border-radius: 5px;
-    width: 65px;
+    position: relative
+}
+
+.about span {
+    color: #5629c0;
+    font-size: 16px
+}
+
+.cart-button button {
+    font-size: 12px;
+    color: #fff;
+    background-color: #5629c0;
+    height: 38px
+}
+
+.cart-button button:focus,
+button:active {
+    font-size: 12px;
+    color: #fff;
+    background-color: #5629c0;
+    box-shadow: none
+}
+
+.product_fav i {
+    line-height: 40px;
+    color: #5629c0;
+    font-size: 15px
+}
+
+.product_fav {
+    display: inline-block;
+    width: 36px;
+    height: 39px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 11%;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 3px;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease
+}
+
+.product_fav:hover {
+    background: #5629c0
+}
+
+.product_fav:hover i {
+    color: #fff
+}
+
+.about {
+    margin-top: 12px
+}
+
+.off {
     position: absolute;
-    top: 2%
-}
-
-@media(min-width:1200px) {
-    #search {
-        width: 300px;
-        padding: 5px;
-        padding-left: 20px
-    }
-
-    .search-nav-item {
-        margin-left: 400px;
-        width: 350px
-    }
-
-    .fa-user-o {
-        margin-left: 300px
-    }
-
-    .text {
-        display: none
-    }
-
-    .fa-user-o,
-    .fa-shopping-cart {
-        font-size: 20px;
-        padding-left: 20px
-    }
-
-    #sidebar {
-        width: 30%;
-        padding: 20px;
-        float: left
-    }
-
-    #products {
-        width: 70%;
-        padding: 10px;
-        margin: 0;
-        float: right
-    }
-
-    .card {
-        width: 300px;
-        height: 330px;
-        border: none
-    }
-
-    .card-img-top {
-        width: 295px;
-        height: 200px;
-        border-radius: 10px
-    }
-
-    del {
-        padding-right: 2px
-    }
-
-    .filter,
-    #mobile-filter {
-        display: none
-    }
-}
-
-@media(min-width:992px) and (max-width:1199px) {
-    #search {
-        width: 300px;
-        padding: 5px;
-        padding-left: 20px
-    }
-
-    .search-nav-item {
-        margin-left: 200px;
-        width: 350px
-    }
-
-    .fa-user-o {
-        margin-left: 160px
-    }
-
-    .text {
-        display: none
-    }
-
-    #sidebar {
-        width: 30%;
-        padding: 20px;
-        float: left
-    }
-
-    #products {
-        width: 70%;
-        padding: 10px;
-        margin: 0;
-        float: right
-    }
-
-    .card {
-        width: 100px;
-        height: 330px;
-        border: none
-    }
-
-    .card-img-top {
-        width: 200px;
-        height: 200px;
-        border-radius: 10px
-    }
-
-    .fa-plus,
-    .fa-minus {
-        font-size: 12px
-    }
-
-    .sign {
-        height: 25px
-    }
-
-    .price {
-        width: 99px
-    }
-
-    .filter,
-    #mobile-filter {
-        display: none
-    }
-}
-
-@media(min-width:768px) and (max-width:991px) {
-    #search {
-        width: 300px;
-        padding: 5px;
-        padding-left: 20px
-    }
-
-    .search-nav-item {
-        margin-left: 60px;
-        width: 350px
-    }
-
-    .fa-user-o {
-        margin-left: 80px
-    }
-
-    .text {
-        display: none
-    }
-
-    #sidebar {
-        width: 35%;
-        padding: 20px;
-        float: left
-    }
-
-    #products {
-        width: 65%;
-        padding: 10px;
-        margin: 0;
-        float: right
-    }
-
-    .card {
-        border: none
-    }
-
-    .filter,
-    #mobile-filter {
-        display: none
-    }
-}
-
-@media(min-width:576px) and (max-width:767px) {
-    .text {
-        display: none
-    }
-
-    .search-nav-item {
-        margin-left: 35px;
-        width: 270px
-    }
-
-    #search {
-        width: 240px;
-        padding: 5px;
-        padding-left: 20px
-    }
-
-    .fa-search {
-        padding: 3px;
-        font-size: 18px
-    }
-
-    #sidebar {
-        width: 40%;
-        padding: 20px;
-        float: left
-    }
-
-    #products {
-        width: 60%;
-        padding: 10px;
-        margin: 0;
-        float: right
-    }
-
-    .card {
-        border: none
-    }
-
-    #off {
-        padding-left: 2px
-    }
-
-    #sorting span,
-    #res {
-        font-size: 14px
-    }
-
-    .filter,
-    #mobile-filter {
-        display: none
-    }
-}
-
-@media(max-width:575px) {
-    .search-nav-item {
-        margin: 0;
-        width: 100%;
-        margin-top: 10px
-    }
-
-    #search {
-        width: 80%;
-        padding-left: 10px;
-        margin-top: 10px;
-        padding-right: 10px
-    }
-
-    .fa-search {
-        padding: 10px;
-        font-size: 18px
-    }
-
-    #sidebar {
-        display: none
-    }
-
-    .filter {
-        margin-left: 70%;
-        margin-top: 2%
-    }
-
-    #sorting,
-    #res {
-        font-size: 12px;
-        margin-top: 2%
-    }
+    left: 65%;
+    top: 6%;
+    width: 80px;
+    text-align: center;
+    height: 30px;
+    line-height: 8px;
+    border-radius: 5px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff
 }
 </style>
 
-
-<!-- Navbar section -->
-<nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom"> <a class="navbar-brand ml-2 font-weight-bold" href="#"><span id="burgundy">The</span><span id="orange">Bakeshop</span></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor" aria-controls="navbarColor" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-    <div class="collapse navbar-collapse" id="navbarColor">
-        <ul class="navbar-nav">
-            <li class="nav-item rounded bg-light search-nav-item"><input type="text" id="search" class="bg-light" placeholder="Search bread, cakes, desserts"><span class="fa fa-search text-muted"></span></li>
-            <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-user-o"></span><span class="text">Login</span></a> </li>
-            <li class="nav-item "><a class="nav-link" href="#"><span class="fa fa-shopping-cart"></span><span class="text">Cart</span></a> </li>
-        </ul>
-    </div>
-</nav>
-<div class="filter"> <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#mobile-filter" aria-expanded="true" aria-controls="mobile-filter">Filters<span class="fa fa-filter pl-1"></span></button>
-</div>
-<div id="mobile-filter">
-    <p class="pl-sm-0 pl-2"> Home | <b>All Breads</b></p>
-    <div class="border-bottom pb-2 ml-2">
-        <h4 id="burgundy">Filters</h4>
-    </div>
-    <div class="py-2 border-bottom ml-3">
-        <h6 class="font-weight-bold">Categories</h6>
-        <div id="orange"><span class="fa fa-minus"></span></div>
-        <form>
-            <div class="form-group"> <input type="checkbox" id="artisan"> <label for="artisan">Fresh Artisan Breads</label> </div>
-            <div class="form-group"> <input type="checkbox" id="breakfast"> <label for="breakfast">Breakfast Breads</label> </div>
-            <div class="form-group"> <input type="checkbox" id="healthy"> <label for="healthy">Healthy Breads</label> </div>
-        </form>
-    </div>
-    <div class="py-2 border-bottom ml-3">
-        <h6 class="font-weight-bold">Accompainments</h6>
-        <div id="orange"><span class="fa fa-minus"></span></div>
-        <form>
-            <div class="form-group"> <input type="checkbox" id="tea"> <label for="tea">Tea Cakes</label> </div>
-            <div class="form-group"> <input type="checkbox" id="cookies"> <label for="cookies">Cookies</label> </div>
-            <div class="form-group"> <input type="checkbox" id="pastries"> <label for="pastries">Pastries</label> </div>
-            <div class="form-group"> <input type="checkbox" id="dough"> <label for="dough">Cookie Dough</label> </div>
-            <div class="form-group"> <input type="checkbox" id="choco"> <label for="choco">Chocolates</label> </div>
-        </form>
-    </div>
-    <div class="py-2 ml-3">
-        <h6 class="font-weight-bold">Top Offers</h6>
-        <div id="orange"><span class="fa fa-minus"></span></div>
-        <form>
-            <div class="form-group"> <input type="checkbox" id="25off"> <label for="25">25% off</label> </div>
-            <div class="form-group"> <input type="checkbox" id="5off"> <label for="5off" id="off">5% off on artisan breads</label> </div>
-        </form>
-    </div>
-</div>
-<!-- Sidebar filter section -->
-<section id="sidebar">
-    <p> Home | <b>All Breads</b></p>
-    <div class="border-bottom pb-2 ml-2">
-        <h4 id="burgundy">Filters</h4>
-    </div>
-    <div class="py-2 border-bottom ml-3">
-        <h6 class="font-weight-bold">Categories</h6>
-        <div id="orange"><span class="fa fa-minus"></span></div>
-        <form>
-            <div class="form-group"> <input type="checkbox" id="artisan"> <label for="artisan">Fresh Artisan Breads</label> </div>
-            <div class="form-group"> <input type="checkbox" id="breakfast"> <label for="breakfast">Breakfast Breads</label> </div>
-            <div class="form-group"> <input type="checkbox" id="healthy"> <label for="healthy">Healthy Breads</label> </div>
-        </form>
-    </div>
-    <div class="py-2 border-bottom ml-3">
-        <h6 class="font-weight-bold">Accompainments</h6>
-        <div id="orange"><span class="fa fa-minus"></span></div>
-        <form>
-            <div class="form-group"> <input type="checkbox" id="tea"> <label for="tea">Tea Cakes</label> </div>
-            <div class="form-group"> <input type="checkbox" id="cookies"> <label for="cookies">Cookies</label> </div>
-            <div class="form-group"> <input type="checkbox" id="pastries"> <label for="pastries">Pastries</label> </div>
-            <div class="form-group"> <input type="checkbox" id="dough"> <label for="dough">Cookie Dough</label> </div>
-            <div class="form-group"> <input type="checkbox" id="choco"> <label for="choco">Chocolates</label> </div>
-        </form>
-    </div>
-    <div class="py-2 ml-3">
-        <h6 class="font-weight-bold">Top Offers</h6>
-        <div id="orange"><span class="fa fa-minus"></span></div>
-        <form>
-            <div class="form-group"> <input type="checkbox" id="25off"> <label for="25">25% off</label> </div>
-            <div class="form-group"> <input type="checkbox" id="5off"> <label for="5off" id="off">5% off on artisan breads</label> </div>
-        </form>
-    </div>
-</section>
-<!-- products section -->
-<section id="products">
-    <div class="container">
-        <div class="d-flex flex-row">
-            <div class="text-muted m-2" id="res">Showing 44 results</div>
-            <div class="ml-auto mr-lg-4">
-                <div id="sorting" class="border rounded p-1 m-1"> <span class="text-muted">Sort by</span> <select name="sort" id="sort">
-                        <option value="popularity"><b>Popularity</b></option>
-                        <option value="prcie"><b>Price</b></option>
-                        <option value="rating"><b>Rating</b></option>
-                    </select> </div>
+       <div class="container-fluid mt-5 mb-5">
+        <div class="row g-2">
+            <div class="col-md-3">
+                <div class="t-products p-2">
+                    <h6 class="text-uppercase">Computer & Periferals</h6>
+                    <div class="p-lists">
+                        <div class="d-flex justify-content-between mt-2"> <span>Laptops</span> <span>23</span> </div>
+                        <div class="d-flex justify-content-between mt-2"> <span>Desktops</span> <span>46</span> </div>
+                        <div class="d-flex justify-content-between mt-2"> <span>Monitors</span> <span>13</span> </div>
+                        <div class="d-flex justify-content-between mt-2"> <span>Mouse</span> <span>33</span> </div>
+                        <div class="d-flex justify-content-between mt-2"> <span>Keyboard</span> <span>12</span> </div>
+                        <div class="d-flex justify-content-between mt-2"> <span>Printer</span> <span>53</span> </div>
+                        <div class="d-flex justify-content-between mt-2"> <span>Mobiles</span> <span>203</span> </div>
+                        <div class="d-flex justify-content-between mt-2"> <span>CPU</span> <span>23</span> </div>
+                    </div>
+                </div>
+                <div class="processor p-2">
+                    <div class="heading d-flex justify-content-between align-items-center">
+                        <h6 class="text-uppercase">Processor</h6> <span>--</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault"> Intel Core i7 </label> </div> <span>3</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Core i6 </label> </div> <span>4</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Core i3 </label> </div> <span>14</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Centron </label> </div> <span>8</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Pentinum </label> </div> <span>14</span>
+                    </div>
+                </div>
+                <div class="brand p-2">
+                    <div class="heading d-flex justify-content-between align-items-center">
+                        <h6 class="text-uppercase">Brand</h6> <span>--</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault"> Apple </label> </div> <span>13</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Asus </label> </div> <span>4</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Dell </label> </div> <span>24</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Lenovo </label> </div> <span>18</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Acer </label> </div> <span>44</span>
+                    </div>
+                </div>
+                <div class="type p-2 mb-2">
+                    <div class="heading d-flex justify-content-between align-items-center">
+                        <h6 class="text-uppercase">Type</h6> <span>--</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault"> Hybrid </label> </div> <span>23</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Laptop </label> </div> <span>24</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Desktop </label> </div> <span>14</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Touch </label> </div> <span>28</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Tablets </label> </div> <span>44</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="row g-2">
+                    <div class="col-md-4">
+                        <div class="product py-4"> <span class="off bg-success">-25% OFF</span>
+                            <div class="text-center"> <img src="https://5.imimg.com/data5/WU/TB/MY-2/kc596_10-500x500.jpg" width="200"> </div>
+                            <div class="about text-center">
+                                <h5>XRD Active Shoes</h5> <span>$1,999.99</span>
+                            </div>
+                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
+                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product py-4"> <span class="off bg-warning">SALE</span>
+                            <div class="text-center"> <img src="https://justcreative.com/wp-content/uploads/2019/11/Apple-Watch-Series-5.jpg" width="200"> </div>
+                            <div class="about text-center">
+                                <h5>Hygen Smart watch </h5> <span>$123.43</span>
+                            </div>
+                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
+                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product py-4">
+                            <div class="text-center"> <img src="https://i5.walmartimages.com/asr/5a2915a2-427a-460e-8fd3-f6ba23467c9c_1.9be7f36f231d846ddec557fa6c53bbad.jpeg" width="200" height="200"> </div>
+                            <div class="about text-center">
+                                <h5>Acer surface book 2.5</h5> <span>$1,999.99</span>
+                            </div>
+                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
+                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product py-4"> <span class="off bg-success">-10% OFF</span>
+                            <div class="text-center"> <img src="https://i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/dell_client_products/notebooks/xps_notebooks/xps_15_7590/pdp/laptops-xps-15-7590-pdp-gallery504x350.jpg?fmt=jpg&wid=570&hei=400" width="200" height="200"> </div>
+                            <div class="about text-center">
+                                <h5>Dell XPS Surface</h5> <span>$1,245.89</span>
+                            </div>
+                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
+                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product py-4">
+                            <!-- <span class="off bg-success">-25% OFF</span> -->
+                            <div class="text-center"> <img src="https://static.bhphoto.com/images/images2500x2500/1588766830_1558265.jpg" width="200"> </div>
+                            <div class="about text-center">
+                                <h5>Acer surface book 5.5</h5> <span>$2,999.99</span>
+                            </div>
+                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
+                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product py-4"> <span class="off bg-success">-5% OFF</span>
+                            <div class="text-center"> <img src="https://harlemtechnologies.co.ke/wp-content/uploads/2020/10/Mi-Band-5-600x600.jpg" width="200"> </div>
+                            <div class="about text-center">
+                                <h5>Xps smart watch 5.0</h5> <span>$999.99</span>
+                            </div>
+                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
+                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product py-4"> <span class="off bg-warning">SALE</span>
+                            <div class="text-center"> <img src="https://www.gizmochina.com/wp-content/uploads/2019/04/UMIDIGI-A5-Pro-5-500x500.jpg" width="200"> </div>
+                            <div class="about text-center">
+                                <h5>Umidigi</h5> <span>$3,999.99</span>
+                            </div>
+                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
+                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product py-4">
+                            <div class="text-center"> <img src="https://fgl.scene7.com/is/image/FGLSportsLtd/FGL_332979914_01_a?bgColor=0,0,0,0&resMode=sharp2&op_sharpen=1&hei=520" width="200"> </div>
+                            <div class="about text-center">
+                                <h5>Tyko Running shoes</h5> <span>$99.99</span>
+                            </div>
+                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
+                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product py-4">
+                            <div class="text-center"> <img src="https://www.mobilehub.co.ke/wp-content/uploads/2019/04/Sony-Bravia-43%E2%80%B3-Smart-4k-Android-TV-43W700E-1.jpg" width="200"> </div>
+                            <div class="about text-center">
+                                <h5>Sony Smart Tv</h5> <span>$1,999.99</span>
+                            </div>
+                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
+                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
-                <div class="card"> <img class="card-img-top" src="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-                    <div class="card-body">
-                        <h5><b>Multi Grain Bread</b> </h5>
-                        <div class="d-flex flex-row my-2">
-                            <div class="text-muted">₹110/loaf</div>
-                            <div class="ml-auto"> <button class="border rounded bg-white sign"><span class="fa fa-plus" id="orange"></span></button> <span class="px-sm-1">1 loaf</span> <button class="border rounded bg-white sign"><span class="fa fa-minus" id="orange"></span></button> </div>
-                        </div> <button class="btn w-100 rounded my-2">Add to cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
-                <div class="card"> <img class="card-img-top" src="https://images.pexels.com/photos/3085146/pexels-photo-3085146.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-                    <div class="card-body">
-                        <h5><b>Bagels</b> </h5>
-                        <div class="d-flex flex-row my-2">
-                            <div class="text-muted">₹35/piece</div>
-                            <div class="ml-auto"> <button class="border rounded bg-white sign"><span class="fa fa-plus" id="orange"></span></button> <span class="px-sm-1">1 pc</span> <button class="border rounded bg-white sign"><span class="fa fa-minus" id="orange"></span></button> </div>
-                        </div> <button class="btn w-100 rounded my-2">Add to cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
-                <div class="card"> <img class="card-img-top" src="https://images.pexels.com/photos/1448665/pexels-photo-1448665.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-                    <div class="card-body">
-                        <h5><b>White Bread</b> </h5>
-                        <div class="d-flex flex-row my-2">
-                            <div class="text-muted">₹80/loaf</div>
-                            <div class="ml-auto"> <button class="border rounded bg-white sign"><span class="fa fa-plus" id="orange"></span></button> <span class="px-sm-1">1 loaf</span> <button class="border rounded bg-white sign"><span class="fa fa-minus" id="orange"></span></button> </div>
-                        </div> <button class="btn w-100 rounded my-2">Add to cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
-                <div class="card"> <img class="card-img-top" src="https://images.pexels.com/photos/461060/pexels-photo-461060.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-                    <div class="card-body">
-                        <h5><b>Baguette</b> </h5>
-                        <div class="d-flex flex-row my-2">
-                            <div class="text-muted">₹160/piece</div>
-                            <div class="ml-auto"> <button class="border rounded bg-white sign"><span class="fa fa-plus" id="orange"></span></button> <span class="px-sm-1">1 pc</span> <button class="border rounded bg-white sign"><span class="fa fa-minus" id="orange"></span></button> </div>
-                        </div> <button class="btn w-100 rounded my-2">Add to cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
-                <div class="card"> <img class="card-img-top" src="https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-                    <div class="card-body">
-                        <h5><b>Masala Bun</b> </h5>
-                        <div class="d-flex flex-row my-2">
-                            <div class="text-muted">₹85/piece</div>
-                            <div class="ml-auto"> <button class="border rounded bg-white sign"><span class="fa fa-plus" id="orange"></span></button> <span class="px-sm-1">1 pc</span> <button class="border rounded bg-white sign"><span class="fa fa-minus" id="orange"></span></button> </div>
-                        </div> <button class="btn w-100 rounded my-2">Add to cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
-                <div class="card d-relative"> <img class="card-img-top" src="https://images.pexels.com/photos/3570/morning-breakfast-croissant.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-                    <div class="card-body">
-                        <h5><b>Croissant</b> </h5>
-                        <div class="rounded bg-white discount" id="orange">10% off</div>
-                        <div class="d-flex flex-row my-2">
-                            <div class="text-muted price"><del>₹55</del>₹45/piece</div>
-                            <div class="ml-auto"> <button class="border rounded bg-white sign"><span class="fa fa-plus" id="orange"></span></button> <span>1pc</span> <button class="border rounded bg-white sign"><span class="fa fa-minus" id="orange"></span></button> </div>
-                        </div> <button class="btn w-100 rounded my-2">Add to cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-</section>

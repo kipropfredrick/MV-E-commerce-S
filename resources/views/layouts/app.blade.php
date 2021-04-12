@@ -22,7 +22,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+            <div class="container" style="height: 90px">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'shopily') }}
                 </a>
