@@ -645,7 +645,7 @@
 
         </style>
              {{-- navbar extention --}}
-             @include('body.navbar')
+             @include('layouts.app')
              <br>
     </head>
 
