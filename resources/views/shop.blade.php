@@ -664,7 +664,7 @@
                                     <a href="#"><i class="fa fa-globe"></i>Food Capboard</a>
                                     <ul>
                                         <li>
-                                            <a href="#"><i class="fa fa-female"></i>cooking ingridients</a>
+                                            <a href="route{{'product.details'}}"><i class="fa fa-female"></i>cooking ingridients</a>
 
                                             <li>
                                                 <a href="#"><i class="fa fa-male"></i>Snacks</a>

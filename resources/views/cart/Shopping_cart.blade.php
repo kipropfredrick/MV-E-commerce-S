@@ -97,8 +97,7 @@
                             <td class="actions" data-th="">
                                 <form action="{{ route('cart.clear') }}" method="POST">
                                     {{ csrf_field() }}
-								<a><button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></a>
-                                <a href="{{ route('cart.clear') }}"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>
+                               ><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
 							</form>
                             <form action="{{ route('cart.update') }}" method="POST">
                                 {{ csrf_field() }}
