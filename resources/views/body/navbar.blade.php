@@ -220,15 +220,14 @@
                             <input type="button" class="btn btn-primary btn-block" value="Register">
                         </a>
                         @endif
-                      @guest
                 @if (Route::has('login'))
                             <div class="or-seperator"><b>or</b></div>
                             <a href="{{ route('login') }}">
                             <input type="button" class="btn btn-primary btn-block"   value=  "Login">
                         </a>
-                 @endif)
+                 @endif
                         </form>
-                        
+
                     </div>
                     @else
                           <li class="nav-item dropdown">
