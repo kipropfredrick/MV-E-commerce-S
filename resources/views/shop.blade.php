@@ -1,8 +1,8 @@
-@include('layouts.app')
-<img src="https://www.pikpng.com/pngl/b/52-528322_pay-via-paypal-also-means-that-you-can.png" style="height: 50px; margin:-5px; width:20%; float:center" alt="">
+
 <!doctype html>
 <html lang="en">
   <head>
+    @include('layouts.app')
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

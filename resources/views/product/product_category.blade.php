@@ -1,26 +1,14 @@
-
-       <meta charset="utf-8">
-       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-       <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-       <title>top_selling_items</title>
-       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-       <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-       <link rel="preconnect" href="https://fonts.gstatic.com">
-       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>top_selling_items</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <style>
     body {
     background-color: #eee
 }
 
 .t-products {
-    background-image: linear-gradient(to right top, #5629c0, #5625cb, #5620d5, #551ae0, #5412eb);
+    background-image: linear-gradient(to right top, #ff9900, #ff9900, #ff9900, #ff9900, #ff9900);
     color: #fff;
     border-radius: 3px
 }
@@ -48,14 +36,14 @@
 }
 
 .about span {
-    color: #5629c0;
+    color: #ff9900;
     font-size: 16px
 }
 
 .cart-button button {
     font-size: 12px;
     color: #fff;
-    background-color: #5629c0;
+    background-color: #ff9900;
     height: 38px
 }
 
@@ -63,13 +51,13 @@
 button:active {
     font-size: 12px;
     color: #fff;
-    background-color: #5629c0;
+    background-color: #ff9900;
     box-shadow: none
 }
 
 .product_fav i {
     line-height: 40px;
-    color: #5629c0;
+    color: #ff9900;
     font-size: 15px
 }
 
@@ -91,7 +79,7 @@ button:active {
 }
 
 .product_fav:hover {
-    background: #5629c0
+    background: #ff9900
 }
 
 .product_fav:hover i {
@@ -99,7 +87,7 @@ button:active {
 }
 
 .about {
-    margin-top: 12px
+    margin-top: 0px
 }
 
 .off {
@@ -119,7 +107,9 @@ button:active {
 }
 </style>
 
+
        <div class="container-fluid mt-5 mb-5">
+        <h2><b>Products</b></h2>
         <div class="row g-2">
             <div class="col-md-3">
                 <div class="t-products p-2">
@@ -199,7 +189,7 @@ button:active {
             <div class="col-md-9">
                 <div class="row g-2">
                     <div class="col-md-4">
-                        <div class="product py-4"> <span class="off bg-success">-25% OFF</span>
+                        <div class="product py-4">
                             <div class="text-center"> <img src="https://5.imimg.com/data5/WU/TB/MY-2/kc596_10-500x500.jpg" width="200"> </div>
                             <div class="about text-center">
                                 <h5>XRD Active Shoes</h5> <span>$1,999.99</span>
@@ -210,7 +200,7 @@ button:active {
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="product py-4"> <span class="off bg-warning">SALE</span>
+                        <div class="product py-4">
                             <div class="text-center"> <img src="https://justcreative.com/wp-content/uploads/2019/11/Apple-Watch-Series-5.jpg" width="200"> </div>
                             <div class="about text-center">
                                 <h5>Hygen Smart watch </h5> <span>$123.43</span>
@@ -232,7 +222,7 @@ button:active {
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="product py-4"> <span class="off bg-success">-10% OFF</span>
+                        <div class="product py-4">
                             <div class="text-center"> <img src="https://i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/dell_client_products/notebooks/xps_notebooks/xps_15_7590/pdp/laptops-xps-15-7590-pdp-gallery504x350.jpg?fmt=jpg&wid=570&hei=400" width="200" height="200"> </div>
                             <div class="about text-center">
                                 <h5>Dell XPS Surface</h5> <span>$1,245.89</span>
@@ -244,7 +234,6 @@ button:active {
                     </div>
                     <div class="col-md-4">
                         <div class="product py-4">
-                            <!-- <span class="off bg-success">-25% OFF</span> -->
                             <div class="text-center"> <img src="https://static.bhphoto.com/images/images2500x2500/1588766830_1558265.jpg" width="200"> </div>
                             <div class="about text-center">
                                 <h5>Acer surface book 5.5</h5> <span>$2,999.99</span>
@@ -255,7 +244,7 @@ button:active {
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="product py-4"> <span class="off bg-success">-5% OFF</span>
+                        <div class="product py-4">
                             <div class="text-center"> <img src="https://harlemtechnologies.co.ke/wp-content/uploads/2020/10/Mi-Band-5-600x600.jpg" width="200"> </div>
                             <div class="about text-center">
                                 <h5>Xps smart watch 5.0</h5> <span>$999.99</span>
@@ -266,7 +255,7 @@ button:active {
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="product py-4"> <span class="off bg-warning">SALE</span>
+                        <div class="product py-4">
                             <div class="text-center"> <img src="https://www.gizmochina.com/wp-content/uploads/2019/04/UMIDIGI-A5-Pro-5-500x500.jpg" width="200"> </div>
                             <div class="about text-center">
                                 <h5>Umidigi</h5> <span>$3,999.99</span>

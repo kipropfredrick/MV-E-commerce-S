@@ -19,10 +19,22 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+<style>
+    .fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:12;
+  width: 100%;
+  height: 50px;
+}
+</style>
 <body>
+    <nav class="fixed-nav-bar">
+        <!-- Fixed navigation bar content -->
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container" style="height: 90px">
+                <img src="/images/logo-removebg-preview (1).png"   width="100px;" height="100px" alt="">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'shopily') }}
                 </a>
@@ -36,8 +48,15 @@
 
                     </ul>
 
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                    <div class="carticon" style="margin-left:-60px;">
+                    <a href="#">
+                    <i class="fa fa-shopping-cart" style="font-size:30px ;color:rgb(1, 5, 5);"></i>
+                    <span  class='badge badge-warning'  id='lblCartCount' style="top:20px;" > 5 </span>
+                </a>
+                </div>
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -72,9 +91,8 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
         </nav>
-
+    </nav>
         <main class="py-4">
             @yield('content')
         </main>

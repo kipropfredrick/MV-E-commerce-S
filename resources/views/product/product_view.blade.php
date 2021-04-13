@@ -1,23 +1,15 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap Product list for Ecommerce Website</title>
+<title>Product list</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <style type="text/css">
-body {
-	font-family: "Open Sans", sans-serif;
-}
 h2 {
 	color: #000;
 	font-size: 26px;
@@ -54,6 +46,7 @@ h2::after {
 	height: 160px;
 	width: 100%;
 	position: relative;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
 .carousel .item img {
 	max-width: 100%;
@@ -181,7 +174,8 @@ h2::after {
 						<div class="col-sm-3">
 							<div class="thumb-wrapper">
 								<div class="img-box">
-								<a href="{{route('product.details')}}"><img src="https://www.priceinkenya.com/images/products/large/oppo-f17-pro-8gb128gb-ZrAMqOevJ3.jpg" class="img-responsive img-fluid"  height="50px" alt=""></a>
+                                    <a href="{{route('product.details')}}"><img src="https://www.priceinkenya.com/images/products/large/oppo-f17-pro-8gb128gb-ZrAMqOevJ3.jpg" class="img-responsive img-fluid"  height="50px" width="220px" alt=""></a>
+
 								</div>
 								<div class="thumb-content">
 									<h4>Apple iPad</h4>
@@ -202,7 +196,7 @@ h2::after {
 						<div class="col-sm-3">
 							<div class="thumb-wrapper">
 								<div class="img-box">
-									<img src="https://www.91-img.com/pictures/140632-v5-oppo-f17-pro-diwali-edition-mobile-phone-large-1.jpg?tr=q-60" class="img-responsive img-fluid" alt="">
+									<img src="https://www.91-img.com/pictures/140632-v5-oppo-f17-pro-diwali-edition-mobile-phone-large-1.jpg?tr=q-60" class="img-responsive img-fluid" width="220px" alt="">
 								</div>
 								<div class="thumb-content">
 									<h4>Sony Headphone</h4>
@@ -223,7 +217,7 @@ h2::after {
 						<div class="col-sm-3">
 							<div class="thumb-wrapper">
 								<div class="img-box">
-									<img src="https://images.yaoota.com/9-hHDlYGhTw2wQKJghj_18fGRdQ=/trim/yaootaweb-production-ke/media/crawledproductimages/2a3815faadddd239a3e77810a6c1e7f2163e5ff2.jpg" class="img-responsive img-fluid" alt="">
+									<img src="https://images.yaoota.com/9-hHDlYGhTw2wQKJghj_18fGRdQ=/trim/yaootaweb-production-ke/media/crawledproductimages/2a3815faadddd239a3e77810a6c1e7f2163e5ff2.jpg" class="img-responsive img-fluid" width="220px" alt="">
 								</div>
 								<div class="thumb-content">
 									<h4>Macbook Air</h4>
@@ -244,7 +238,7 @@ h2::after {
 						<div class="col-sm-3">
 							<div class="thumb-wrapper">
 								<div class="img-box">
-									<img src="https://tsalutecelectronics.com/wp-content/uploads/2018/06/56.jpg" class="img-responsive img-fluid" alt="">
+									<img src="https://tsalutecelectronics.com/wp-content/uploads/2018/06/56.jpg" class="img-responsive img-fluid" width="220px" alt="">
 								</div>
 								<div class="thumb-content">
 									<h4>Nikon DSLR</h4>
@@ -269,7 +263,7 @@ h2::after {
 						<div class="col-sm-3">
 							<div class="thumb-wrapper">
 								<div class="img-box">
-									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" width="220px" alt="">
 								</div>
 								<div class="thumb-content">
 									<h4>Sony Play Station</h4>
@@ -290,7 +284,7 @@ h2::after {
 						<div class="col-sm-3">
 							<div class="thumb-wrapper">
 								<div class="img-box">
-									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" width="220px" alt="">
 								</div>
 								<div class="thumb-content">
 									<h4>Macbook Pro</h4>
@@ -311,7 +305,7 @@ h2::after {
 						<div class="col-sm-3">
 							<div class="thumb-wrapper">
 								<div class="img-box">
-									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" width="220px" alt="">
 								</div>
 								<div class="thumb-content">
 									<h4>Bose Speaker</h4>
@@ -332,7 +326,7 @@ h2::after {
 						<div class="col-sm-3">
 							<div class="thumb-wrapper">
 								<div class="img-box">
-									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" width="220px" alt="">
 								</div>
 								<div class="thumb-content">
 									<h4>Samsung Galaxy S8</h4>
@@ -357,7 +351,7 @@ h2::after {
 						<div class="col-sm-3">
 							<div class="thumb-wrapper">
 								<div class="img-box">
-									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" width="220px" alt="">
 								</div>
 								<div class="thumb-content">
 									<h4>Apple iPhone</h4>
@@ -378,7 +372,7 @@ h2::after {
 						<div class="col-sm-3">
 							<div class="thumb-wrapper">
 								<div class="img-box">
-									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" width="220px" alt="">
 								</div>
 								<div class="thumb-content">
 									<h4>Canon DSLR</h4>
@@ -399,7 +393,7 @@ h2::after {
 						<div class="col-sm-3">
 							<div class="thumb-wrapper">
 								<div class="img-box">
-									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" width="220px" alt="">
 								</div>
 								<div class="thumb-content">
 									<h4>Google Pixel</h4>
@@ -420,7 +414,7 @@ h2::after {
 						<div class="col-sm-3">
 							<div class="thumb-wrapper">
 								<div class="img-box">
-									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" width="220px" alt="">
 								</div>
 								<div class="thumb-content">
 									<h4>Apple Watch</h4>

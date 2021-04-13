@@ -19,6 +19,9 @@ class ProductController extends Controller
     public function productDetails(){
         return view('product.product-details');
     }
+    public function productbread(){
+        return view('product.product_bread');
+    }
 
     /**
      * Show the form for creating a new resource.

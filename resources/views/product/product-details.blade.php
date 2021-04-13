@@ -1,3 +1,5 @@
+@include('layouts.app')
+<br><br>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,10 +16,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 
-body {
-    background-color: #eee;
-    font-family: "Poppins", sans-serif
-}
 
 .card {
     background-color: #fff;
@@ -42,10 +40,15 @@ li {
     cursor: pointer
 }
 
-img {
+.rounded-circle {
     display: block;
     height: auto;
     width: 100%
+}
+.p-image{
+    display: block;
+    height: auto;
+    width: 100%;
 }
 
 .stars i {
@@ -257,9 +260,9 @@ label.radio input:checked+span::before {
                 <div class="card">
                     <div class="demo">
                         <ul id="lightSlider">
-                            <li data-thumb="https://dream2000.com/pub/media/catalog/product/cache/9b6394f59e15b10e6dd47471b29c7ca4/x/i/xiaomi_poco_m3_4gb_128gb_yellow-1.jpg"> <img src="https://dream2000.com/pub/media/catalog/product/cache/9b6394f59e15b10e6dd47471b29c7ca4/x/i/xiaomi_poco_m3_4gb_128gb_yellow-1.jpg" /> </li>
-                            <li data-thumb="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_009-1.png"> <img src="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_009-1.png" /> </li>
-                            <li data-thumb="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_008.png"> <img src="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_008.png" /> </li>
+                            <li data-thumb="https://dream2000.com/pub/media/catalog/product/cache/9b6394f59e15b10e6dd47471b29c7ca4/x/i/xiaomi_poco_m3_4gb_128gb_yellow-1.jpg"> <img class="p-image" src="https://dream2000.com/pub/media/catalog/product/cache/9b6394f59e15b10e6dd47471b29c7ca4/x/i/xiaomi_poco_m3_4gb_128gb_yellow-1.jpg" /> </li>
+                            <li data-thumb="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_009-1.png"> <img  class="p-image" src="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_009-1.png" /> </li>
+                            <li data-thumb="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_008.png"> <img class="p-image" src="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_008.png" /> </li>
                         </ul>
                     </div>
                 </div>
@@ -300,7 +303,8 @@ label.radio input:checked+span::before {
                     <div class="about"> <span class="font-weight-bold">IKEA x HAY Ypperlig Collection </span>
                         <h4 class="font-weight-bold">$3,444</h4>
                     </div>
-                    <div class="buttons"> <button class="btn btn-outline-warning btn-long cart">Add to Cart</button> <button class="btn btn-warning btn-long buy">Buy it Now</button> <button class="btn btn-light wishlist"> <i class="fa fa-heart"></i> </button> </div>
+                    <a href="{{route('cart.index')}}"><div class="buttons"> <button class="btn btn-outline-warning btn-long cart">Add to Cart</button> <button class="btn btn-warning btn-long buy">Buy it Now</button> <button class="btn btn-light wishlist"> <i class="fa fa-heart"></i> </button> </div></a>
+
                     <hr>
                     <div class="product-description">
                         <div><span class="font-weight-bold">Color:</span><span> blue</span></div>
@@ -357,6 +361,7 @@ label.radio input:checked+span::before {
             </div>
         </div>
     </div>
+    <br>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
     <script src='https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js'></script>
     <script>
