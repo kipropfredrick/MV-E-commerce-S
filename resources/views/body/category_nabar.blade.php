@@ -1,137 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body {margin:0;font-family:Arial}
-
-.topnav {
-  overflow: hidden;
-  background-color: #333;
+.megamenu {
+    position: static
 }
 
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+.megamenu .dropdown-menu {
+    background: none;
+    border: none;
+    width: 500%;
 }
 
-.active {
-  background-color: #4CAF50;
-  color: white;
+code {
+    color: #ff9900;
+    background:#ff9900;
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.2rem
 }
 
-.topnav .icon {
-  display: none;
-}
-
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  font-size: 17px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #555;
-  color: white;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child), .dropdown .dropbtn {
-    display: none;
-  }
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .topnav.responsive .dropdown {float: none;}
-  .topnav.responsive .dropdown-content {position: relative;}
-  .topnav.responsive .dropdown .dropbtn {
-    display: block;
-    width: 100%;
-    text-align: left;
-  }
+.text-uppercase {
+    letter-spacing: 0.08em
 }
 </style>
 </head>
 <body>
 
-<div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <div class="dropdown">
-    <button class="dropbtn">Dropdown
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm"> <a href="#" class="navbar-brand font-weight-bold d-block d-lg-none">Categories</a> <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"> <span class="navbar-toggler-icon"></span> </button>
+    <div id="navbarContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item dropdown megamenu"><a id="megamneu" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle font-weight-bold text-uppercase">Categories</a>
+                <div aria-labelledby="megamneu" class="dropdown-menu border-0 p-0 m-0">
+                    <div class="container">
+                        <div class="row bg-white rounded-0 m-0 shadow-sm">
+                            <div class="col-lg-7 col-xl-8">
+                                <div class="p-4">
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-4">
+                                            <h6 class="font-weight-bold text-uppercase">Heading one</h6>
+                                            <ul class="list-unstyled">
+                                                <li class="nav-item"><a href="" class="nav-link text-small pb-0">Home</a></li>
+                                                <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">About</a></li>
+                                                <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">Help</a></li>
+                                                <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">Account</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h6 class="font-weight-bold text-uppercase">Heading two</h6>
+                                            <ul class="list-unstyled">
+                                                <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">Home</a></li>
+                                                <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">About</a></li>
+                                                <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">Help</a></li>
+                                                <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">Account</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h6 class="font-weight-bold text-uppercase">Heading three</h6>
+                                            <ul class="list-unstyled">
+                                                <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">Home</a></li>
+                                                <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">About</a></li>
+                                                <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">Help</a></li>
+                                                <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">Account</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h6 class="font-weight-bold text-uppercase">Heading four</h6>
+                                            <ul class="list-unstyled">
+                                                <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">Home</a></li>
+                                                <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">About</a></li>
+                                                <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">Help</a></li>
+                                                <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">Account</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item"><a href="" class="nav-link font-weight-bold text-uppercase">About</a></li>
+            <li class="nav-item"><a href="" class="nav-link font-weight-bold text-uppercase">Services</a></li>
+            <li class="nav-item"><a href="" class="nav-link font-weight-bold text-uppercase">Contact</a></li>
+        </ul>
     </div>
-  </div>
-  <a href="#about">About</a>
-  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-</div>
-
-
-
+</nav>
 <script>
 function myFunction() {
   var x = document.getElementById("myTopnav");

@@ -1,20 +1,47 @@
+<style>
+    .container {
+    margin-top: 200px
+}
+
+.btn:hover {
+    color: #fff
+}
+
+.input-text:focus {
+    box-shadow: 0px 0px 0px;
+    border-color: #f8c146;
+    outline: 0px
+}
+
+.form-control {
+    border: 1px solid #f8c146
+}
+</style>
+
+
 
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
+                <img src="https://o.remove.bg/downloads/4149ff64-5621-4d6c-ba3e-009ada093465/logo-removebg-preview.png" alt="">
                 SHOPLIY
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="container justify-content-center">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="input-group mb-3"> <input type="text" class="form-control input-text" placeholder="Search products...." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append"> <button class="btn btn-outline-warning btn-lg" type="button"><i class="fa fa-search"></i></button> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-                    <form  class="form-inline my-2 my-lg-3 col-7" style=" margin-left:10% ;">
-                        <input class="form-control mr-sm-3 col-9" type="search" placeholder= "Search for Products" aria-label="Search" >
-                        <button type="button" class="btn btn-warning"><i class="fa fa-search">Search</i></button>
-                      </form>
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->

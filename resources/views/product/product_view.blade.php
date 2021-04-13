@@ -181,7 +181,7 @@ h2::after {
 						<div class="col-sm-3">
 							<div class="thumb-wrapper">
 								<div class="img-box">
-									<img src="https://www.priceinkenya.com/images/products/large/oppo-f17-pro-8gb128gb-ZrAMqOevJ3.jpg" class="img-responsive img-fluid"  height="50px" alt="">
+								<a href="{{route('product.details')}}"><img src="https://www.priceinkenya.com/images/products/large/oppo-f17-pro-8gb128gb-ZrAMqOevJ3.jpg" class="img-responsive img-fluid"  height="50px" alt=""></a>
 								</div>
 								<div class="thumb-content">
 									<h4>Apple iPad</h4>

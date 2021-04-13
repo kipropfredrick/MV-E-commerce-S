@@ -1,4 +1,5 @@
 @include('layouts.app')
+<img src="https://www.pikpng.com/pngl/b/52-528322_pay-via-paypal-also-means-that-you-can.png" style="height: 50px; margin:-5px; width:20%; float:center" alt="">
 <!doctype html>
 <html lang="en">
   <head>
