@@ -1,82 +1,158 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('shopily', 'shopily') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 <style>
-    .fixed-nav-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index:12;
-  width: 100%;
-  height: 50px;
+    /* adds some margin below the link sets  */
+/* adds some margin below the link sets  */
+.navbar .dropdown-menu div[class*="col"] {
+   margin-bottom:1rem;
 }
+
+.navbar .dropdown-menu {
+  border:none;
+  background-color:#0060c8!important;
+}
+
+/* breakpoint and up - mega dropdown styles */
+@media screen and (min-width: 992px) {
+
+  /* remove the padding from the navbar so the dropdown hover state is not broken */
+.navbar {
+  padding-top:0px;
+  padding-bottom:0px;
+}
+
+/* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
+.navbar .nav-item {
+  padding:.5rem .5rem;
+  margin:0 .25rem;
+}
+
+/* makes the dropdown full width  */
+.navbar .dropdown {position:static;}
+
+.navbar .dropdown-menu {
+  width:100%;
+  left:0;
+  right:0;
+/*  height of nav-item  */
+  top:45px;
+
+  display:block;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s linear;
+
+}
+
+
+
+
+  /* shows the dropdown menu on hover */
+.navbar .dropdown:hover .dropdown-menu, .navbar .dropdown .dropdown-menu:hover {
+  display:block;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.3s linear;
+}
+
+  .navbar .dropdown-menu {
+    border: 1px solid rgba(0,0,0,.15);
+    background-color: #fff;
+  }
+
+}
+
+
 </style>
-<body>
-    <nav class="fixed-nav-bar">
-        <!-- Fixed navigation bar content -->
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-                <img src="/images/logo-removebg-preview (1).png"   width="100px;" height="100px" alt="">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'shopily') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+<img src="/images/logo-removebg-preview (1).png"   width="100px;" height="100px" alt="">
+    <a class="navbar-brand" href="{{ url('/') }}">Mega Dropdown</a>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-                    </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" style="color: black;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categories
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                    <div class="carticon" style="margin-left:-60px;">
-                    <a href="#">
-                    <i class="fa fa-shopping-cart" style="font-size:30px ;color:rgb(1, 5, 5);"></i>
-                    <span  class='badge badge-warning'  id='lblCartCount' style="top:20px;" > 5 </span>
-                </a>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4">
+                  <span class="text-uppercase text-black">Categories</span>
+                  <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Active</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link item</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link item</a>
+                  </li>
+                </ul>
                 </div>
-                        <!-- Authentication Links -->
+                <!-- /.col-md-4  -->
+                <div class="col-md-4">
+                  <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Active</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link item</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link item</a>
+                  </li>
+                </ul>
+                </div>
+                <!-- /.col-md-4  -->
+                <div class="col-md-4">
+                  <a href="">
+                    <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
+                  </a>
+                  <p class="text-white">Short image call to action</p>
+
+                </div>
+                <!-- /.col-md-4  -->
+              </div>
+            </div>
+            <!--  /.container  -->
+
+
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-6 my-lg-9"  style="margin-right:25%">
+        <input class="form-control mr-sm-9"  type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+          <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
+
+                                    {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a> --}}
+
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
+
+                                    {{-- <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> --}}
+
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                        <div class="dropdown-menu-right" aria-labelledby="navbarDropdown" style="margin-right: 10">
+                                <a>
+                                    <i class="fa fa-user-circle-o" aria-hidden="true" >{{ Auth::user()->name }}</i>
                                 </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -87,15 +163,47 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
+
                         @endguest
-                    </ul>
-                </div>
-        </nav>
-    </nav>
+
+    </div>
+         <div class="carticon" style="left:3000px;">
+        <a href="#">
+        <i class="fa fa-shopping-cart" style="font-size:30px ;color:rgb(1, 5, 5);"></i>
+        <span  class='badge badge-danger' id='lblCartCount'> 5 </span>
+    </a>
+
+     </div>
+
+  </nav>
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
-</body>
-</html>
+  <script>
+      $(document).ready(function() {
+ // executes when HTML-Document is loaded and DOM is ready
+
+// breakpoint and up
+$(window).resize(function(){
+	if ($(window).width() >= 980){
+
+      // when you hover a toggle show its dropdown menu
+      $(".navbar .dropdown-toggle").hover(function () {
+         $(this).parent().toggleClass("show");
+         $(this).parent().find(".dropdown-menu").toggleClass("show");
+       });
+
+        // hide the menu when the mouse leaves the dropdown
+      $( ".navbar .dropdown-menu" ).mouseleave(function() {
+        $(this).removeClass("show");
+      });
+
+		// do something here
+	}
+});
+
+
+
+// document ready
+});
+  </script>

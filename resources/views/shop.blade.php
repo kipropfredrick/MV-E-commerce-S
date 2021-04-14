@@ -71,7 +71,6 @@ div.content {
   </style>
 
   <body>
-    @include('body.category_nabar')
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 100%">
         <ol class="carousel-indicators">
