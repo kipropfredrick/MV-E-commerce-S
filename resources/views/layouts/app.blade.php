@@ -1,209 +1,220 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bootstrap All in One Navbar</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merienda+One">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <style>
-    /* adds some margin below the link sets  */
-/* adds some margin below the link sets  */
-.navbar .dropdown-menu div[class*="col"] {
-   margin-bottom:1rem;
+body {
+	background: #eeeeee;
 }
-
-.navbar .dropdown-menu {
-  border:none;
-  background-color:#0060c8!important;
+.form-inline {
+	display: inline-block;
 }
-
-/* breakpoint and up - mega dropdown styles */
-@media screen and (min-width: 992px) {
-
-  /* remove the padding from the navbar so the dropdown hover state is not broken */
+.navbar-header.col {
+	padding: 0 !important;
+}
 .navbar {
-  padding-top:0px;
-  padding-bottom:0px;
+	background: #fff;
+	padding-left: 16px;
+	padding-right: 16px;
+	border-bottom: 1px solid #d6d6d6;
+	box-shadow: 0 0 4px rgba(0,0,0,.1);
 }
-
-/* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
-.navbar .nav-item {
-  padding:.5rem .5rem;
-  margin:0 .25rem;
+.nav-link img {
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	margin: -8px 0;
+	float: left;
+	margin-right: 10px;
 }
-
-/* makes the dropdown full width  */
-.navbar .dropdown {position:static;}
-
+.navbar .navbar-brand {
+	color: #555;
+	padding-left: 0;
+	padding-right: 50px;
+	font-family: 'Merienda One', sans-serif;
+}
+.navbar .navbar-brand i {
+	font-size: 20px;
+	margin-right: 5px;
+}
+.search-box {
+	position: relative;
+}
+.search-box input {
+	box-shadow: none;
+	padding-right: 35px;
+	border-radius: 3px !important;
+}
+.search-box .input-group-addon {
+	min-width: 35px;
+	border: none;
+	background: transparent;
+	position: absolute;
+	right: 0;
+	z-index: 9;
+	padding: 7px;
+	height: 100%;
+}
+.search-box i {
+	color: #a0a5b1;
+	font-size: 19px;
+}
+.navbar .nav-item i {
+	font-size: 18px;
+}
+.navbar .dropdown-item i {
+	font-size: 16px;
+	min-width: 22px;
+}
+.navbar .nav-item.open > a {
+	background: none !important;
+}
 .navbar .dropdown-menu {
-  width:100%;
-  left:0;
-  right:0;
-/*  height of nav-item  */
-  top:45px;
-
-  display:block;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.3s linear;
-
+	border-radius: 5px;
+	border-color: #e5e5e5;
+	box-shadow: 0 2px 8px rgba(0,0,0,.05);
 }
-
-
-
-
-  /* shows the dropdown menu on hover */
-.navbar .dropdown:hover .dropdown-menu, .navbar .dropdown .dropdown-menu:hover {
-  display:block;
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0s, opacity 0.3s linear;
+.navbar .dropdown-menu a {
+	color: #777;
+	padding: 8px 20px;
+	line-height: normal;
 }
-
-  .navbar .dropdown-menu {
-    border: 1px solid rgba(0,0,0,.15);
-    background-color: #fff;
-  }
-
+.navbar .dropdown-menu a:hover, .navbar .dropdown-menu a:active {
+	color: #333;
 }
-
-
-</style>
-<nav class="navbar navbar-expand-lg navbar-dark bg-warning">
-<img src="/images/logo-removebg-preview (1).png"   width="100px;" height="100px" alt="">
-    <a class="navbar-brand" href="{{ url('/') }}">Mega Dropdown</a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" style="color: black;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Categories
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-
-            <div class="container">
-              <div class="row">
-                <div class="col-md-4">
-                  <span class="text-uppercase text-black">Categories</span>
-                  <ul class="nav flex-column">
-                  <li class="nav-item">
-                    <a class="nav-link active" href="#">Active</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link item</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link item</a>
-                  </li>
-                </ul>
-                </div>
-                <!-- /.col-md-4  -->
-                <div class="col-md-4">
-                  <ul class="nav flex-column">
-                  <li class="nav-item">
-                    <a class="nav-link active" href="#">Active</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link item</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link item</a>
-                  </li>
-                </ul>
-                </div>
-                <!-- /.col-md-4  -->
-                <div class="col-md-4">
-                  <a href="">
-                    <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
-                  </a>
-                  <p class="text-white">Short image call to action</p>
-
-                </div>
-                <!-- /.col-md-4  -->
-              </div>
-            </div>
-            <!--  /.container  -->
-
-
-          </div>
-        </li>
-      </ul>
-      <form class="form-inline my-6 my-lg-9"  style="margin-right:25%">
-        <input class="form-control mr-sm-9"  type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-      </form>
-
-          <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-
-                                    {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a> --}}
-
-                            @endif
-
-                            @if (Route::has('register'))
-
-                                    {{-- <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> --}}
-
-                            @endif
-                        @else
-                        <div class="dropdown-menu-right" aria-labelledby="navbarDropdown" style="margin-right: 10">
-                                <a>
-                                    <i class="fa fa-user-circle-o" aria-hidden="true" >{{ Auth::user()->name }}</i>
-                                </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-
-                        @endguest
-
-    </div>
-         <div class="carticon" style="left:3000px;">
-        <a href="#">
-        <i class="fa fa-shopping-cart" style="font-size:30px ;color:rgb(1, 5, 5);"></i>
-        <span  class='badge badge-danger' id='lblCartCount'> 5 </span>
-    </a>
-
-     </div>
-
-  </nav>
-        <main class="py-4">
-            @yield('content')
-        </main>
-  <script>
-      $(document).ready(function() {
- // executes when HTML-Document is loaded and DOM is ready
-
-// breakpoint and up
-$(window).resize(function(){
-	if ($(window).width() >= 980){
-
-      // when you hover a toggle show its dropdown menu
-      $(".navbar .dropdown-toggle").hover(function () {
-         $(this).parent().toggleClass("show");
-         $(this).parent().find(".dropdown-menu").toggleClass("show");
-       });
-
-        // hide the menu when the mouse leaves the dropdown
-      $( ".navbar .dropdown-menu" ).mouseleave(function() {
-        $(this).removeClass("show");
-      });
-
-		// do something here
+.navbar .dropdown-item .material-icons {
+	font-size: 21px;
+	line-height: 16px;
+	vertical-align: middle;
+	margin-top: -2px;
+}
+.navbar .badge {
+	color: #fff;
+	background: #f44336;
+	font-size: 11px;
+	border-radius: 20px;
+	position: absolute;
+	min-width: 10px;
+	padding: 4px 6px 0;
+	min-height: 18px;
+	top: 5px;
+}
+.navbar a.notifications, .navbar a.messages {
+	position: relative;
+	margin-right: 10px;
+}
+.navbar a.messages {
+	margin-right: 20px;
+}
+.navbar a.notifications .badge {
+	margin-left: -8px;
+}
+.navbar a.messages .badge {
+	margin-left: -4px;
+}
+.navbar .active a, .navbar .active a:hover, .navbar .active a:focus {
+	background: transparent !important;
+}
+@media (min-width: 1200px){
+	.form-inline .input-group {
+		width: 300px;
+		margin-left: 30px;
 	}
-});
+}
+@media (max-width: 1199px){
+	.form-inline {
+		display: block;
+		margin-bottom: 10px;
+	}
+	.input-group {
+		width: 100%;
+	}
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-xl sticky-top navbar-light bg-warning">
+	<a href="/" class="navbar-brand"> <img src="/images/logo-removebg-preview (1).png"  width="100px;" height="100px" alt=""> Brand<b>Name</b></a>
+	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<!-- Collection of nav links, forms, and other content for toggling -->
+	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+		<div class="navbar-nav">
+			<a href="/" class="nav-item nav-link active">Home</a>
+			<a href="#" class="nav-item nav-link">About</a>
+			<div class="nav-item dropdown">
+				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
+				<div class="dropdown-menu">
+					<a href="#" class="dropdown-item">Web Design</a>
+					<a href="#" class="dropdown-item">Web Development</a>
+					<a href="#" class="dropdown-item">Graphic Design</a>
+					<a href="#" class="dropdown-item">Digital Marketing</a>
+                    <a href="#" class="dropdown-item">Graphic Design</a>
+					<a href="#" class="dropdown-item">Digital Marketing</a>
+                    <a href="#" class="dropdown-item">Graphic Design</a>
+					<a href="#" class="dropdown-item">Digital Marketing</a>
+                    <a href="#" class="dropdown-item">Graphic Design</a>
+					<a href="#" class="dropdown-item">Digital Marketing</a>
+                    <a href="#" class="dropdown-item">Graphic Design</a>
+					<a href="#" class="dropdown-item">Digital Marketing</a>
+                    <a href="#" class="dropdown-item">Graphic Design</a>
+				</div>
+			</div>
+		</div>
+		<form class="navbar-form form-inline">
+			<div class="input-group search-box">
+				<input type="text" id="search" class="form-control" placeholder="Search by Name">
+				<span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+			</div>
+		</form>
+		<div class="navbar-nav ml-auto">
+			<a href="#" class="nav-item nav-link notifications"><i class="fa fa-cart-arrow-down" style="font-size: 2em;"></i><span class="badge">1</span></a>
+			<div class="nav-item dropdown">
+                                <!-- Authentication Links -->
+                                @guest
+                                @if (Route::has('login'))
 
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
 
+                                @endif
 
-// document ready
-});
-  </script>
+                               @if (Route::has('register'))
+
+                                   <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+
+                                @endif
+                            @else
+				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="https://www.shareicon.net/data/512x512/2016/07/26/802043_man_512x512.png" class="avatar" alt="Avatar"> {{ Auth::user()->name }} <b class="caret"></b></a>
+				<div class="dropdown-menu">
+					<a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a></a>
+					<a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a></a>
+					<a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a></a>
+					<div class="dropdown-divider"></div>
+					<a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();"
+                    class="dropdown-item"> <i class="material-icons">&#xE8AC;</i> Logout</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+				</div>
+                @endguest
+			</div>
+		</div>
+	</div>
+</nav>
+</body>
+<main class="py-4">
+    @yield('content')
+</main>
+</html>
