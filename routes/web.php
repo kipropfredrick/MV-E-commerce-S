@@ -40,6 +40,9 @@ Route::get('/cart/shopping', [App\Http\Controllers\HomeController::class, 'items
 //product related routes
 //resource controller for storing product
 //get subcategory for product
+Route::resource('phones', 'PhonesTabletsController');
+Route::get('electronics', 'PhonesTabletsController@electronics')->name('phones.electronics');
+Route::get('supermarket', 'PhonesTabletsController@supermarket')->name('phones.electronics');
 //function to get product form
 Route::resource('product', 'ProductController');
 Route::get('category','ProductController@getCategories')->name('product.getCategory');
