@@ -1,8 +1,8 @@
-
+@include('layouts.app')
+@include('body.navbar')
 <!doctype html>
 <html lang="en">
   <head>
-    @include('layouts.app')
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -79,6 +79,7 @@ div.content {
 
   <body>
 
+
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 100%">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -111,6 +112,7 @@ div.content {
     </div>
     <br>
     @include('product.product_category')
+    @include('body.footer')
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 

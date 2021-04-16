@@ -151,8 +151,8 @@ body {
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 		<div class="navbar-nav">
 			<a href="/" class="nav-item nav-link active">Home</a>
-			<a href="#" class="nav-item nav-link">About</a>
-			<div class="nav-item dropdown">
+			<a href="" class="nav-item nav-link"></a>
+			<div class="nav-item dropdown w-100">
 				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
 				<div class="dropdown-menu">
 					<a href="#" class="dropdown-item">Web Design</a>
@@ -178,7 +178,7 @@ body {
 			</div>
 		</form>
 		<div class="navbar-nav ml-auto">
-			<a href="{{route('product.getCountries')}}" class="nav-item nav-link notifications"><i class="fa fa-cart-arrow-down" style="font-size: 2em;"></i><span class="badge">{{\Cart::getContent()->count()}}</span></a>
+			<a href="{{route('cart.index')}}" class="nav-item nav-link notifications"><i class="fa fa-cart-arrow-down" style="font-size: 2em;"></i><span class="badge">{{\Cart::getContent()->count()}}</span></a>
 			<div class="nav-item dropdown">
                                 <!-- Authentication Links -->
                                 @guest
