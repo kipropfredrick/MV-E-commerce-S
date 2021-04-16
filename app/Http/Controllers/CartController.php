@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+
 class CartController extends Controller
 {
     //
@@ -23,17 +24,15 @@ class CartController extends Controller
         //dd($cartCollection);
         return view('cart.shopping_cart')->withTitle('SHOPILYV | SHOP')->with(['cartCollection' => $cartCollection]);;
 }
-public function add(Request$request){
+public function add(Product $product){
     \Cart::add(array(
-        'id' => $request->id,
-        'name' => $request->name,
-        'price' => $request->price,
-        'quantity' => $request->quantity,
-        'attributes' => array(
-            'image' => $request->img,
-            'slug' => $request->slug
-        )
-    ));
+        'id' => $product->id,
+        'name' => $product->name,
+        'price' => $product->price,
+        'quantity' => 1,
+        'attributes' => array(),
+        'associatedModel' => $product
+        ));
     return redirect()->route('shop')->with('success_msg', 'Item is Added to Cart!');
 }
 public function remove(Request $request){

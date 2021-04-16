@@ -42,6 +42,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        
     }
 
     /**
@@ -87,5 +88,16 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+    }
+    public function getCategories()
+    {
+        $countries = \DB::table('categories')->pluck("cat_name","id");
+        return view('product.create-products',compact('countries'));
+    }
+
+    public function getSubcategory($id)
+    {
+        $states = \DB::table("sub_category")->where("subcat_id",$id)->pluck("subcat_name","id");
+        return json_encode($states);
     }
 }

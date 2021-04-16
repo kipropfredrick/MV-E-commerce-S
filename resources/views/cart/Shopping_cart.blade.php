@@ -82,7 +82,7 @@
 								<div class="row">
 									<div class="col-sm-3 hidden-xs"><img src="/images/{{ $item->attributes->image }}"/></div>
 									<div class="col-sm-5">
-										<h4 class="nomargin">/shop/{{ $item->attributes->slug }}">{{ $item->name }}</h4>
+										<h4 class="nomargin">{{ $item->name }}</h4>
 									</div>
 								</div>
 							</td>
@@ -95,14 +95,19 @@
                             <td class="actions" data-th="">
                                 <form action="{{ route('cart.clear') }}" method="POST">
                                     {{ csrf_field() }}
-                               ><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                               <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
 							</form>
                             <form action="{{ route('cart.update') }}" method="POST">
                                 {{ csrf_field() }}
                             <a href=""><button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></a>
                         </form>
                             </td>
+                             {{-- <form action="{{route('cart.update',$item->id)}}">
+                                <input name="quantity" type="number" min="{{$item->quantity}}" value="{{$item->quantity}}">
+                                <input type="submit" value="Save">
+                            </form> --}}
                             @endif
+                            @endforeach
 						</tr>
 					</tbody>
 					<tfoot>
@@ -117,7 +122,8 @@
 							<td><a href="/checkout" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
 						</tr>
                         @endif
+
 					</tfoot>
 				</table>
-                @endforeach
+
 </div>

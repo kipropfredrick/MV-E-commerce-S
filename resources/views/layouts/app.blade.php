@@ -178,7 +178,7 @@ body {
 			</div>
 		</form>
 		<div class="navbar-nav ml-auto">
-			<a href="#" class="nav-item nav-link notifications"><i class="fa fa-cart-arrow-down" style="font-size: 2em;"></i><span class="badge">1</span></a>
+			<a href="{{route('product.getCountries')}}" class="nav-item nav-link notifications"><i class="fa fa-cart-arrow-down" style="font-size: 2em;"></i><span class="badge">{{\Cart::getContent()->count()}}</span></a>
 			<div class="nav-item dropdown">
                                 <!-- Authentication Links -->
                                 @guest

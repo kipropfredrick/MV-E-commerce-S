@@ -12,10 +12,9 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
         //
-
     }
 
     /**
@@ -25,8 +24,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //]
-        return view('checkout.checkout');
+        //
     }
 
     /**
@@ -37,7 +35,8 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        //dd($request->all());
         $request->validate([
             'shipping_fullname' => 'required',
             'shipping_state' => 'required',
@@ -45,50 +44,67 @@ class OrderController extends Controller
             'shipping_address' => 'required',
             'shipping_phone' => 'required',
             'shipping_zipcode' => 'required',
-            'payment_method' => 'required',
+            // 'payment_method' => 'required',
         ]);
 
         $order = new Order();
-        $order->user_id=auth()->id();
+        $order->notes="to be delivered";
+        //$order->payment_methods="online";
+        $order->order_number = uniqid('OrderNumber-');
 
-        $order->order_number = uniqid();
-        $order->custome_name = auth()->User()->name;
-
-        $order->shipping_fullname = $request->input('shipping_fullname');
-        $order->shipping_state=$request->input('shipping_state');
-        $order->shipping_state=$request->input('shipping_state');
-        $order->shipping_city=$request->input('shipping_city');
-        $order->shipping_address=$request->input('shipping_address');
-        $order->shipping_phone=$request->input('shipping_phone');
-        $order->shipping_zipcode=$request->input('shipping_zipcode');
-        $order->payment_methods=$request->input('payment_method');
+        $order->shippping_fullname = $request->input('shipping_fullname');
+        $order->shippping_state = $request->input('shipping_state');
+        $order->shippping_city = $request->input('shipping_city');
+        $order->shippping_address = $request->input('shipping_address');
+        $order->shippping_phone = $request->input('shipping_phone');
+        $order->shippping_zipcode = $request->input('shipping_zipcode');
+        // $order->shippping_email=$request->input('shipping_email');
+        // $order->notes=$request->input('notes');
 
         if(!$request->has('billing_fullname')) {
             $order->billing_fullname = $request->input('shipping_fullname');
-            $order->billing_state=$request->input('shipping_state');
-            $order->billing_city=$request->input('shipping_city');
-            $order->billing_address=$request->input('shipping_address');
-            $order->billing_phone=$request->input('shipping_phone');
-            $order->billing_zipcode=$request->input('shipping_zipcode');
+            $order->billing_state = $request->input('shipping_state');
+            $order->billing_city = $request->input('shipping_city');
+            $order->billing_address = $request->input('shipping_address');
+            $order->billing_phone = $request->input('shipping_phone');
+            $order->billing_zipcode = $request->input('shipping_zipcode');
+        }else {
+            $order->billing_fullname = $request->input('billing_fullname');
+            $order->billing_state = $request->input('billing_state');
+            $order->billing_city = $request->input('billing_city');
+            $order->billing_address = $request->input('billing_address');
+            $order->billing_phone = $request->input('billing_phone');
+            $order->billing_zipcode = $request->input('billing_zipcode');
         }
-        else{
-            $order->billing_fullname = $request->input('shipping_fullname');
-            $order->billing_state=$request->input('shipping_state');
-            $order->billing_city=$request->input('shipping_city');
-            $order->billing_address=$request->input('shipping_address');
-            $order->billing_phone=$request->input('shipping_phone');
-            $order->billing_zipcode=$request->input('shipping_zipcode');
-        }
-        //$cartItems = \Cart::session(auth()->id())->getContent();
-        $cartItems = \Cart::getContent();
-        foreach($cartItems as $items){
-            $items->grant_total = \Cart::session(auth()->id())->getTotal();
-            $items->item_count = \Cart::session(auth()->id())->getContent()->count();
-           }
-           $order->grant_total=$items->grant_total;
-           $order->item_count=$items->item_count;
+
+
+        $order->grant_total = \Cart::getTotal();
+        $order->item_count = \Cart::getContent()->count();
+
+        $order->user_id = auth()->id();
+
+        // if (request('payment_method') == 'paypal') {
+        //     $order->payment_method = 'paypal';
+        // }
+
         $order->save();
-        \Cart::session(auth()->id())->clear();
+
+        $cartItems = \Cart::getContent();
+
+        foreach($cartItems as $item) {
+            $order->items()->attach($item->id, ['price'=> $item->price, 'quantityy'=> $item->quantity]);
+        }
+
+        //$order->generateSubOrders();
+
+        // if (request('payment_method') == 'paypal') {
+
+        //     return redirect()->route('paypal.checkout', $order->id);
+
+        // }
+
+        \Cart::clear();
+
         return redirect()->route('home')->withMessage('Order has been placed');
 
     }
@@ -137,4 +153,5 @@ class OrderController extends Controller
     {
         //
     }
+
 }
