@@ -51,7 +51,7 @@ class OrderController extends Controller
         $order->notes="to be delivered";
         //$order->payment_methods="online";
         $order->order_number = uniqid('OrderNumber-');
-
+        $order->shop_id=auth()->id();
         $order->shippping_fullname = $request->input('shipping_fullname');
         $order->shippping_state = $request->input('shipping_state');
         $order->shippping_city = $request->input('shipping_city');

@@ -150,6 +150,12 @@ class ProductController extends Controller
          //dd($subcategory);
          return view('product.product-details',compact('subcategory'));
     }
+    public function getsubcatproduct($id){
+        $users = Product::join('Sub_categories', 'products.category_id', '=', 'sub_categories.subcat_id')
+        ->where('category_id',$id)
+        ->get(['products.*']);
+        dd($users);
+    }
 
 
 }
