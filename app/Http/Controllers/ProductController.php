@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Image;
+use App\Models\Sub_category;
 
 class ProductController extends Controller
 {
@@ -20,9 +22,7 @@ class ProductController extends Controller
         $products = Product::all();
         return view('product.product_view',compact('products'));
     }
-    public function productDetails(){
-        return view('product.product-details');
-    }
+
     public function productbread(){
         return view('product.product_bread');
     }
@@ -88,7 +88,7 @@ class ProductController extends Controller
 
     public function getSubcategory($id)
     {
-        $states = \DB::table("sub_category")->where("subcat_id",$id)->pluck("subcat_name","id");
+        $states = \DB::table("sub_categories")->where("subcat_id",$id)->pluck("subcat_name","id");
         return json_encode($states);
     }
 
@@ -139,6 +139,16 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+    }
+    public function slugg($slug){
+        $category=Categories::with(relations:'product')->where('slug',$slug)->first();
+        return view('categories.computing.index',compact('category'));
+    }
+
+     public function productDetails(){
+         $subcategory=Sub_category::with(relations:'product')->first();
+         //dd($subcategory);
+         return view('product.product-details',compact('subcategory'));
     }
 
 

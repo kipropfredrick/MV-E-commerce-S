@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
@@ -12,7 +13,8 @@ class CartController extends Controller
     {
         $products = Product::all();
         //dd($products);
-        return view('shop')->withTitle('SHOPILYV | SHOP')->with(['products' => $products]);
+        $category=Categories::get();
+        return view('shop')->withTitle('SHOPILYV | SHOP')->with(['products' => $products,'category'=>$category]);
     }
     public function create()
     {

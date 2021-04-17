@@ -260,9 +260,9 @@ label.radio input:checked+span::before {
                 <div class="card">
                     <div class="demo">
                         <ul id="lightSlider">
-                            <li data-thumb="/images/{{$product->image_path}}"> <img class="p-image" src="/images/{{$product->image_path}}" /> </li>
-                            <li data-thumb="/images/{{$product->image_path}}"> <img  class="p-image" src="/images/{{$product->image_path}}" /> </li>
-                            <li data-thumb="/images/{{$product->image_path}}"> <img class="p-image" src="/images/{{$product->image_path}}" /> </li>
+                            <li data-thumb=""> <img class="p-image" src="" /> </li>
+                            <li data-thumb=""> <img  class="p-image" src="" /> </li>
+                            <li data-thumb=""> <img class="p-image" src="" /> </li>
                         </ul>
                     </div>
                 </div>
@@ -285,7 +285,7 @@ label.radio input:checked+span::before {
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex flex-row align-items-center"> <img src="/images/{{$product->image_path}}" class="rounded-circle profile-image">
+                            <div class="d-flex flex-row align-items-center"> <img src="" class="rounded-circle profile-image">
                                 <div class="d-flex flex-column ml-1 comment-profile">
                                     <div class="comment-ratings"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div> <span class="username">Timona Simaung</span>
                                 </div>
@@ -300,16 +300,23 @@ label.radio input:checked+span::before {
                     <div class="d-flex flex-row align-items-center">
                         <div class="p-ratings"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div> <span class="ml-1">5.0</span>
                     </div>
-                    <div class="about"> <span class="font-weight-bold">{{ $product->name }}</span>
-                        <h4 class="font-weight-bold">${{ $product->price }}</h4>
+                    <div class="about"> <span class="font-weight-bold"></span>
+                        <h4 class="font-weight-bold"></h4>
                     </div>
-                    <form action="{{route('add.cart',$product->id)}}" method="GET">
+                    @if (count($subcategory->product)>0)
+                       {{-- @foreach ($subcategory->product as $item )
+                        <tr><p>{{$item->name}}</p></tr>
+                        <p>{{$item->price}}</p>
+                        <p>{{$item->oprice}}</p>
+                       @endforeach --}}
+                    @endif
+                    <form action="" method="GET">
                         {{ csrf_field() }}
-                        <input type="hidden" value="{{ $product->id }}" id="id" name="id">
-                        <input type="hidden" value="{{ $product->name }}" id="name" name="name">
-                        <input type="hidden" value="{{ $product->price }}" id="price" name="price">
-                        <input type="hidden" value="{{ $product->image_path }}" id="img" name="img">
-                        <input type="hidden" value="{{ $product->slug }}" id="slug" name="slug">
+                        <input type="hidden" value="" id="id" name="id">
+                        <input type="hidden" value="" id="name" name="name">
+                        <input type="hidden" value="" id="price" name="price">
+                        <input type="hidden" value="" id="img" name="img">
+                        <input type="hidden" value="" id="slug" name="slug">
                         <input type="hidden" value="1" id="quantity" name="quantity">
                         <div class="buttons">
                         <button class="btn btn-outline-warning btn-long cart">Add to Cart</button>
@@ -325,7 +332,7 @@ label.radio input:checked+span::before {
                         <div class="my-color"> <label class="radio"> <input type="radio" name="gender" value="MALE" checked> <span class="red"></span> </label> <label class="radio"> <input type="radio" name="gender" value="FEMALE"> <span class="blue"></span> </label> <label class="radio"> <input type="radio" name="gender" value="FEMALE"> <span class="green"></span> </label> <label class="radio"> <input type="radio" name="gender" value="FEMALE"> <span class="orange"></span> </label> </div>
                         <div class="d-flex flex-row align-items-center"> <i class="fa fa-calendar-check-o"></i> <span class="ml-1">Delivery from sweden, 15-45 days</span> </div>
                         <div class="mt-2"> <span class="font-weight-bold">Description</span>
-                            <p>{{ $product->description }}</p>
+
                             <div class="bullets">
                                 <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Best in Quality</span> </div>
                                 <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Anti-creak joinery</span> </div>
@@ -345,31 +352,13 @@ label.radio input:checked+span::before {
                 </div>
                 <div class="card mt-2"> <span>Similar items:</span>
                     <div class="similar-products mt-2 d-flex flex-row">
-                        <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://www.gizmochina.com/wp-content/uploads/2019/09/Xiaomi-Redmi-Note-8-1-500x500.jpg" class="card-img-top" alt="...">
+                        @foreach ($subcategory->product as $item)
+                        <div class="card border p-1" style="width: 9rem;"> <img src="/images/{{$item->image_path}}" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h6 class="card-title">$1,999</h6>
+                                <h6 class="card-title">${{$item->price}}</h6>
                             </div>
                         </div>
-                        <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://images.samsung.com/is/image/samsung/levant-galaxy-a51-a515-sm-a515fzkwmid-back-202053679?$720_576_PNG$" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title">$1,699</h6>
-                            </div>
-                        </div>
-                        <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://www.eezepc.com/wp-content/uploads/2020/04/Samsung-Galaxy-A51-White-1.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title">$2,999</h6>
-                            </div>
-                        </div>
-                        <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://images.samsung.com/is/image/samsung/assets/africa_en/smartphones/galaxy-s10/sunset/images/gallery/galaxy-s10_gallery-color_s10-c1-01.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title">$3,999</h6>
-                            </div>
-                        </div>
-                        <div class="card border p-1" style="width: 9rem;"> <img src="https://images.samsung.com/is/image/samsung/levant-galaxy-s20-plus-g985-bts-sm-g985fzpdmid-frontbpurple-261902310?$720_576_PNG$" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title">$999</h6>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

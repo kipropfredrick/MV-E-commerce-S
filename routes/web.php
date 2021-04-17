@@ -33,7 +33,7 @@ Route::get('/checkout', 'CartController@create')->name('checkout')->middleware('
 Route::resource('orders', 'OrderController')->middleware('auth');
 //Route::post('/oders/store', 'OrderController@store')->name('orders.store');
 //ROUTES FOR PRODUCTS
-Route::get('/product/details', 'ProductController@productDetails')->name('product.details');
+Route::get('/product/details/', 'ProductController@productDetails')->name('product.details');
 Route::get('/product/bread', 'ProductController@productbread')->name('product.bread');
 Route::get('/cart/shopping', [App\Http\Controllers\HomeController::class, 'items'])->name('cart.Shopping');
 
@@ -48,5 +48,5 @@ Route::resource('product', 'ProductController');
 Route::get('category','ProductController@getCategories')->name('product.getCategory');
 Route::get('category/subcategory/{id}','ProductController@getSubcategory');
 Route::get('/data/related/', 'ProductController@getRelatedItems')->name('product.related');
-
+Route::get('cart/slug/{slug}','ProductController@slugg')->name('home.slug');
 

@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>top_selling_items</title>
@@ -107,8 +109,7 @@ button:active {
 }
 </style>
 
-@extends('layouts.app')
-@section('content')
+
       <div class="container-fluid mt-5 mb-5">
        <h2><b>Products</b></h2>
        <div class="row g-2">
@@ -188,38 +189,35 @@ button:active {
                </div>
            </div>
            <div class="col-md-9">
+            <div class="row g-2">
                 @if (count($category->product)>0)
-                <div class="row g-2">
-                    @foreach ($category->product as $product)
-                    <div class="col-md-4">
-                        <a href="{{route('home.slug',$product->slug)}}">
-                         <div class="product py-4">
-                             <div class="text-center"> <img src="/images/{{$product->image_path}}" width="200"> </div>
-                             <div class="about text-center"> </a>
-                                 <h5>{{$product->name}}</h5> <s><span>${{$product->oprice}}</span></s> <span>${{$product->price}}</span>
+                 @foreach ($category->product as $product)
+                 <div class="col-md-4">
+                     <a href="{{route('product.details')}}">
+                      <div class="product py-4">
+                          <div class="text-center"> <img src="/images/{{$product->image_path}}" width="200"> </div>
+                          <div class="about text-center"> </a>
+                              <h5>{{$product->subcat_name}}</h5> <s><span>${{$product->oprice}}</span></s> <span>${{$product->price}}</span>
 
-                                 <form action="{{route('add.cart',$product->id)}}" method="GET">
-                                     {{ csrf_field() }}
-                                     <input type="hidden" value="{{ $product->id }}" id="id" name="id">
-                                     <input type="hidden" value="{{ $product->name }}" id="name" name="name">
-                                     <input type="hidden" value="{{ $product->price }}" id="price" name="price">
-                                     <input type="hidden" value="{{ $product->image_path }}" id="img" name="img">
-                                     <input type="hidden" value="{{ $product->slug }}" id="slug" name="slug">
-                                     <input type="hidden" value="1" id="quantity" name="quantity">
-                             </div>
-                             <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                                 <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                             </div>
-                             </form>
-                         </div>
+                              <form action="{{route('add.cart',$product->id)}}" method="GET">
+                                  {{ csrf_field() }}
+                                  <input type="hidden" value="{{ $product->id }}" id="id" name="id">
+                                  <input type="hidden" value="{{ $product->cat_name }}" id="name" name="name">
+                                  {{-- <input type="hidden" value="{{ $product->price }}" id="price" name="price"> --}}
+                                  <input type="hidden" value="{{ $product->image_path }}" id="img" name="img">
+                                  <input type="hidden" value="{{ $product->slug }}" id="slug" name="slug">
+                                  <input type="hidden" value="1" id="quantity" name="quantity">
+                          </div>
+                          <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
+                              {{-- <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div> --}}
+                          </div>
+                          </form>
+                      </div>
 
-                    </div>
-                    @endforeach
-                </div>
+                 </div>
+                 @endforeach
                 @endif
-
-
            </div>
        </div>
    </div>
-   @endsection
+@endsection
