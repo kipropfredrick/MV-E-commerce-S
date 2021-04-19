@@ -94,7 +94,7 @@
                          </div>
                                <br>
                                <div class="form-row">
-                                   <h6><span>&#10003;</span>To Pay <br><br><b>Amoumt:</b> {{ config('settings.currency_symbol') }}{{ \Cart::getSubTotal() }}  <br><br><b>Item:</b>"Techno Camon 16"</h6>
+                                   <h6><span>&#10003;</span>To Pay <br><br><b>Amoumt:</b> {{ config('settings.currency_symbol') }}{{ \Cart::getSubTotal() }}  <br><br><b>Item:</b></h6>
                                </div>
                                <div class="col-md-12 mt-4">
                                 <button type="submit" class="subscribe btn btn-success btn-lg btn-block"> <b>Pay : </b> {{ config('settings.currency_symbol') }}{{ \Cart::getSubTotal() }} </button>

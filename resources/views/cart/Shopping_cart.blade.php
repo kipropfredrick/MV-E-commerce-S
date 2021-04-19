@@ -123,6 +123,5 @@
 						</tr>
                         @endif
 					</tfoot>
-				</table>
-
+		</table>
 </div>
