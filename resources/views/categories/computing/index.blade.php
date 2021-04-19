@@ -1,12 +1,9 @@
-@include('layouts.app')
-<br><br>
+@extends('layouts.app')
+@section('content')
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>top_selling_items</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 <style>
    body {
    background-color: #eee
@@ -110,7 +107,6 @@ button:active {
    justify-content: center;
    color: #fff
 }
-
 </style>
 
 
@@ -193,23 +189,35 @@ button:active {
                </div>
            </div>
            <div class="col-md-9">
-               <div class="row g-2">
-                   @foreach ($sproduct->product as $item)
-                   <div class="col-md-4">
-                    <div class="product py-4">
-                       <a href="{{route('product.show',$item->id)}}">
-                        <div class="text-center"> <img src="https://5.imimg.com/data5/WU/TB/MY-2/kc596_10-500x500.jpg" width="200"> </div>
-                        <div class="about text-center">
-                        </a>
-                            <h5>XRD Active Shoes</h5> <span>$1,999.99</span>
-                        </div>
-                        <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                            <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                        </div>
-                    </div>
-                </div>
-                   @endforeach
-               </div>
+            <div class="row g-2">
+                @if (count($category->product)>0)
+                 @foreach ($category->product as $product)
+                 <div class="col-md-4">
+                     <a href="{{route('product.related',$product->slug)}}">
+                      <div class="product py-4">
+                          <div class="text-center"> <img src="/images/{{$product->image_path}}" width="200"> </div>
+                          <div class="about text-center"> </a>
+                              <h5>{{$product->subcat_name}}</h5> <s><span>${{$product->oprice}}</span></s> <span>${{$product->price}}</span>
+
+                              <form action="{{route('add.cart',$product->id)}}" method="GET">
+                                  {{ csrf_field() }}
+                                  <input type="hidden" value="{{ $product->id }}" id="id" name="id">
+                                  <input type="hidden" value="{{ $product->cat_name }}" id="name" name="name">
+                                  {{-- <input type="hidden" value="{{ $product->price }}" id="price" name="price"> --}}
+                                  <input type="hidden" value="{{ $product->image_path }}" id="img" name="img">
+                                  <input type="hidden" value="{{ $product->slug }}" id="slug" name="slug">
+                                  <input type="hidden" value="1" id="quantity" name="quantity">
+                          </div>
+                          <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
+                              {{-- <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div> --}}
+                          </div>
+                          </form>
+                      </div>
+
+                 </div>
+                 @endforeach
+                @endif
            </div>
        </div>
    </div>
+@endsection

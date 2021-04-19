@@ -189,13 +189,17 @@ button:active {
            <div class="col-md-9">
 
                <div class="row g-2">
-                   @foreach ($products as $product)
+                   @foreach ($category as $product)
                    <div class="col-md-4">
-                       <a href="{{route('product.show',$product->id)}}">
+                       <a href="{{route('home.slug',$product->slug)}}">
                         <div class="product py-4">
                             <div class="text-center"> <img src="/images/{{$product->image_path}}" width="200"> </div>
                             <div class="about text-center"> </a>
+<<<<<<< HEAD
                                 <h5>{{$product->name}}</h5><span>${{$product->price}}</span> <br> <s style="color:grey;"><span style="color:grey;">${{$product->oprice}}</span></s>
+=======
+                                <h5>{{$product->cat_name}}</h5> <s><span>${{$product->oprice}}</span></s> <span>${{$product->price}}</span>
+>>>>>>> d84a2adc595e77295de0606f265f62255fac18cd
 
                                 <form action="{{route('add.cart',$product->id)}}" method="GET">
                                     {{ csrf_field() }}
@@ -207,7 +211,7 @@ button:active {
                                     <input type="hidden" value="1" id="quantity" name="quantity">
                             </div>
                             <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                                <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
+                                {{-- <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div> --}}
                             </div>
                             </form>
                         </div>

@@ -251,8 +251,7 @@ label.radio input:checked+span::before {
     padding: 0.3rem 0.3rem 0.2rem
 }
 </style>
-
-  <body>
+<body>
     <link rel='stylesheet' href='https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css'>
     <div class="container-fluid mt-2 mb-3">
         <div class="row no-gutters">
@@ -260,9 +259,9 @@ label.radio input:checked+span::before {
                 <div class="card">
                     <div class="demo">
                         <ul id="lightSlider">
-                            <li data-thumb="/images/{{$product->image_path}}"> <img class="p-image" src="/images/{{$product->image_path}}" /> </li>
-                            <li data-thumb="/images/{{$product->image_path}}"> <img  class="p-image" src="/images/{{$product->image_path}}" /> </li>
-                            <li data-thumb="/images/{{$product->image_path}}"> <img class="p-image" src="/images/{{$product->image_path}}" /> </li>
+                            <li data-thumb="https://dream2000.com/pub/media/catalog/product/cache/9b6394f59e15b10e6dd47471b29c7ca4/x/i/xiaomi_poco_m3_4gb_128gb_yellow-1.jpg"> <img class="p-image" src="https://dream2000.com/pub/media/catalog/product/cache/9b6394f59e15b10e6dd47471b29c7ca4/x/i/xiaomi_poco_m3_4gb_128gb_yellow-1.jpg" /> </li>
+                            <li data-thumb="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_009-1.png"> <img  class="p-image" src="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_009-1.png" /> </li>
+                            <li data-thumb="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_008.png"> <img class="p-image" src="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_008.png" /> </li>
                         </ul>
                     </div>
                 </div>
@@ -285,7 +284,7 @@ label.radio input:checked+span::before {
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex flex-row align-items-center"> <img src="/images/{{$product->image_path}}" class="rounded-circle profile-image">
+                            <div class="d-flex flex-row align-items-center"> <img src="https://i.imgur.com/tmdHXOY.jpg" class="rounded-circle profile-image">
                                 <div class="d-flex flex-column ml-1 comment-profile">
                                     <div class="comment-ratings"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div> <span class="username">Timona Simaung</span>
                                 </div>
@@ -300,24 +299,10 @@ label.radio input:checked+span::before {
                     <div class="d-flex flex-row align-items-center">
                         <div class="p-ratings"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div> <span class="ml-1">5.0</span>
                     </div>
-                    <div class="about"> <span class="font-weight-bold">{{ $product->name }}</span>
-                        <h4 class="font-weight-bold">${{ $product->price }}</h4>
+                    <div class="about"> <span class="font-weight-bold">IKEA x HAY Ypperlig Collection </span>
+                        <h4 class="font-weight-bold">$3,444</h4>
                     </div>
-                    <form action="{{route('add.cart',$product->id)}}" method="GET">
-                        {{ csrf_field() }}
-                        <input type="hidden" value="{{ $product->id }}" id="id" name="id">
-                        <input type="hidden" value="{{ $product->name }}" id="name" name="name">
-                        <input type="hidden" value="{{ $product->price }}" id="price" name="price">
-                        <input type="hidden" value="{{ $product->image_path }}" id="img" name="img">
-                        <input type="hidden" value="{{ $product->slug }}" id="slug" name="slug">
-                        <input type="hidden" value="1" id="quantity" name="quantity">
-                        <div class="buttons">
-                        <button class="btn btn-outline-warning btn-long cart">Add to Cart</button>
-                        <button class="btn btn-warning btn-long buy">Buy it Now</button>
-                        <button class="btn btn-light wishlist"> <i class="fa fa-heart"></i>
-                        </button>
-                    </div>
-               </form>
+                    <a href="{{route('cart.index')}}"><div class="buttons"> <button class="btn btn-outline-warning btn-long cart">Add to Cart</button> <button class="btn btn-warning btn-long buy">Buy it Now</button> <button class="btn btn-light wishlist"> <i class="fa fa-heart"></i> </button> </div></a>
 
                     <hr>
                     <div class="product-description">
@@ -325,7 +310,7 @@ label.radio input:checked+span::before {
                         <div class="my-color"> <label class="radio"> <input type="radio" name="gender" value="MALE" checked> <span class="red"></span> </label> <label class="radio"> <input type="radio" name="gender" value="FEMALE"> <span class="blue"></span> </label> <label class="radio"> <input type="radio" name="gender" value="FEMALE"> <span class="green"></span> </label> <label class="radio"> <input type="radio" name="gender" value="FEMALE"> <span class="orange"></span> </label> </div>
                         <div class="d-flex flex-row align-items-center"> <i class="fa fa-calendar-check-o"></i> <span class="ml-1">Delivery from sweden, 15-45 days</span> </div>
                         <div class="mt-2"> <span class="font-weight-bold">Description</span>
-                            <p>{{ $product->description }}</p>
+                            <p>The minimalist collaboration features chairs, lightening, Shelves, Sofas, Desks and various home accessories, all offering form and function at the same point.We use high-strength clamps and joinery techniques specially designed for engineered wood beds. Ergo, no irksome creaks - and you can sleep like a baby, well into adulthood!</p>
                             <div class="bullets">
                                 <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Best in Quality</span> </div>
                                 <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Anti-creak joinery</span> </div>
@@ -387,3 +372,4 @@ label.radio input:checked+span::before {
             thumbItem: 9
         });
     </script>
+

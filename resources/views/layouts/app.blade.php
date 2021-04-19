@@ -143,7 +143,7 @@ body {
 </head>
 <body>
 <nav class="navbar navbar-expand-xl sticky-top navbar-light bg-warning">
-	<a href="/" class="navbar-brand"> <img src="/images/logo-removebg-preview (1).png"  width="100px;" height="100px" alt=""> Brand<b>Name</b></a>
+	<a href="/" class="navbar-brand"> <img src="/images/i.png"  width="100px;" height="100px" alt=""> Brand<b>Name</b></a>
 	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -155,9 +155,9 @@ body {
 			<div class="nav-item dropdown">
 				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
 				<div class="dropdown-menu">
-					<a href="#" class="dropdown-item">Phones and Tablets</a>
-					<a href="#" class="dropdown-item">Supermarket</a>
-					<a href="#" class="dropdown-item">Electronics</a>
+					<a href="{{route('phones.index')}}" class="dropdown-item">Phones and Tablets</a>
+					<a href="{{route('phones.electronics')}}" class="dropdown-item">Supermarket</a>
+					<a href="{{route('phones.electronics')}}" class="dropdown-item">Electronics</a>
 					<a href="#" class="dropdown-item">Fashion</a>
                     <a href="#" class="dropdown-item">Graphic Design</a>
 					<a href="#" class="dropdown-item">Digital Marketing</a>
