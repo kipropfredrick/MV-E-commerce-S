@@ -195,11 +195,7 @@ button:active {
                         <div class="product py-4">
                             <div class="text-center"> <img src="/images/{{$product->image_path}}" width="200"> </div>
                             <div class="about text-center"> </a>
-<<<<<<< HEAD
-                                <h5>{{$product->name}}</h5><span>${{$product->price}}</span> <br> <s style="color:grey;"><span style="color:grey;">${{$product->oprice}}</span></s>
-=======
-                                <h5>{{$product->cat_name}}</h5> <s><span>${{$product->oprice}}</span></s> <span>${{$product->price}}</span>
->>>>>>> d84a2adc595e77295de0606f265f62255fac18cd
+                                <h5>{{$product->cat_name}}</h5> <s><span>${{$product->oprice}}</span></s> <span>{{$product->price}}</span>
 
                                 <form action="{{route('add.cart',$product->id)}}" method="GET">
                                     {{ csrf_field() }}

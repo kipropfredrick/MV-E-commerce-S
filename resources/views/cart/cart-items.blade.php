@@ -29,6 +29,7 @@
                 <form action="cart.remove" method="POST">
                     {{ csrf_field() }}
                     <button class="btn btn-secondary btn-sm"><i class="fa fa-trash"></i></button>
+                    <input type="hidden" name="return_to" value="back" />
                 </form>
             </div>
         </div>
