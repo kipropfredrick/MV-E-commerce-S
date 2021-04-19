@@ -103,9 +103,8 @@ class ProductController extends Controller
         //
         $subcategory=Sub_category::with(relations:'product')->first();
 
-        //$productt = Product::find( $id );
-        //dd($product);
-        return view('product.product-details',compact('subcategory'));
+        //dd($subcategory->toArray());
+        return view('product.product-details')->with('product',$product,'subcategory',$subcategory);
     }
 
     /**

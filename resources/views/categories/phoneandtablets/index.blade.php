@@ -110,7 +110,7 @@ div.content {
         @include('product.product_view')
     </div>
     <br>
-    @include('product.product_category')
+   @include('phoneandtablets.subcat')
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
