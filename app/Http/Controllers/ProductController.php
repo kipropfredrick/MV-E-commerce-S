@@ -98,12 +98,14 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
         //
-        $productt = Product::find( $id );
+        $subcategory=Sub_category::with(relations:'product')->first();
+
+        //$productt = Product::find( $id );
         //dd($product);
-        return view('product.product-details')->with('product',$productt);
+        return view('product.product-details',compact('subcategory'));
     }
 
     /**
@@ -143,6 +145,12 @@ class ProductController extends Controller
     public function slugg($slug){
         $category=Categories::with(relations:'product')->where('slug',$slug)->first();
         return view('categories.computing.index',compact('category'));
+    }
+    public function productsubcategory($slug){
+        $sproduct=sub_category::with(relations:['product'])->where('slug',$slug)->first();
+        //dd($sproduct->toArray());
+        return view('product.product_bread',compact('sproduct'));
+
     }
 
      public function productDetails(){

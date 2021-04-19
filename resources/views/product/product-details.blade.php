@@ -251,8 +251,7 @@ label.radio input:checked+span::before {
     padding: 0.3rem 0.3rem 0.2rem
 }
 </style>
-
-  <body>
+<body>
     <link rel='stylesheet' href='https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css'>
     <div class="container-fluid mt-2 mb-3">
         <div class="row no-gutters">
@@ -260,9 +259,9 @@ label.radio input:checked+span::before {
                 <div class="card">
                     <div class="demo">
                         <ul id="lightSlider">
-                            <li data-thumb=""> <img class="p-image" src="" /> </li>
-                            <li data-thumb=""> <img  class="p-image" src="" /> </li>
-                            <li data-thumb=""> <img class="p-image" src="" /> </li>
+                            <li data-thumb="https://dream2000.com/pub/media/catalog/product/cache/9b6394f59e15b10e6dd47471b29c7ca4/x/i/xiaomi_poco_m3_4gb_128gb_yellow-1.jpg"> <img class="p-image" src="https://dream2000.com/pub/media/catalog/product/cache/9b6394f59e15b10e6dd47471b29c7ca4/x/i/xiaomi_poco_m3_4gb_128gb_yellow-1.jpg" /> </li>
+                            <li data-thumb="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_009-1.png"> <img  class="p-image" src="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_009-1.png" /> </li>
+                            <li data-thumb="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_008.png"> <img class="p-image" src="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_008.png" /> </li>
                         </ul>
                     </div>
                 </div>
@@ -285,7 +284,7 @@ label.radio input:checked+span::before {
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex flex-row align-items-center"> <img src="" class="rounded-circle profile-image">
+                            <div class="d-flex flex-row align-items-center"> <img src="https://i.imgur.com/tmdHXOY.jpg" class="rounded-circle profile-image">
                                 <div class="d-flex flex-column ml-1 comment-profile">
                                     <div class="comment-ratings"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div> <span class="username">Timona Simaung</span>
                                 </div>
@@ -300,31 +299,10 @@ label.radio input:checked+span::before {
                     <div class="d-flex flex-row align-items-center">
                         <div class="p-ratings"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div> <span class="ml-1">5.0</span>
                     </div>
-                    <div class="about"> <span class="font-weight-bold"></span>
-                        <h4 class="font-weight-bold"></h4>
+                    <div class="about"> <span class="font-weight-bold">IKEA x HAY Ypperlig Collection </span>
+                        <h4 class="font-weight-bold">$3,444</h4>
                     </div>
-                    @if (count($subcategory->product)>0)
-                       {{-- @foreach ($subcategory->product as $item )
-                        <tr><p>{{$item->name}}</p></tr>
-                        <p>{{$item->price}}</p>
-                        <p>{{$item->oprice}}</p>
-                       @endforeach --}}
-                    @endif
-                    <form action="" method="GET">
-                        {{ csrf_field() }}
-                        <input type="hidden" value="" id="id" name="id">
-                        <input type="hidden" value="" id="name" name="name">
-                        <input type="hidden" value="" id="price" name="price">
-                        <input type="hidden" value="" id="img" name="img">
-                        <input type="hidden" value="" id="slug" name="slug">
-                        <input type="hidden" value="1" id="quantity" name="quantity">
-                        <div class="buttons">
-                        <button class="btn btn-outline-warning btn-long cart">Add to Cart</button>
-                        <button class="btn btn-warning btn-long buy">Buy it Now</button>
-                        <button class="btn btn-light wishlist"> <i class="fa fa-heart"></i>
-                        </button>
-                    </div>
-               </form>
+                    <a href="{{route('cart.index')}}"><div class="buttons"> <button class="btn btn-outline-warning btn-long cart">Add to Cart</button> <button class="btn btn-warning btn-long buy">Buy it Now</button> <button class="btn btn-light wishlist"> <i class="fa fa-heart"></i> </button> </div></a>
 
                     <hr>
                     <div class="product-description">
@@ -332,7 +310,7 @@ label.radio input:checked+span::before {
                         <div class="my-color"> <label class="radio"> <input type="radio" name="gender" value="MALE" checked> <span class="red"></span> </label> <label class="radio"> <input type="radio" name="gender" value="FEMALE"> <span class="blue"></span> </label> <label class="radio"> <input type="radio" name="gender" value="FEMALE"> <span class="green"></span> </label> <label class="radio"> <input type="radio" name="gender" value="FEMALE"> <span class="orange"></span> </label> </div>
                         <div class="d-flex flex-row align-items-center"> <i class="fa fa-calendar-check-o"></i> <span class="ml-1">Delivery from sweden, 15-45 days</span> </div>
                         <div class="mt-2"> <span class="font-weight-bold">Description</span>
-
+                            <p>The minimalist collaboration features chairs, lightening, Shelves, Sofas, Desks and various home accessories, all offering form and function at the same point.We use high-strength clamps and joinery techniques specially designed for engineered wood beds. Ergo, no irksome creaks - and you can sleep like a baby, well into adulthood!</p>
                             <div class="bullets">
                                 <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Best in Quality</span> </div>
                                 <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Anti-creak joinery</span> </div>
@@ -352,13 +330,31 @@ label.radio input:checked+span::before {
                 </div>
                 <div class="card mt-2"> <span>Similar items:</span>
                     <div class="similar-products mt-2 d-flex flex-row">
-                        @foreach ($subcategory->product as $item)
-                        <div class="card border p-1" style="width: 9rem;"> <img src="/images/{{$item->image_path}}" class="card-img-top" alt="...">
+                        <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://www.gizmochina.com/wp-content/uploads/2019/09/Xiaomi-Redmi-Note-8-1-500x500.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h6 class="card-title">${{$item->price}}</h6>
+                                <h6 class="card-title">$1,999</h6>
                             </div>
                         </div>
-                        @endforeach
+                        <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://images.samsung.com/is/image/samsung/levant-galaxy-a51-a515-sm-a515fzkwmid-back-202053679?$720_576_PNG$" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title">$1,699</h6>
+                            </div>
+                        </div>
+                        <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://www.eezepc.com/wp-content/uploads/2020/04/Samsung-Galaxy-A51-White-1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title">$2,999</h6>
+                            </div>
+                        </div>
+                        <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://images.samsung.com/is/image/samsung/assets/africa_en/smartphones/galaxy-s10/sunset/images/gallery/galaxy-s10_gallery-color_s10-c1-01.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title">$3,999</h6>
+                            </div>
+                        </div>
+                        <div class="card border p-1" style="width: 9rem;"> <img src="https://images.samsung.com/is/image/samsung/levant-galaxy-s20-plus-g985-bts-sm-g985fzpdmid-frontbpurple-261902310?$720_576_PNG$" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title">$999</h6>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -376,3 +372,4 @@ label.radio input:checked+span::before {
             thumbItem: 9
         });
     </script>
+

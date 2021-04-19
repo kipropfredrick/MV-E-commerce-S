@@ -47,6 +47,6 @@ Route::get('supermarket', 'PhonesTabletsController@supermarket')->name('phones.e
 Route::resource('product', 'ProductController');
 Route::get('category','ProductController@getCategories')->name('product.getCategory');
 Route::get('category/subcategory/{id}','ProductController@getSubcategory');
-Route::get('/data/related/', 'ProductController@getRelatedItems')->name('product.related');
+Route::get('/data/related/{slug}', 'ProductController@productsubcategory')->name('product.related');
 Route::get('cart/slug/{slug}','ProductController@slugg')->name('home.slug');
 

@@ -193,7 +193,7 @@ button:active {
                 @if (count($category->product)>0)
                  @foreach ($category->product as $product)
                  <div class="col-md-4">
-                     <a href="{{route('product.details')}}">
+                     <a href="{{route('product.related',$product->slug)}}">
                       <div class="product py-4">
                           <div class="text-center"> <img src="/images/{{$product->image_path}}" width="200"> </div>
                           <div class="about text-center"> </a>

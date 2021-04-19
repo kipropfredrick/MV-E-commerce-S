@@ -194,105 +194,21 @@ button:active {
            </div>
            <div class="col-md-9">
                <div class="row g-2">
+                   @foreach ($sproduct->product as $item)
                    <div class="col-md-4">
-                       <div class="product py-4">
-                           <div class="text-center"> <img src="https://5.imimg.com/data5/WU/TB/MY-2/kc596_10-500x500.jpg" width="200"> </div>
-                           <div class="about text-center">
-                               <h5>XRD Active Shoes</h5> <span>$1,999.99</span>
-                           </div>
-                           <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                               <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-md-4">
-                       <div class="product py-4">
-                           <div class="text-center"> <img src="https://justcreative.com/wp-content/uploads/2019/11/Apple-Watch-Series-5.jpg" width="200"> </div>
-                           <div class="about text-center">
-                               <h5>Hygen Smart watch </h5> <span>$123.43</span>
-                           </div>
-                           <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                               <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-md-4">
-                       <div class="product py-4">
-                           <div class="text-center"> <img src="https://i5.walmartimages.com/asr/5a2915a2-427a-460e-8fd3-f6ba23467c9c_1.9be7f36f231d846ddec557fa6c53bbad.jpeg" width="200" height="200"> </div>
-                           <div class="about text-center">
-                               <h5>Acer surface book 2.5</h5> <span>$1,999.99</span>
-                           </div>
-                           <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                               <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-md-4">
-                       <div class="product py-4">
-                           <div class="text-center"> <img src="https://i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/dell_client_products/notebooks/xps_notebooks/xps_15_7590/pdp/laptops-xps-15-7590-pdp-gallery504x350.jpg?fmt=jpg&wid=570&hei=400" width="200" height="200"> </div>
-                           <div class="about text-center">
-                               <h5>Dell XPS Surface</h5> <span>$1,245.89</span>
-                           </div>
-                           <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                               <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-md-4">
-                       <div class="product py-4">
-                           <div class="text-center"> <img src="https://static.bhphoto.com/images/images2500x2500/1588766830_1558265.jpg" width="200"> </div>
-                           <div class="about text-center">
-                               <h5>Acer surface book 5.5</h5> <span>$2,999.99</span>
-                           </div>
-                           <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                               <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-md-4">
-                       <div class="product py-4">
-                           <div class="text-center"> <img src="https://harlemtechnologies.co.ke/wp-content/uploads/2020/10/Mi-Band-5-600x600.jpg" width="200"> </div>
-                           <div class="about text-center">
-                               <h5>Xps smart watch 5.0</h5> <span>$999.99</span>
-                           </div>
-                           <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                               <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-md-4">
-                       <div class="product py-4">
-                           <div class="text-center"> <img src="https://www.gizmochina.com/wp-content/uploads/2019/04/UMIDIGI-A5-Pro-5-500x500.jpg" width="200"> </div>
-                           <div class="about text-center">
-                               <h5>Umidigi</h5> <span>$3,999.99</span>
-                           </div>
-                           <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                               <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-md-4">
-                       <div class="product py-4">
-                           <div class="text-center"> <img src="https://fgl.scene7.com/is/image/FGLSportsLtd/FGL_332979914_01_a?bgColor=0,0,0,0&resMode=sharp2&op_sharpen=1&hei=520" width="200"> </div>
-                           <div class="about text-center">
-                               <h5>Tyko Running shoes</h5> <span>$99.99</span>
-                           </div>
-                           <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                               <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-md-4">
-                       <div class="product py-4">
-                           <div class="text-center"> <img src="https://www.mobilehub.co.ke/wp-content/uploads/2019/04/Sony-Bravia-43%E2%80%B3-Smart-4k-Android-TV-43W700E-1.jpg" width="200"> </div>
-                           <div class="about text-center">
-                               <h5>Sony Smart Tv</h5> <span>$1,999.99</span>
-                           </div>
-                           <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                               <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
-                           </div>
-                       </div>
-                   </div>
+                    <div class="product py-4">
+                       <a href="{{route('product.show',$item->id)}}">
+                        <div class="text-center"> <img src="https://5.imimg.com/data5/WU/TB/MY-2/kc596_10-500x500.jpg" width="200"> </div>
+                        <div class="about text-center">
+                        </a>
+                            <h5>XRD Active Shoes</h5> <span>$1,999.99</span>
+                        </div>
+                        <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
+                            <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div>
+                        </div>
+                    </div>
+                </div>
+                   @endforeach
                </div>
            </div>
        </div>
