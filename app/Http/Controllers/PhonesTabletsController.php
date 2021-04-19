@@ -13,12 +13,10 @@ class PhonesTabletsController extends Controller
      */
     public function index()
     {
-        //
-        $products = \DB::table('products')
-                ->join('sub_category', 'products.id', '=', 'sub_category.subcat_id')
-                
-                ->get();
-        return view('phoneandtablets.index',compact('products'));
+
+        $phones=Product::where('category_id',1)->get();
+       //dd($phones);
+        return view('categories.phoneandtablets.subcat',compact('phones'));
     }
 
     /**
@@ -85,5 +83,17 @@ class PhonesTabletsController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function computers(){
+        $computers=Product::where('category_id',3)->get();
+        //dd($computers);
+        return view('categories.electronic.subcat',compact('computers'));
+
+    }
+    public function supermarket(){
+        $computers=Product::where('category_id',2)->get();
+        //dd($computers);
+        return view('categories.electronic.subcat',compact('computers'));
+
     }
 }
