@@ -36,11 +36,8 @@
     <br>
     <div class="row" style="margin: 0px;">
         <a class="btn btn-dark btn-sm btn-block" href="{{ route('cart.index') }}">
-            CART <i class="fa fa-arrow-right"></i>
-        </a>
-        <a class="btn btn-dark btn-sm btn-block" href="{{route('checkout')}}">
-            CHECKOUT <i class="fa fa-arrow-right"></i>
-        </a>
+            CART</a>
+        <a class="btn btn-dark btn-sm btn-block" href="{{route('checkout')}}">CHECKOUT</a>
     </div>
 @else
     <li class="list-group-item">Your Cart is Empty</li>

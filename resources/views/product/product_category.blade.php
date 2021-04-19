@@ -1,6 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>top_selling_items</title>
+<title>Product category</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <style>
    body {
@@ -195,7 +195,7 @@ button:active {
                         <div class="product py-4">
                             <div class="text-center"> <img src="/images/{{$product->image_path}}" width="200"> </div>
                             <div class="about text-center"> </a>
-                                <h5>{{$product->name}}</h5> <s><span>${{$product->oprice}}</span></s> <span>${{$product->price}}</span>
+                                <h5>{{$product->name}}</h5><span>${{$product->price}}</span> <br> <s style="color:grey;"><span style="color:grey;">${{$product->oprice}}</span></s>
 
                                 <form action="{{route('add.cart',$product->id)}}" method="GET">
                                     {{ csrf_field() }}

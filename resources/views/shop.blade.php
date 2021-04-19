@@ -1,5 +1,5 @@
 @include('layouts.app')
-@include('body.navbar')
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <title>Hello, world!</title>
+    <title>Home Page</title>
   </head>
   <style>
       body {
@@ -102,31 +102,11 @@ div.content {
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-                </div><!-- /.carousel -->
-                <li class="divider"></li>
-                <li><a href="#">View all Collection <span class="glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-            </ul>
-        </li>
-    </ul>
-</li>
-<li><a href="#">Store locator</a></li>
-</ul>
-<ul class="nav navbar-nav navbar-right">
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My account <span class="caret"></span></a>
-<ul class="dropdown-menu" role="menu">
-<li><a href="#">Action</a></li>
-<li><a href="#">Another action</a></li>
-<li><a href="#">Something else here</a></li>
-<li class="divider"></li>
-<li><a href="#">Separated link</a></li>
-</ul>
-</li>
-<li><a href="#">My cart (0) items</a></li>
-</ul>
-</div><!-- /.nav-collapse -->
-</nav>
-</div>
+      </div>
+    </div>
+<div>
+        @include('product.product_view')
+    </div>
     <br>
     @include('product.product_category')
     @include('body.footer')

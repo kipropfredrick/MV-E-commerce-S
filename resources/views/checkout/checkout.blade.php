@@ -14,6 +14,9 @@
       span {
       content: "\2713";
 }
+.required{
+  color: red;
+}
 </style>
     <div class="container clearfix">
         <h1 class="title-page">CHECKOUT</h1>
@@ -38,7 +41,8 @@
                             <br>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label>First name</label>
+                                    <label>Name</label>
+                                    <span class="required">*</span>
                                     <input type="text" name="shipping_fullname" id="" class="form-control">
                                     <small class="form-text text-muted">We'll never share your email with anyone else.</small>
                                 </div>
@@ -46,6 +50,7 @@
 
                             <div class="form-group">
                                 <label>Address</label>
+                                <span class="required">*</span>
                                 <input type="text" name="shipping_address" id="" class="form-control">
                             </div>
                             <div class="form-row">
@@ -65,6 +70,7 @@
                                 </div>
                                 <div class="form-group  col-md-6">
                                     <label>Phone Number</label>
+                                    <span class="required">*</span>
                                     <input type="text" class="form-control" name="shipping_phone">
                                 </div>
                             </div>
@@ -88,10 +94,10 @@
                          </div>
                                <br>
                                <div class="form-row">
-                                   <h6><span>&#10003;</span>To Pay <br><br><b>Amoumt:</b> Ksh 400.00 <br><br><b>Item:</b>"Techno Camon 16"</h6>
+                                   <h6><span>&#10003;</span>To Pay <br><br><b>Amoumt:</b> {{ config('settings.currency_symbol') }}{{ \Cart::getSubTotal() }}  <br><br><b>Item:</b>"Techno Camon 16"</h6>
                                </div>
                                <div class="col-md-12 mt-4">
-                                <button type="submit" class="subscribe btn btn-success btn-lg btn-block"> <b>Pay : </b> ksh 400.00</button>
+                                <button type="submit" class="subscribe btn btn-success btn-lg btn-block"> <b>Pay : </b> {{ config('settings.currency_symbol') }}{{ \Cart::getSubTotal() }} </button>
                             </div>
                             <br>
 

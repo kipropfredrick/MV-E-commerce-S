@@ -9,7 +9,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
          <!------ Include the above in your HEAD tag ---------->
-    <title>Document</title>
+    <title>Register</title>
 <style>
  @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 .login-block{
@@ -39,7 +39,7 @@
  <div class="container">
 	<div class="row">
         <div class="col-md-4 login-sec">
-            <h2 class="text-center">Login Now</h2>
+            <h2 class="text-center">Register Now</h2>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 

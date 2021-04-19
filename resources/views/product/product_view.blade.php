@@ -76,7 +76,7 @@ h2::after {
 }
 .carousel .item .btn:hover, .carousel .item .btn:focus {
 	color: #fff;
-	background: #000;
+	background: #ffc000;
 	border-color: #000;
 	box-shadow: none;
 }
@@ -107,7 +107,7 @@ h2::after {
     z-index: 5;
     left: 0;
     right: 0;
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 174, 0, 0.8);
     text-shadow: none;
     font-weight: bold;
 }
@@ -179,16 +179,7 @@ h2::after {
 								</div>
 								<div class="thumb-content">
 									<h4>Apple iPad</h4>
-									<p class="item-price"><strike>$400.00</strike> <span>$369.00</span></p>
-									<div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>
+									<p class="item-price"><span>$369.00</span><br><strike>$400.00</strike> </p>
 									<a href="#" class="btn btn-primary">Add to Cart</a>
 								</div>
 							</div>
@@ -200,16 +191,7 @@ h2::after {
 								</div>
 								<div class="thumb-content">
 									<h4>Sony Headphone</h4>
-									<p class="item-price"><strike>$25.00</strike> <span>$23.99</span></p>
-									<div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>
+									<p class="item-price"><span>$23.99</span><br><strike>$25.00</strike> </p>
 									<a href="#" class="btn btn-primary">Add to Cart</a>
 								</div>
 							</div>
@@ -221,16 +203,7 @@ h2::after {
 								</div>
 								<div class="thumb-content">
 									<h4>Macbook Air</h4>
-									<p class="item-price"><strike>$899.00</strike> <span>$649.00</span></p>
-									<div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-										</ul>
-									</div>
+									<p class="item-price"> <span>$649.00</span><br><strike>$899.00</strike></p>
 									<a href="#" class="btn btn-primary">Add to Cart</a>
 								</div>
 							</div>
@@ -242,16 +215,7 @@ h2::after {
 								</div>
 								<div class="thumb-content">
 									<h4>Nikon DSLR</h4>
-									<p class="item-price"><strike>$315.00</strike> <span>$250.00</span></p>
-									<div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>
+									<p class="item-price"> <span>$250.00</span><br><strike>$315.00</strike></p>
 									<a href="#" class="btn btn-primary">Add to Cart</a>
 								</div>
 							</div>
@@ -267,15 +231,7 @@ h2::after {
 								</div>
 								<div class="thumb-content">
 									<h4>Sony Play Station</h4>
-									<p class="item-price"><strike>$289.00</strike> <span>$269.00</span></p>
-									<div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
+									<p class="item-price"> <span>$269.00</span><br><strike>$289.00</strike></p>
 									</div>
 									<a href="#" class="btn btn-primary">Add to Cart</a>
 								</div>
@@ -288,16 +244,7 @@ h2::after {
 								</div>
 								<div class="thumb-content">
 									<h4>Macbook Pro</h4>
-									<p class="item-price"><strike>$1099.00</strike> <span>$869.00</span></p>
-									<div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-										</ul>
-									</div>
+									<p class="item-price"><span>$269.00</span><br><strike>$289.00</strike></p>
 									<a href="#" class="btn btn-primary">Add to Cart</a>
 								</div>
 							</div>
@@ -309,16 +256,8 @@ h2::after {
 								</div>
 								<div class="thumb-content">
 									<h4>Bose Speaker</h4>
-									<p class="item-price"><strike>$109.00</strike> <span>$99.00</span></p>
-									<div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>
+									<p class="item-price"><span>$269.00</span><br><strike>$289.00</strike></p>
+
 									<a href="#" class="btn btn-primary">Add to Cart</a>
 								</div>
 							</div>
@@ -330,16 +269,7 @@ h2::after {
 								</div>
 								<div class="thumb-content">
 									<h4>Samsung Galaxy S8</h4>
-									<p class="item-price"><strike>$599.00</strike> <span>$569.00</span></p>
-									<div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>
+									<p class="item-price"><span>$269.00</span><br><strike>$289.00</strike></p>
 									<a href="#" class="btn btn-primary">Add to Cart</a>
 								</div>
 							</div>
@@ -355,16 +285,7 @@ h2::after {
 								</div>
 								<div class="thumb-content">
 									<h4>Apple iPhone</h4>
-									<p class="item-price"><strike>$369.00</strike> <span>$349.00</span></p>
-									<div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>
+									<p class="item-price"><span>$269.00</span><br><strike>$289.00</strike></p>
 									<a href="#" class="btn btn-primary">Add to Cart</a>
 								</div>
 							</div>
@@ -376,16 +297,7 @@ h2::after {
 								</div>
 								<div class="thumb-content">
 									<h4>Canon DSLR</h4>
-									<p class="item-price"><strike>$315.00</strike> <span>$250.00</span></p>
-									<div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>
+									<p class="item-price"><span>$269.00</span><br><strike>$289.00</strike></p>
 									<a href="#" class="btn btn-primary">Add to Cart</a>
 								</div>
 							</div>
@@ -397,16 +309,7 @@ h2::after {
 								</div>
 								<div class="thumb-content">
 									<h4>Google Pixel</h4>
-									<p class="item-price"><strike>$450.00</strike> <span>$418.00</span></p>
-									<div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>
+									<p class="item-price"><span>$269.00</span><br><strike>$289.00</strike></p>
 									<a href="#" class="btn btn-primary">Add to Cart</a>
 								</div>
 							</div>
@@ -418,16 +321,7 @@ h2::after {
 								</div>
 								<div class="thumb-content">
 									<h4>Apple Watch</h4>
-									<p class="item-price"><strike>$350.00</strike> <span>$330.00</span></p>
-									<div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>
+									<p class="item-price"><span>$269.00</span><br><strike>$289.00</strike></p>
 									<a href="#" class="btn btn-primary">Add to Cart</a>
 								</div>
 							</div>
