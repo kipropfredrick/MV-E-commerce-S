@@ -192,28 +192,31 @@ button:active {
                <div class="row g-2">
                    <br>
 
-                   @foreach ($computers as $item)
+                   @foreach ($computers as $product)
                    <div class="col-md-4">
                     <a href="">
                      <div class="product py-4">
-                         <div class="text-center"> <img src="/images/{{$item->image_path}}" width="200"> </div>
-                         <div class="about text-center"> </a>
-                             <h5></h5> <s><span></span></s> <span></span>
+                         <a href="{{route('product.show',$product->id)}}">
+                            <div class="text-center"> <img src="/images/{{$product->image_path}}" width="200"> </div>
+                            <div class="about text-center"> </a>
+                                <h5></h5> <s><span></span></s> <span></span>
 
-                             <form action="" method="GET">
-                                 {{ csrf_field() }}
-                                 <input type="hidden" value="" id="id" name="id">
-                                 <input type="hidden" value="" id="name" name="name">
-                                 <input type="hidden" value=" id="price" name="price">
-                                 <input type="hidden" value=""d="img" name="img">
-                                 <input type="hidden" value="" id="slug" name="slug">
-                                 <input type="hidden" value="1" id="quantity" name="quantity">
-                         </div>
-                         <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                             {{-- <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div> --}}
-                         </div>
-                         </form>
-                     </div>
+                                <form action="{{route('add.cart',$product->id)}}" method="GET">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" value="{{ $product->id }}" id="id" name="id">
+                                    <input type="hidden" value="{{ $product->name }}" id="name" name="name">
+                                    <input type="hidden" value="{{ $product->price }}" id="price" name="price">
+                                    <input type="hidden" value="{{ $product->image_path }}" id="img" name="img">
+                                    <input type="hidden" value="{{ $product->slug }}" id="slug" name="slug">
+                                    <input type="hidden" value="1" id="quantity" name="quantity">
+                            </div>
+                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
+                                {{-- <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div> --}}
+                            </div>
+                            </form>
+                        </div>
+                        </a>
+
 
                 </div>
                    @endforeach

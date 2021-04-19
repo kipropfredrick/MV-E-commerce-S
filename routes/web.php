@@ -45,6 +45,7 @@ Route::get('electronics', 'PhonesTabletsController@electronics')->name('phones.e
 Route::get('supermarket', 'PhonesTabletsController@supermarket')->name('phones.electronics');
 Route::get('computers','PhonesTabletsController@computers')->name('computers');
 Route::get('supermarket','PhonesTabletsController@supermarket')->name('supermarket');
+Route::get('fashion','PhonesTabletsController@fashion')->name('fashion');
 //function to get product form
 Route::resource('product', 'ProductController');
 Route::get('category','ProductController@getCategories')->name('product.getCategory');
