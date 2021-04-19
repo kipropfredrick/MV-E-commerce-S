@@ -122,7 +122,6 @@
 							<td><a href="/checkout" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
 						</tr>
                         @endif
-
 					</tfoot>
 				</table>
 

@@ -76,10 +76,7 @@ div.content {
   }
 }
   </style>
-
   <body>
-
-
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 100%">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -105,11 +102,31 @@ div.content {
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-      </div>
-    </div>
-    <div>
-        @include('product.product_view')
-    </div>
+                </div><!-- /.carousel -->
+                <li class="divider"></li>
+                <li><a href="#">View all Collection <span class="glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+<li><a href="#">Store locator</a></li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My account <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="#">Action</a></li>
+<li><a href="#">Another action</a></li>
+<li><a href="#">Something else here</a></li>
+<li class="divider"></li>
+<li><a href="#">Separated link</a></li>
+</ul>
+</li>
+<li><a href="#">My cart (0) items</a></li>
+</ul>
+</div><!-- /.nav-collapse -->
+</nav>
+</div>
     <br>
     @include('product.product_category')
     @include('body.footer')
