@@ -96,4 +96,10 @@ class PhonesTabletsController extends Controller
         return view('categories.electronic.subcat',compact('computers'));
 
     }
+    public function fashion(){
+        $computers=Product::where('category_id',4)->get();
+        //dd($computers);
+        return view('categories.electronic.subcat',compact('computers'));
+
+    }
 }

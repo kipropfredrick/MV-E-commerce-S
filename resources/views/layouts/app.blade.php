@@ -158,7 +158,7 @@ body {
 					<a href="{{route('phones.index')}}" class="dropdown-item">Phones and Tablets</a>
 					<a href="{{route('supermarket')}}" class="dropdown-item">Supermarket</a>
 					<a href="{{route('computers')}}" class="dropdown-item">Electronics</a>
-					<a href="#" class="dropdown-item">Fashion</a>
+					<a href="{{route('fashion')}}" class="dropdown-item">Fashion</a>
 				</div>
 			</div>
 		</div>
