@@ -155,7 +155,7 @@ body {
 			<div class="nav-item dropdown">
 				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
 				<div class="dropdown-menu">
-					<a href="{{route('phones.index')}}" class="dropdown-item">Phones and Tablets</a>
+					<a href="{{route('phones&tablets.index')}}" class="dropdown-item">Phones and Tablets</a>
 					<a href="{{route('supermarket')}}" class="dropdown-item">Supermarket</a>
 					<a href="{{route('computers')}}" class="dropdown-item">Electronics</a>
 					<a href="{{route('fashion')}}" class="dropdown-item">Fashion</a>

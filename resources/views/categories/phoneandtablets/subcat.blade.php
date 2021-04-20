@@ -107,23 +107,116 @@ button:active {
 }
 </style>
        @include('layouts.app')
-       @include('product.product_view')
+       <h2><b>Phones & tablets</b></h2>
+          <!--Carousel Wrapper-->
+    <div class="container-fluid">
+        <div class="row mb-5">
+            <div class="col-md-12">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://fdn.gsmarena.com/imgroot/news/19/06/xiaomi-mi-9t-malaysia-philippines/-1220x526/gsmarena_003.jpg" class="d-block w-100" height="350px;" alt="" />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>First slide label</h5>
+                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://blenderartists.org/uploads/default/original/3X/f/5/f54ae76a7216000ed8b1768b181ca258c2718ccd.jpg" class="d-block w-100" height="350px;" alt="" />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>First slide label</h5>
+                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://i.ytimg.com/vi/XvAVOAPshYg/maxresdefault.jpg" class="d-block w-100" height="350px;" alt="" />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>First slide label</h5>
+                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!--/Carousel Wrapper-->
+      {{-- Navigation bar --}}
+      <div class="row mb-5">
+        <div class="col-md-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home / </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{route('phones&tablets.index')}}">Phones&Tablets</a>
+                        </li>
+                        {{-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#"></a>
+                                <a class="dropdown-item" href="#"></a>
+                                <a class="dropdown-item" href="#"></a>
+                                <a class="dropdown-item" href="#"></a>
+                                <a class="dropdown-item" href="#"></a>
+                            </div>
+                        </li> --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+      {{-- end of navigation bar --}}
       <div class="container-fluid mt-5 mb-5">
-       <h2><b>Products</b></h2>
        <div class="row g-2">
            <div class="col-md-3">
                <div class="t-products p-2">
-                   <h6 class="text-uppercase">Computer & Periferals</h6>
+                   <h6 class="text-uppercase">Phones & Tablets</h6>
                    <div class="p-lists">
-                       <div class="d-flex justify-content-between mt-2"> <span>Laptops</span> <span>23</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Desktops</span> <span>46</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Monitors</span> <span>13</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Mouse</span> <span>33</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Keyboard</span> <span>12</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Printer</span> <span>53</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Mobiles</span> <span>203</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>CPU</span> <span>23</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span> <a href="{{route('phones.sumsung')}}">Samsung tablets</a></span> <span>23</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Xiaomi</span> <span>46</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Lenovo</span> <span>13</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Huwawei</span> <span>33</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Htc</span> <span>12</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>infinix</span> <span>53</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Motorola</span> <span>203</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Ulephone</span> <span>23</span> </div>
                    </div>
                </div>
                <div class="processor p-2">
@@ -191,35 +284,29 @@ button:active {
 
                <div class="row g-2">
                    <br>
-
-                   @foreach ($phones as $product)
-                   <div class="col-md-4">
-                    <a href="{{route('product.show',$product->id)}}">
-                     <div class="product py-4">
-                         <a href="{{route('product.show',$product->id)}}">
-                            <div class="text-center"> <img src="/images/{{$product->image_path}}" width="200"> </div>
-                            <div class="about text-center"> </a>
-                                <h5>{{$product->subcat_name}}</h5> <s><span>${{$product->oprice}}</span></s> <span>${{$product->price}}</span>
-
-                                <form action="{{route('add.cart',$product->id)}}" method="GET">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" value="{{ $product->id }}" id="id" name="id">
-                                    <input type="hidden" value="{{ $product->name }}" id="name" name="name">
-                                    <input type="hidden" value="{{ $product->price }}" id="price" name="price">
-                                    <input type="hidden" value="{{ $product->image_path }}" id="img" name="img">
-                                    <input type="hidden" value="{{ $product->slug }}" id="slug" name="slug">
-                                    <input type="hidden" value="1" id="quantity" name="quantity">
-                            </div>
-                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                                {{-- <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div> --}}
-                            </div>
-                            </form>
+                   <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="https://cdn.sharafdg.com/cdn-cgi/image/width=600,height=600,fit=pad/assets/c/1/8/9/c189a5aec57a4c2f3462b3699497b489a4943104_S100541190_1.jpg" alt="" />
+                        <div class="card-body">
+                            <p class="h6"><small class="text-muted">xiaomi redmi 9t</small></p>
+                            <p class="h5 m-0">$782.00</p>
                         </div>
-                        </a>
-
-
+                        <div class="card-footer p-0">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-light">
+                                    <i class="fa fa-cart-plus"></i>
+                                    <span>Add Cart</span>
+                                </button>
+                                {{-- <button type="button" class="btn btn-light">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </button> --}}
+                                <button type="button" class="btn btn-light">
+                                    <i class="fa fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                   @endforeach
 
                </div>
 

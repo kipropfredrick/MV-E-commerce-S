@@ -109,113 +109,103 @@ button:active {
 
 
       <div class="container-fluid mt-5 mb-5">
-       <h2><b>Products</b></h2>
+       <h2><b>Picks for You</b></h2>
        <div class="row g-2">
            <div class="col-md-3">
                <div class="t-products p-2">
-                   <h6 class="text-uppercase">Computer & Periferals</h6>
+                   <h6 class="text-uppercase">Top Picks for You</h6>
+                   <hr>
                    <div class="p-lists">
-                       <div class="d-flex justify-content-between mt-2"> <span>Laptops</span> <span>23</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Desktops</span> <span>46</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Monitors</span> <span>13</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Mouse</span> <span>33</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Keyboard</span> <span>12</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Printer</span> <span>53</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Mobiles</span> <span>203</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>CPU</span> <span>23</span> </div>
-                   </div>
-               </div>
-               <div class="processor p-2">
-                   <div class="heading d-flex justify-content-between align-items-center">
-                       <h6 class="text-uppercase">Processor</h6> <span>--</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault"> Intel Core i7 </label> </div> <span>3</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Core i6 </label> </div> <span>4</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Core i3 </label> </div> <span>14</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Centron </label> </div> <span>8</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Pentinum </label> </div> <span>14</span>
-                   </div>
-               </div>
-               <div class="brand p-2">
-                   <div class="heading d-flex justify-content-between align-items-center">
-                       <h6 class="text-uppercase">Brand</h6> <span>--</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault"> Apple </label> </div> <span>13</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Asus </label> </div> <span>4</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Dell </label> </div> <span>24</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Lenovo </label> </div> <span>18</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Acer </label> </div> <span>44</span>
-                   </div>
-               </div>
-               <div class="type p-2 mb-2">
-                   <div class="heading d-flex justify-content-between align-items-center">
-                       <h6 class="text-uppercase">Type</h6> <span>--</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault"> Hybrid </label> </div> <span>23</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Laptop </label> </div> <span>24</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Desktop </label> </div> <span>14</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Touch </label> </div> <span>28</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Tablets </label> </div> <span>44</span>
+                       <div class="d-flex justify-content-between mt-2"> <span>Agriculture</span> <span>23</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span> <a href="{{route('phones&tablets.index')}}">Phones & Tablets</a> </span> <span>46</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Smart Tv</span> <span>13</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Furnitures</span> <span>33</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Groceries</span> <span>12</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Beauty</span> <span>53</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Small Appliancess</span> <span>203</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Smartphones</span> <span>23</span> </div>
                    </div>
                </div>
            </div>
            <div class="col-md-9">
 
-               <div class="row g-2">
-                   @foreach ($category as $product)
-                   <div class="col-md-4">
-                       <a href="{{route('home.slug',$product->slug)}}">
-                        <div class="product py-4">
-                            <div class="text-center"> <img src="/images/{{$product->image_path}}" width="200"> </div>
-                            <div class="about text-center"> </a>
-                                <h5>{{$product->cat_name}}</h5> <s><span>${{$product->oprice}}</span></s> <span>${{$product->price}}</span>
-
-                                <form action="{{route('add.cart',$product->id)}}" method="GET">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" value="{{ $product->id }}" id="id" name="id">
-                                    <input type="hidden" value="{{ $product->name }}" id="name" name="name">
-                                    <input type="hidden" value="{{ $product->price }}" id="price" name="price">
-                                    <input type="hidden" value="{{ $product->image_path }}" id="img" name="img">
-                                    <input type="hidden" value="{{ $product->slug }}" id="slug" name="slug">
-                                    <input type="hidden" value="1" id="quantity" name="quantity">
-                            </div>
-                            <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                                {{-- <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div> --}}
-                            </div>
-                            </form>
-                        </div>
-
-                   </div>
-                   @endforeach
-               </div>
-
-           </div>
+               <div class="row g-1">
+<div class="container">
+	<div class="row mb-5">
+@foreach ($category->take(4) as $product )
+<div class="col-md-3 mb-4">
+    <div class="card">
+        <a href="{{route('product.show',$product->id)}}">
+        <img class="card-img-top" src="https://image.freepik.com/free-vector/cosmetic-advertisement-with-realistic-design_23-2147925114.jpg" alt="" />
+        </a>
+        <div class="card-body">
+            <p class="h6"><small class="text-muted">Apple</small></br>Butterflies Hand composite</p>
+            <p class="h5 m-0">$782.00</p>
+        </div>
+    </div>
+</div>
+@endforeach
+	</div>
+ </div>
+ </div>
        </div>
    </div>
+{{-- Third lane --}}
+<div class="row mb-5">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="card">
+                            <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
+                            <div class="card-footer">
+                                <p class="card-text"><a href="#">Apple</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card">
+                            <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
+                            <div class="card-footer">
+                                <p class="card-text"><a href="#">Samsung</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card">
+                            <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
+                            <div class="card-footer">
+                                <p class="card-text"><a href="#">IBM</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card">
+                            <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
+                            <div class="card-footer">
+                                <p class="card-text"><a href="#">HP</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card">
+                            <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
+                            <div class="card-footer">
+                                <p class="card-text"><a href="#">Sony</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card">
+                            <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
+                            <div class="card-footer">
+                                <p class="card-text"><a href="#">Asus</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

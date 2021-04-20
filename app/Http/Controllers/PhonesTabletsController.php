@@ -19,6 +19,13 @@ class PhonesTabletsController extends Controller
         return view('categories.phoneandtablets.subcat',compact('phones'));
     }
 
+    public function sumsung_tab()
+    {
+
+        // $phones=Product::where('category_id',1)->get();
+       //dd($phones);
+        return view('categories.phoneandtablets.Tablets.Tablets.samsung_tablets');
+    }
     /**
      * Show the form for creating a new resource.
      *

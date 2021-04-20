@@ -101,10 +101,10 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         //
-        $subcategory=Sub_category::with(relations:'product')->first();
+        // $subcategory=Sub_category::with(relations:'product')->first();
 
         //dd($subcategory->toArray());
-        return view('product.product-details')->with('product',$product,'subcategory',$subcategory);
+        return view('product.product-details')->with('product',$product);
     }
 
     /**

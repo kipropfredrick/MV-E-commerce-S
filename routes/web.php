@@ -40,8 +40,9 @@ Route::get('/cart/shopping', [App\Http\Controllers\HomeController::class, 'items
 //product related routes
 //resource controller for storing product
 //get subcategory for product
-Route::resource('phones', 'PhonesTabletsController');
+Route::resource('phones&tablets', 'PhonesTabletsController');
 Route::get('electronics', 'PhonesTabletsController@electronics')->name('phones.electronics');
+Route::get('electronics', 'PhonesTabletsController@sumsung_tab')->name('phones.sumsung');
 Route::get('supermarket', 'PhonesTabletsController@supermarket')->name('phones.electronics');
 Route::get('computers','PhonesTabletsController@computers')->name('computers');
 Route::get('supermarket','PhonesTabletsController@supermarket')->name('supermarket');
