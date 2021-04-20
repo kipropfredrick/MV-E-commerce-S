@@ -6,9 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Product list</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <style type="text/css">
 h2 {
 	color: #000;
@@ -19,6 +17,40 @@ h2 {
 	position: relative;
 	margin: 30px 0 80px;
 }
+@media (max-width: 992px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 992px) {
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(16.6%);
+    }
+
+    .carousel-inner .carousel-item-left.active,
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-16.6%);
+    }
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left{
+    transform: translateX(0);
+}
+
+
 h2 b {
 	color: #ffc000;
 }
@@ -58,8 +90,8 @@ h2::after {
 	left: 0;
 	right: 0;
 }
-.carousel .item h4 {
-	font-size: 18px;
+.carousel .item h5 {
+	font-size: 10px;
 	margin: 10px 0;
 }
 .carousel .item .btn {
@@ -160,185 +192,73 @@ h2::after {
 		<div class="col-md-12">
 			<h2>Trending <b>Products</b></h2>
 
-			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
-			<!-- Carousel indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>
-			<!-- Wrapper for carousel items -->
-			<div class="carousel-inner">
-				<div class="item carousel-item active">
-					<div class="row">
-						<div class="col-sm-3">
-							<div class="thumb-wrapper">
-								<div class="img-box">
-                                    <a href="{{route('product.details')}}"><img src="https://www.priceinkenya.com/images/products/large/oppo-f17-pro-8gb128gb-ZrAMqOevJ3.jpg" class="img-responsive img-fluid"  height="50px" width="220px" alt=""></a>
+			<div class="container text-center my-3">                <div class="row mx-auto my-auto">
+                    <div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
+                        <div class="carousel-inner w-100" role="listbox">
+                            @if (count($products)>0)
+                           @foreach ($products as $product)
+                           <div class="carousel-item {{$product['id']==1 ? 'active':''}}">
+                            <div class="col-lg-2">
+                                <img class="img-fluid" src="/images/{{$product['image_path']}}">
+                                <h5>Apple iPhone</h5>
+                                <p class="item-price"><span>$269.00</span><strike> $289.00</strike></p>
+                                <form action="{{route('add.cart',$product->id)}}" method="GET">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" value="{{ $product->id }}" id="id" name="id">
+                                    <input type="hidden" value="{{ $product->name }}" id="name" name="name">
+                                    <input type="hidden" value="{{ $product->price }}" id="price" name="price">
+                                    <input type="hidden" value="{{ $product->image_path }}" id="img" name="img">
+                                    <input type="hidden" value="{{ $product->slug }}" id="slug" name="slug">
+                                    <input type="hidden" value="1" id="quantity" name="quantity">
+                                    <button class="">Add to cart</button>                                </form>
+                            </div>
+                        </div>
+                           @endforeach
+                            @endif
+                        </div>
+                        <a class="carousel-control-prev bg-dark w-auto" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next bg-dark w-auto" href="#myCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-								</div>
-								<div class="thumb-content">
-									<h4>Apple iPad</h4>
-									<p class="item-price"><span>$369.00</span><br><strike>$400.00</strike> </p>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="thumb-wrapper">
-								<div class="img-box">
-									<img src="https://www.91-img.com/pictures/140632-v5-oppo-f17-pro-diwali-edition-mobile-phone-large-1.jpg?tr=q-60" class="img-responsive img-fluid" width="220px" alt="">
-								</div>
-								<div class="thumb-content">
-									<h4>Sony Headphone</h4>
-									<p class="item-price"><span>$23.99</span><br><strike>$25.00</strike> </p>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="thumb-wrapper">
-								<div class="img-box">
-									<img src="https://images.yaoota.com/9-hHDlYGhTw2wQKJghj_18fGRdQ=/trim/yaootaweb-production-ke/media/crawledproductimages/2a3815faadddd239a3e77810a6c1e7f2163e5ff2.jpg" class="img-responsive img-fluid" width="220px" alt="">
-								</div>
-								<div class="thumb-content">
-									<h4>Macbook Air</h4>
-									<p class="item-price"> <span>$649.00</span><br><strike>$899.00</strike></p>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="thumb-wrapper">
-								<div class="img-box">
-									<img src="https://tsalutecelectronics.com/wp-content/uploads/2018/06/56.jpg" class="img-responsive img-fluid" width="220px" alt="">
-								</div>
-								<div class="thumb-content">
-									<h4>Nikon DSLR</h4>
-									<p class="item-price"> <span>$250.00</span><br><strike>$315.00</strike></p>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="item carousel-item">
-					<div class="row">
-						<div class="col-sm-3">
-							<div class="thumb-wrapper">
-								<div class="img-box">
-									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" width="220px" alt="">
-								</div>
-								<div class="thumb-content">
-									<h4>Sony Play Station</h4>
-									<p class="item-price"> <span>$269.00</span><br><strike>$289.00</strike></p>
-									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="thumb-wrapper">
-								<div class="img-box">
-									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" width="220px" alt="">
-								</div>
-								<div class="thumb-content">
-									<h4>Macbook Pro</h4>
-									<p class="item-price"><span>$269.00</span><br><strike>$289.00</strike></p>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="thumb-wrapper">
-								<div class="img-box">
-									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" width="220px" alt="">
-								</div>
-								<div class="thumb-content">
-									<h4>Bose Speaker</h4>
-									<p class="item-price"><span>$269.00</span><br><strike>$289.00</strike></p>
 
-									<a href="#" class="btn btn-primary">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="thumb-wrapper">
-								<div class="img-box">
-									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" width="220px" alt="">
-								</div>
-								<div class="thumb-content">
-									<h4>Samsung Galaxy S8</h4>
-									<p class="item-price"><span>$269.00</span><br><strike>$289.00</strike></p>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="item carousel-item">
-					<div class="row">
-						<div class="col-sm-3">
-							<div class="thumb-wrapper">
-								<div class="img-box">
-									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" width="220px" alt="">
-								</div>
-								<div class="thumb-content">
-									<h4>Apple iPhone</h4>
-									<p class="item-price"><span>$269.00</span><br><strike>$289.00</strike></p>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="thumb-wrapper">
-								<div class="img-box">
-									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" width="220px" alt="">
-								</div>
-								<div class="thumb-content">
-									<h4>Canon DSLR</h4>
-									<p class="item-price"><span>$269.00</span><br><strike>$289.00</strike></p>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="thumb-wrapper">
-								<div class="img-box">
-									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" width="220px" alt="">
-								</div>
-								<div class="thumb-content">
-									<h4>Google Pixel</h4>
-									<p class="item-price"><span>$269.00</span><br><strike>$289.00</strike></p>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="thumb-wrapper">
-								<div class="img-box">
-									<img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" width="220px" alt="">
-								</div>
-								<div class="thumb-content">
-									<h4>Apple Watch</h4>
-									<p class="item-price"><span>$269.00</span><br><strike>$289.00</strike></p>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Carousel controls -->
-			<a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
-				<i class="fa fa-angle-left"></i>
-			</a>
-			<a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
-				<i class="fa fa-angle-right"></i>
-			</a>
-		</div>
+
+
 		</div>
 	</div>
 </div>
 </body>
+<script>
+    $('#myCarousel').carousel({
+  interval: 10000
+})
+
+$('.carousel .carousel-item').each(function(){
+    var minPerSlide = 3;
+    var next = $(this).next();
+    if (!next.length) {
+    next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+
+    for (var i=0;i<minPerSlide;i++) {
+        next=next.next();
+        if (!next.length) {
+        	next = $(this).siblings(':first');
+      	}
+
+        next.children(':first-child').clone().appendTo($(this));
+      }
+});
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>

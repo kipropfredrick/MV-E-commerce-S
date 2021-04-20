@@ -11,10 +11,10 @@ class CartController extends Controller
     //
     public function shop()
     {
-        $products = Product::all();
+        $product=Product::where('price','>',500)->inRandomOrder()->get()->take(8);
         //dd($products);
         $category=Categories::get();
-        return view('shop')->withTitle('SHOPILYV | SHOP')->with(['products' => $products,'category'=>$category]);
+        return view('shop')->withTitle('SHOPILYV | SHOP')->with(['products' => $product,'category'=>$category]);
     }
     public function create()
     {
