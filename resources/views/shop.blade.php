@@ -108,7 +108,7 @@ div.content {
         @include('product.product_view')
     </div>
     <br>
-    
+
     @include('product.product_category')
     @include('body.footer')
     <!-- Optional JavaScript -->
