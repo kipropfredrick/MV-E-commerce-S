@@ -16,7 +16,7 @@
                         <a class="nav-link" href="{{route('phones')}}">Phones </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Auto&Garden&Building </a>
+                        <a class="nav-link" href="{{route('allgrocery')}}">Supermarket </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Sports&Sightseeing</a>

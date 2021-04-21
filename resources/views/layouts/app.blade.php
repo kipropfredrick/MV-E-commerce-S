@@ -143,7 +143,7 @@ body {
 </head>
 <body>
 <nav class="navbar navbar-expand-xl sticky-top navbar-light bg-warning">
-	<a href="/" class="navbar-brand"> <img src="/images/i.png"  width="100px;" height="100px" alt=""> Brand<b>Name</b></a>
+	<a href="/" class="navbar-brand"> <img src="/images/i.png"  width="60px;" height="60px" alt=""> Brand<b>Name</b></a>
 	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 		<span class="navbar-toggler-icon"></span>
 	</button>

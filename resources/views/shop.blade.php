@@ -4,7 +4,7 @@
 
     <!--Carousel Wrapper-->
     <div class="container-fluid">
-        <div class="row mb-5">
+        <div class="row mb-1">
             <div class="col-md-12">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">

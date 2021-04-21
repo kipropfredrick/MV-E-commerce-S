@@ -56,4 +56,20 @@ Route::get('kidstablet','PhonesTabletsController@kidstablet')->name('kidstablet'
 Route::get('samsung_tablets','PhonesTabletsController@samsung_tablets')->name('samsung_tablets');
 Route::get('tcl_tab','PhonesTabletsController@tcl_tab')->name('tcl_tab');
 
+//supermarket
+//Grocery
+Route::get('allgrocery','Supermarket@allgrocery')->name('allgrocery');
+//Drinks
+Route::get('beers','supermarket@beers')->name('beers');
+Route::get('carbonated','Supermarket@carbonated')->name('carbonated');
+Route::get('water','Supermarket@water')->name('water');
+//food capboard
+Route::get('cerials','Supermarket@cerials')->name('cerials');
+Route::get('cookingingriedients','supermarket@cookingingriedients')->name('cookingingriedients');
+Route::get('snacks','Supermarket@snacks')->name('tcl_tab');
+//households
+Route::get('bathroomcleaner','Supermarket@bathroomcleaner')->name('bathroomcleaner');
+Route::get('bulbbatteries','Supermarket@bulbbatteries')->name('bulbbatteries');
+Route::get('freshners','Supermarket@freshners')->name('freshners');
+
 

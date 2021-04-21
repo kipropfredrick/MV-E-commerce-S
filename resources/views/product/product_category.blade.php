@@ -138,8 +138,8 @@ button:active {
         <img class="card-img-top" src="https://image.freepik.com/free-vector/cosmetic-advertisement-with-realistic-design_23-2147925114.jpg" alt="" />
         </a>
         <div class="card-body">
-            <p class="h6"><small class="text-muted">Apple</small></br>Butterflies Hand composite</p>
-            <p class="h5 m-0">$782.00</p>
+            <p class="h6"><small class="text-muted"> Butterflies Hand composite</small></p>
+            <p class="h5 m-0"> $782.00</p>
         </div>
     </div>
 </div>
@@ -152,11 +152,14 @@ button:active {
 <div class="row mb-5">
     <div class="col-md-12">
         <div class="card">
+            <div class="card-header">
+                <h6 style="float: right;">SEE ALL></h6>
+            </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-2">
                         <div class="card">
-                            <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
+                            <img class="card-img-top" src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/25/983523/1.jpg?4194" alt="" />
                             <div class="card-footer">
                                 <p class="card-text"><a href="#">Apple</a></p>
                             </div>
@@ -164,7 +167,7 @@ button:active {
                     </div>
                     <div class="col-md-2">
                         <div class="card">
-                            <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
+                            <img class="card-img-top" src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/14/511682/1.jpg?0506" alt="" />
                             <div class="card-footer">
                                 <p class="card-text"><a href="#">Samsung</a></p>
                             </div>
@@ -172,7 +175,7 @@ button:active {
                     </div>
                     <div class="col-md-2">
                         <div class="card">
-                            <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
+                            <img class="card-img-top" src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/75/944232/1.jpg?9391" alt="" />
                             <div class="card-footer">
                                 <p class="card-text"><a href="#">IBM</a></p>
                             </div>
@@ -180,7 +183,7 @@ button:active {
                     </div>
                     <div class="col-md-2">
                         <div class="card">
-                            <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
+                            <img class="card-img-top" src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/29/758482/1.jpg?1756" alt="" />
                             <div class="card-footer">
                                 <p class="card-text"><a href="#">HP</a></p>
                             </div>
@@ -188,7 +191,7 @@ button:active {
                     </div>
                     <div class="col-md-2">
                         <div class="card">
-                            <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
+                            <img class="card-img-top" src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/45/801803/1.jpg?5355" alt="" />
                             <div class="card-footer">
                                 <p class="card-text"><a href="#">Sony</a></p>
                             </div>
@@ -196,7 +199,7 @@ button:active {
                     </div>
                     <div class="col-md-2">
                         <div class="card">
-                            <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
+                            <img class="card-img-top" src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/63/778343/1.jpg?4886" alt="" />
                             <div class="card-footer">
                                 <p class="card-text"><a href="#">Asus</a></p>
                             </div>
