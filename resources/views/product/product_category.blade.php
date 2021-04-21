@@ -117,7 +117,7 @@ button:active {
                    <hr>
                    <div class="p-lists">
                        <div class="d-flex justify-content-between mt-2"> <span>Agriculture</span> <span>23</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span> <a href="{{route('phones&tablets.index')}}">Phones & Tablets</a> </span> <span>46</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span> <a href="{{route('phonestablets')}}">Phones & Tablets</a> </span> <span>46</span> </div>
                        <div class="d-flex justify-content-between mt-2"> <span>Smart Tv</span> <span>13</span> </div>
                        <div class="d-flex justify-content-between mt-2"> <span>Furnitures</span> <span>33</span> </div>
                        <div class="d-flex justify-content-between mt-2"> <span>Groceries</span> <span>12</span> </div>
@@ -132,10 +132,9 @@ button:active {
                <div class="row g-1">
 <div class="container">
 	<div class="row mb-5">
-@foreach ($category->take(4) as $product )
 <div class="col-md-3 mb-4">
     <div class="card">
-        <a href="{{route('product.show',$product->id)}}">
+        <a href="">
         <img class="card-img-top" src="https://image.freepik.com/free-vector/cosmetic-advertisement-with-realistic-design_23-2147925114.jpg" alt="" />
         </a>
         <div class="card-body">
@@ -144,7 +143,6 @@ button:active {
         </div>
     </div>
 </div>
-@endforeach
 	</div>
  </div>
  </div>

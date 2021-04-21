@@ -11,7 +11,7 @@ class PhonesTabletsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function tablets()
     {
 
         $phones=Product::where('category_id',1)->get();
@@ -19,13 +19,21 @@ class PhonesTabletsController extends Controller
         return view('categories.phoneandtablets.subcat',compact('phones'));
     }
 
-    public function sumsung_tab()
+    public function phonetablet()
     {
 
         // $phones=Product::where('category_id',1)->get();
        //dd($phones);
-        return view('categories.phoneandtablets.Tablets.Tablets.samsung_tablets');
+        return view('categories.phoneandtablets.Phonestablets');
     }
+
+    public function phones()
+    {
+
+
+        return view('categories.phoneandtablets.Phones.all_phones_types');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

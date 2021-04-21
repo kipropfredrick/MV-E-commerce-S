@@ -10,20 +10,10 @@
                         <a class="nav-link" href="/">Home / </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Clothing&Jewelry  </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Living</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Decoration</a>
-                            <a class="dropdown-item" href="#">Furniture</a>
-                            <a class="dropdown-item" href="#">Textile</a>
-                            <a class="dropdown-item" href="#">Lighting</a>
-                            <a class="dropdown-item" href="#">Kitchenware</a>
-                        </div>
+                        <a class="nav-link" href="">Tablets </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Stationery&Office </a>
+                        <a class="nav-link" href="{{route('phones')}}">Phones </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Auto&Garden&Building </a>

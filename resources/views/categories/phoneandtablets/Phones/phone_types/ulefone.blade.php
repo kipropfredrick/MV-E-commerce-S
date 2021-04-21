@@ -1,10 +1,7 @@
-@extends('layouts.app')
-@section('content')
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>top_selling_items</title>
+<title>Ulephone Phones</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
 <style>
    body {
    background-color: #eee
@@ -109,10 +106,10 @@ button:active {
    color: #fff
 }
 </style>
-
-    <!--Carousel Wrapper-->
+       @include('layouts.app')
+       <h2><b>Ulephone Phones</b></h2>
+          <!--Carousel Wrapper-->
     <div class="container-fluid">
-        <h2><b>PHONES</b>cATEGORY</h2>
         <div class="row mb-5">
             <div class="col-md-12">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -123,21 +120,21 @@ button:active {
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://via.placeholder.com/1200x350" class="d-block w-100" alt="" />
+                        <img src="https://i.ytimg.com/vi/CW1LS0jJLU4/maxresdefault.jpg" class="d-block w-100" height="350px;" alt="" />
                         <div class="carousel-caption d-none d-md-block">
                             <h5>First slide label</h5>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://via.placeholder.com/1200x350" class="d-block w-100" alt="" />
+                        <img src="https://i.ytimg.com/vi/giGymlSzjKo/maxresdefault.jpg" class="d-block w-100" height="350px;" alt="" />
                         <div class="carousel-caption d-none d-md-block">
                             <h5>First slide label</h5>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://via.placeholder.com/1200x350" class="d-block w-100" alt="" />
+                        <img src="https://i.ytimg.com/vi/XeJTCzU4Pqo/maxresdefault.jpg" class="d-block w-100" height="350px;" alt="" />
                         <div class="carousel-caption d-none d-md-block">
                             <h5>First slide label</h5>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -156,64 +153,75 @@ button:active {
             </div>
         </div>
     </div>
-<div class="row mb-5">
-    <div class="col-md-12">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Electronics, Computers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Clothing, Jewelry</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home, Living</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Decoration</a>
-                            <a class="dropdown-item" href="#">Furniture</a>
-                            <a class="dropdown-item" href="#">Textile</a>
-                            <a class="dropdown-item" href="#">Lighting</a>
-                            <a class="dropdown-item" href="#">Kitchenware</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Stationery, Office</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Auto, Garden, Building</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sports, Sightseeing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Cosmetics, Care</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Hobby, Film, Music, Books</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+    <!--/Carousel Wrapper-->
+     {{-- navigation bar --}}
+     <div class="row mb-5">
+        <div class="col-md-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/">Home / </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Phones&Tablets / </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Phone / </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="">Ulephone</a>
+                        </li>
+                        {{-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home, Living</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Decoration</a>
+                                <a class="dropdown-item" href="#">Furniture</a>
+                                <a class="dropdown-item" href="#">Textile</a>
+                                <a class="dropdown-item" href="#">Lighting</a>
+                                <a class="dropdown-item" href="#">Kitchenware</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Stationery, Office</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Auto, Garden, Building</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sports, Sightseeing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Cosmetics, Care</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Hobby, Film, Music, Books</a>
+                        </li> --}}
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </div>
-</div>
+
+     {{-- end of navigation bar --}}
+
       <div class="container-fluid mt-5 mb-5">
        <div class="row g-2">
            <div class="col-md-3">
                <div class="t-products p-2">
-                   <h6 class="text-uppercase">Computer & Periferals</h6>
+                   <h6 class="text-uppercase">Ulephone Phones</h6>
                    <div class="p-lists">
-                       <div class="d-flex justify-content-between mt-2"> <span>Laptops</span> <span>23</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Desktops</span> <span>46</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Monitors</span> <span>13</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Mouse</span> <span>33</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Keyboard</span> <span>12</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Printer</span> <span>53</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Mobiles</span> <span>203</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>CPU</span> <span>23</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Tecno</span> <span>23</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Xiaomi</span> <span>46</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Lenovo</span> <span>13</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Huwawei</span> <span>33</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Htc</span> <span>12</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>infinix</span> <span>53</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>Motorola</span> <span>203</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span>U</span> <span>23</span> </div>
                    </div>
                </div>
                <div class="processor p-2">
@@ -278,34 +286,35 @@ button:active {
                </div>
            </div>
            <div class="col-md-9">
-            <div class="row g-2">
-                @if (count($category->product)>0)
-                 @foreach ($category->product as $product)
-                 <div class="col-md-4">
-                     <a href="{{route('product.related',$product->slug)}}">
-                      <div class="product py-4">
-                          <div class="text-center"> <img src="/images/{{$product->image_path}}" width="200"> </div>
-                          <div class="about text-center"> </a>
-                              <h5>{{$product->subcat_name}}</h5> <s><span>${{$product->oprice}}</span></s> <span>${{$product->price}}</span>
 
-                              <form action="{{route('add.cart',$product->id)}}" method="GET">
-                                  {{ csrf_field() }}
-                                  <input type="hidden" value="{{ $product->id }}" id="id" name="id">
-                                  <input type="hidden" value="{{ $product->cat_name }}" id="name" name="name">
-                                  {{-- <input type="hidden" value="{{ $product->price }}" id="price" name="price"> --}}
-                                  <input type="hidden" value="{{ $product->image_path }}" id="img" name="img">
-                                  <input type="hidden" value="{{ $product->slug }}" id="slug" name="slug">
-                                  <input type="hidden" value="1" id="quantity" name="quantity">
-                          </div>
-                          <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center"> <button class="btn btn-primary text-uppercase">Add to cart</button>
-                              {{-- <div class="add"> <span class="product_fav"><i class="fa fa-heart-o"></i></span> <span class="product_fav"><i class="fa fa-opencart"></i></span> </div> --}}
-                          </div>
-                          </form>
-                      </div>
-                 </div>
-                 @endforeach
-                @endif
+               <div class="row g-2">
+                   <br>
+                   <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="https://media.extra.com/s/aurora/100142445_800/Samsung-Galaxy-Tab-S6-105-Inch-Book-Cover-Keyboard-Arabic-and-English-Gray?locale=en-GB,en-*,*" alt="" />
+                        <div class="card-body">
+                            <p class="h6"><small class="text-muted">Samsung Galaxy Tab S6, 10.5 Inch Book Cover Keyboard</small></p>
+                            <p class="h5 m-0">$782.00</p>
+                        </div>
+                        <div class="card-footer p-0">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-light">
+                                    <i class="fa fa-cart-plus"></i>
+                                    <span>Add Cart</span>
+                                </button>
+                                {{-- <button type="button" class="btn btn-light">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </button> --}}
+                                <button type="button" class="btn btn-light">
+                                    <i class="fa fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               </div>
+
            </div>
        </div>
    </div>
-@endsection

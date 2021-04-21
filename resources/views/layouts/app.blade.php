@@ -151,14 +151,14 @@ body {
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 		<div class="navbar-nav">
 			<a href="/" class="nav-item nav-link active">Home</a>
-			<a href="{{route('product.getCategory')}}" class="nav-item nav-link">Add prodcut</a>
+			<a href="" class="nav-item nav-link">Add prodcut</a>
 			<div class="nav-item dropdown">
 				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
 				<div class="dropdown-menu">
-					<a href="{{route('phones&tablets.index')}}" class="dropdown-item">Phones and Tablets</a>
-					<a href="{{route('supermarket')}}" class="dropdown-item">Supermarket</a>
-					<a href="{{route('computers')}}" class="dropdown-item">Electronics</a>
-					<a href="{{route('fashion')}}" class="dropdown-item">Fashion</a>
+					<a href="" class="dropdown-item">Phones and Tablets</a>
+					<a href="" class="dropdown-item">Supermarket</a>
+					<a href="" class="dropdown-item">Electronics</a>
+					<a href="" class="dropdown-item">Fashion</a>
 				</div>
 			</div>
 		</div>

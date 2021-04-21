@@ -167,7 +167,7 @@ button:active {
                             <a class="nav-link" href="/">Home / </a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{route('phones&tablets.index')}}">Phones&Tablets</a>
+                            <a class="nav-link" href="">Phones&Tablets</a>
                         </li>
                         {{-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -209,7 +209,7 @@ button:active {
                <div class="t-products p-2">
                    <h6 class="text-uppercase">Phones & Tablets</h6>
                    <div class="p-lists">
-                       <div class="d-flex justify-content-between mt-2"> <span> <a href="{{route('phones.sumsung')}}">Samsung tablets</a></span> <span>23</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span> <a href="">Samsung tablets</a></span> <span>23</span> </div>
                        <div class="d-flex justify-content-between mt-2"> <span>Xiaomi</span> <span>46</span> </div>
                        <div class="d-flex justify-content-between mt-2"> <span>Lenovo</span> <span>13</span> </div>
                        <div class="d-flex justify-content-between mt-2"> <span>Huwawei</span> <span>33</span> </div>
