@@ -167,7 +167,7 @@ button:active {
                             <a class="nav-link" href="/">Home / </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('phones&tablets.index')}}">Phones&Tablets / </a>
+                            <a class="nav-link" href="{{route('phonestablets')}}">Phones&Tablets / </a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="">Tablets</a>
@@ -211,14 +211,9 @@ button:active {
                <div class="t-products p-2">
                    <h6 class="text-uppercase">Tablets</h6>
                    <div class="p-lists">
-                       <div class="d-flex justify-content-between mt-2"> <span>Tecno</span> <span>23</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Xiaomi</span> <span>46</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Lenovo</span> <span>13</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Huwawei</span> <span>33</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Htc</span> <span>12</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>infinix</span> <span>53</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Motorola</span> <span>203</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Ulephone</span> <span>23</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <a href="{{route('kidstablet')}}"><span>kids_tablets</span></a> <span>23</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <a href="{{route('samsung_tablets')}}"><span>Sumsung_tablets</span></a> <span>46</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <a href="{{route('tcl_tab')}}"><span>Tcl_tablets</span></a> <span>13</span> </div>
                    </div>
                </div>
                <div class="processor p-2">

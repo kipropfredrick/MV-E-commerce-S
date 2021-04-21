@@ -155,7 +155,7 @@ body {
 			<div class="nav-item dropdown">
 				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
 				<div class="dropdown-menu">
-					<a href="#" class="dropdown-item">Web Design</a>
+					<a href="{{route('phonestablets')}}" class="dropdown-item">Phone & Tablets</a>
 					<a href="#" class="dropdown-item">Web Development</a>
 					<a href="#" class="dropdown-item">Graphic Design</a>
 					<a href="#" class="dropdown-item">Digital Marketing</a>

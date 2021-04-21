@@ -167,10 +167,10 @@ button:active {
                             <a class="nav-link" href="/">Home / </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Phones&Tablets / </a>
+                            <a class="nav-link" href="{{route('phonestablets')}}">Phones&Tablets / </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Phones / </a>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{route('phones')}}">Phones / </a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="">Infinix</a>
@@ -214,14 +214,14 @@ button:active {
                <div class="t-products p-2">
                    <h6 class="text-uppercase">Infinix Phones</h6>
                    <div class="p-lists">
-                       <div class="d-flex justify-content-between mt-2"> <span>Tecno</span> <span>23</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Xiaomi</span> <span>46</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Lenovo</span> <span>13</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Huwawei</span> <span>33</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Htc</span> <span>12</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>infinix</span> <span>53</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Motorola</span> <span>203</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Ulephone</span> <span>23</span> </div>
+                    <div class="d-flex justify-content-between mt-2"><a href="{{route('apple')}}"> <span>Apple</span></a> <span>23</span> </div>
+                    <div class="d-flex justify-content-between mt-2"> <a href="{{route('xiaomi')}}"><span>Xiaomi</span> </a><span>46</span> </div>
+                    <div class="d-flex justify-content-between mt-2"> <a href="{{route('lenovo')}}"><span>Lenovo</span></a> <span>13</span> </div>
+                    <div class="d-flex justify-content-between mt-2"> <a href="{{route('huwawei')}}"><span>Huwawei</span></a>  <span>33</span> </div>
+                    <div class="d-flex justify-content-between mt-2"> <a href="{{route('nokia')}}"><span>Nokia</span></a> <span>12</span> </div>
+                    <div class="d-flex justify-content-between mt-2"> <a href="{{route('infinix')}}"><span>infinix</span></a> <span>53</span> </div>
+                    <div class="d-flex justify-content-between mt-2"> <a href="{{route('motorola')}}"><span>Motorola</span></a> <span>203</span> </div>
+                    <div class="d-flex justify-content-between mt-2"> <a href="{{route('ulefone')}}"><span>Ulephone</span></a> <span>23</span> </div>
                    </div>
                </div>
                <div class="processor p-2">

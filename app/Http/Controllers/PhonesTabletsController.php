@@ -11,13 +11,6 @@ class PhonesTabletsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function tablets()
-    {
-
-        $phones=Product::where('category_id',1)->get();
-       //dd($phones);
-        return view('categories.phoneandtablets.subcat',compact('phones'));
-    }
 
     public function phonetablet()
     {
@@ -33,6 +26,109 @@ class PhonesTabletsController extends Controller
 
         return view('categories.phoneandtablets.Phones.all_phones_types');
     }
+    public function apple()
+    {
+
+
+        return view('categories.phoneandtablets.Phones.phone_types.apple');
+    }
+    public function huwawei()
+    {
+
+
+        return view('categories.phoneandtablets.Phones.phone_types.huwawei');
+    }
+    public function infinix()
+    {
+
+
+        return view('categories.phoneandtablets.Phones.phone_types.infinix');
+    }
+    public function lenovo()
+    {
+
+
+        return view('categories.phoneandtablets.Phones.phone_types.lenovo');
+    }
+    public function motorola()
+    {
+
+
+        return view('categories.phoneandtablets.Phones.phone_types.motorola');
+    }
+    public function nokia()
+    {
+
+
+        return view('categories.phoneandtablets.Phones.phone_types.nokia');
+    }
+    public function samsung()
+    {
+
+
+        return view('categories.phoneandtablets.Phones.phone_types.samsung');
+    }
+    public function sony()
+    {
+
+
+        return view('categories.phoneandtablets.Phones.phone_types.sony');
+    }
+    public function ulefone()
+    {
+
+
+        return view('categories.phoneandtablets.Phones.phone_types.ulefone');
+    }
+    public function wiko()
+    {
+
+
+        return view('categories.phoneandtablets.Phones.phone_types.wiko');
+    }
+    public function xiaomi()
+    {
+
+
+        return view('categories.phoneandtablets.Phones.phone_types.xiaomi');
+    }
+//phonestablets/tablets view
+
+     public function tablets()
+    {
+
+
+    return view('categories.phoneandtablets.Tablets.all_tablets_types');
+    }
+    public function kidstablet()
+    {
+
+
+    return view('categories.phoneandtablets.Tablets.Tablets.kids_tablets');
+    }
+    public function samsung_tablets()
+    {
+
+
+    return view('categories.phoneandtablets.Tablets.Tablets.samsung_tablets');
+    }
+    public function tcl_tab()
+    {
+
+
+    return view('categories.phoneandtablets.Tablets.Tablets.tcl_tab');
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * Show the form for creating a new resource.

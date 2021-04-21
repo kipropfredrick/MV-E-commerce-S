@@ -10,7 +10,7 @@
                         <a class="nav-link" href="/">Home / </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Tablets </a>
+                        <a class="nav-link" href="{{route('tablets')}}">Tablets </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('phones')}}">Phones </a>
