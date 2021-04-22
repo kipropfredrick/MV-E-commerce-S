@@ -116,9 +116,9 @@ button:active {
                    <h6 class="text-uppercase">Top Picks for You</h6>
                    <hr>
                    <div class="p-lists">
-                       <div class="d-flex justify-content-between mt-2"> <span>Agriculture</span> <span>23</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span><a href="{{route('allgrocery')}}">Grocery</a></span> <span>23</span> </div>
                        <div class="d-flex justify-content-between mt-2"> <span> <a href="{{route('phonestablets')}}">Phones & Tablets</a> </span> <span>46</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <span>Smart Tv</span> <span>13</span> </div>
+                       <div class="d-flex justify-content-between mt-2"> <span><a href="{{route('Fashion')}}">Fashion</a></span> <span>13</span> </div>
                        <div class="d-flex justify-content-between mt-2"> <span>Furnitures</span> <span>33</span> </div>
                        <div class="d-flex justify-content-between mt-2"> <span>Groceries</span> <span>12</span> </div>
                        <div class="d-flex justify-content-between mt-2"> <span>Beauty</span> <span>53</span> </div>

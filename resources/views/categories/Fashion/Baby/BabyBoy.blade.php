@@ -1,6 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>grocery</title>
+<title>Fashion</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <style>
    body {
@@ -107,7 +107,7 @@ button:active {
 }
 </style>
        @include('layouts.app')
-       <h2><b>Grocery</b></h2>
+       <h2><b>Fashion</b></h2>
           <!--Carousel Wrapper-->
     <div class="container-fluid">
         <div class="row mb-5">
@@ -120,26 +120,26 @@ button:active {
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://ke.jumia.is/cms/2021/W06/Prime/KE_Prime_0121_SIS-(1).jpg" class="d-block w-100" height="350px;" alt="" />
+                        <img src="https://fdn.gsmarena.com/imgroot/news/19/06/xiaomi-mi-9t-malaysia-philippines/-1220x526/gsmarena_003.jpg" class="d-block w-100" height="350px;" alt="" />
                         <div class="carousel-caption d-none d-md-block">
                             <h5>First slide label</h5>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://ke.jumia.is/cms/TNG/L1/Grocery/sliders/1168_384-(1).png" class="d-block w-100" height="350px;" alt="" />
+                        <img src="https://blenderartists.org/uploads/default/original/3X/f/5/f54ae76a7216000ed8b1768b181ca258c2718ccd.jpg" class="d-block w-100" height="350px;" alt="" />
                         <div class="carousel-caption d-none d-md-block">
                             <h5>First slide label</h5>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </div>
                     </div>
-                    {{-- <div class="carousel-item">
+                    <div class="carousel-item">
                         <img src="https://i.ytimg.com/vi/XvAVOAPshYg/maxresdefault.jpg" class="d-block w-100" height="350px;" alt="" />
                         <div class="carousel-caption d-none d-md-block">
                             <h5>First slide label</h5>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -167,7 +167,7 @@ button:active {
                             <a class="nav-link" href="/">Home / </a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href=""> grocery</a>
+                            <a class="nav-link" href="">Fashion</a>
                         </li>
                         {{-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -207,20 +207,12 @@ button:active {
        <div class="row g-2">
            <div class="col-md-3">
                <div class="t-products p-2">
-                   <h6 class="text-uppercase">Grocery</h6>
-                   <h6><a href="{{route('Drinks')}}">Drinks</a> </h6>
+                   <h6 class="text-uppercase">Fashion</h6>
                    <div class="p-lists">
-                       <div class="d-flex justify-content-between mt-2"> <span> <a href="{{route('beers')}}">beers & wine</a></span> <span>23</span> </div>
-                       <div class="d-flex justify-content-between mt-2">  <a href="{{route('water')}}"><span>Water</span> </a> <span>46</span> </div>
-                       <div class="d-flex justify-content-between mt-2">  <a href="{{route('carbonated')}}"><span>Carbonated Drinks</span></a> <span>13</span> </div>
-                   <h6><a href="{{route('Food')}}">Food Capboard</a> </h6>
-                       <div class="d-flex justify-content-between mt-2">  <a href="{{route('cerials')}}"><span>Cerials</span></a> <span>33</span> </div>
-                       <div class="d-flex justify-content-between mt-2">  <a href="{{route('cookingingriedients')}}"><span>cooking ingridients</span></a> <span>33</span> </div>
-                       <div class="d-flex justify-content-between mt-2">  <a href="{{route('snacks')}}"><span>Snacks</span></a> <span>33</span> </div>
-                   <h6><a href="{{route('Households')}}">Households</a> </h6>
-                   <div class="d-flex justify-content-between mt-2">  <a href="{{route('snacks')}}"><span>Bathroomcleaner</span></a> <span>33</span> </div>
-                   <div class="d-flex justify-content-between mt-2">  <a href="{{route('snacks')}}"><span>Bulbs & Batteries</span></a> <span>33</span> </div>
-                   <div class="d-flex justify-content-between mt-2">  <a href="{{route('snacks')}}"><span>Freshners</span></a> <span>33</span> </div>
+                    <div class="d-flex justify-content-between mt-2"> <span> <a href="{{route('bathroomcleaner')}}">Bathroom items</a></span> <span>23</span> </div>
+                    <div class="d-flex justify-content-between mt-2">  <a href="{{route('freshners')}}"><span>Air freshners</span> </a> <span>46</span> </div>
+                    <div class="d-flex justify-content-between mt-2">  <a href="{{route('bulbbatteries')}}"><span>bulbs</span></a> <span>13</span> </div>
+                    <div class="d-flex justify-content-between mt-2">  <a href="{{route('cookingingriedients')}}"><span>cooking ingridients</span></a> <span>33</span> </div>
                    </div>
                </div>
                <div class="processor p-2">

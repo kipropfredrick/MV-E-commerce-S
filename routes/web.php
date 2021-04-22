@@ -60,16 +60,40 @@ Route::get('tcl_tab','PhonesTabletsController@tcl_tab')->name('tcl_tab');
 //Grocery
 Route::get('allgrocery','Supermarket@allgrocery')->name('allgrocery');
 //Drinks
+Route::get('Drinks','supermarket@Drinks')->name('Drinks');
 Route::get('beers','supermarket@beers')->name('beers');
 Route::get('carbonated','Supermarket@carbonated')->name('carbonated');
 Route::get('water','Supermarket@water')->name('water');
 //food capboard
+Route::get('Food','Supermarket@Food')->name('Food');
 Route::get('cerials','Supermarket@cerials')->name('cerials');
 Route::get('cookingingriedients','supermarket@cookingingriedients')->name('cookingingriedients');
-Route::get('snacks','Supermarket@snacks')->name('tcl_tab');
+Route::get('snacks','Supermarket@snacks')->name('snacks');
 //households
+Route::get('Households','Supermarket@Households')->name('Households');
 Route::get('bathroomcleaner','Supermarket@bathroomcleaner')->name('bathroomcleaner');
 Route::get('bulbbatteries','Supermarket@bulbbatteries')->name('bulbbatteries');
 Route::get('freshners','Supermarket@freshners')->name('freshners');
+
+//Fashion
+Route::get('Fashion','Fashion@Fashion')->name('Fashion');
+//Baby
+Route::get('baby','Fashion@baby')->name('baby');
+Route::get('BabyBoy','Fashion@BabyBoy')->name('BabyBoy');
+Route::get('BabyGirl','Fashion@BabyGirl')->name('BabyGirl');
+//Kid`s Fashion
+Route::get('kids','Fashion@kids')->name('kids');
+Route::get('Boys','Fashion@Boys')->name('Boys');
+Route::get('Girls','Fashion@Girls')->name('Girls');
+//Men`s Fashion
+Route::get('mens','Fashion@mens')->name('mens');
+Route::get('Pants','Fashion@Pants')->name('Pants');
+Route::get('Short','Fashion@Short')->name('Short');
+Route::get('Shirt','Fashion@Shirt')->name('Shirt');
+//Women`s Fashion
+Route::get('women','Fashion@women')->name('women');
+Route::get('Dress','Fashion@Dress')->name('Dress');
+Route::get('Jeans','Fashion@Jeans')->name('Jeans');
+Route::get('Skirt','Fashion@Skirt')->name('Skirt');
 
 

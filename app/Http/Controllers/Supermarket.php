@@ -13,7 +13,11 @@ class Supermarket extends Controller
         return view('categories.Supermarket.Grocery.allgrocery');
     }
     //drinks
+    public function Drinks ()
+    {
 
+        return view('categories.Supermarket.Grocery.Drinks.Drinks');
+    }
     public function beers ()
     {
 
@@ -31,6 +35,11 @@ class Supermarket extends Controller
     }
 
     //food capboard
+    public function Food ()
+    {
+
+        return view('categories.Supermarket.Grocery.Food Capboard.Food');
+    }
     public function cerials()
     {
 
@@ -48,6 +57,11 @@ class Supermarket extends Controller
     }
 
     //Households supplies
+    public function Households ()
+    {
+
+        return view('categories.Supermarket.Grocery.Households Supplies.Households');
+    }
     public function  bathroomcleaner()
     {
 

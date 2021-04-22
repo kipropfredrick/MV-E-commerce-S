@@ -1,6 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>top_selling_items</title>
+<title>Beers, Wines & Spirits</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <style>
    body {
@@ -107,7 +107,7 @@ button:active {
 }
 </style>
        @include('layouts.app')
-       <h2><b>Phones & tablets</b></h2>
+       <h2><b>Beers, Wines & Spirits</b></h2>
           <!--Carousel Wrapper-->
     <div class="container-fluid">
         <div class="row mb-5">
@@ -164,10 +164,19 @@ button:active {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Home / </a>
+                            <a class="nav-link" href="/">Home/</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="">Supermarket/</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{route('allgrocery')}}">Grocery/</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="">Drinks/</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="">Phones&Tablets</a>
+                            <a class="nav-link" href="{{route('beers')}}">Beers, Wines & Spirits</a>
                         </li>
                         {{-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
