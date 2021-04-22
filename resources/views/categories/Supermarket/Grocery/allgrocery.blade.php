@@ -106,68 +106,22 @@ button:active {
    color: #fff
 }
 </style>
-       @include('layouts.app')
-       <h2><b>Grocery</b></h2>
-          <!--Carousel Wrapper-->
-    <div class="container-fluid">
-        <div class="row mb-5">
-            <div class="col-md-12">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://ke.jumia.is/cms/2021/W06/Prime/KE_Prime_0121_SIS-(1).jpg" class="d-block w-100" height="350px;" alt="" />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://ke.jumia.is/cms/TNG/L1/Grocery/sliders/1168_384-(1).png" class="d-block w-100" height="350px;" alt="" />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </div>
-                    </div>
-                    {{-- <div class="carousel-item">
-                        <img src="https://i.ytimg.com/vi/XvAVOAPshYg/maxresdefault.jpg" class="d-block w-100" height="350px;" alt="" />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </div>
-                    </div> --}}
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-            </div>
-        </div>
-    </div>
-    <!--/Carousel Wrapper-->
+@include('layouts.app')
+<h2><b>Grocery</b></h2>
       {{-- Navigation bar --}}
       <div class="row mb-5">
         <div class="col-md-12">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Home / </a>
+                            <a class="nav-link active" href="/">Home></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href=""> grocery</a>
+                            <a class="nav-link" href="">Supermarket></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="">grocery</a>
                         </li>
                         {{-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -201,6 +155,7 @@ button:active {
             </nav>
         </div>
     </div>
+{{--starter--}}
 
       {{-- end of navigation bar --}}
       <div class="container-fluid mt-5 mb-5">
@@ -290,7 +245,7 @@ button:active {
                    <br>
                    <div class="col-md-3 mb-4">
                     <div class="card">
-                        <img class="card-img-top" src="https://cdn.sharafdg.com/cdn-cgi/image/width=600,height=600,fit=pad/assets/c/1/8/9/c189a5aec57a4c2f3462b3699497b489a4943104_S100541190_1.jpg" alt="" />
+                        <img class="card-img-top" src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/07/472982/1.jpg?1801" alt="" />
                         <div class="card-body">
                             <p class="h6"><small class="text-muted">xiaomi redmi 9t</small></p>
                             <p class="h5 m-0">$782.00</p>

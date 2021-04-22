@@ -138,6 +138,8 @@ body {
 	.input-group {
 		width: 100%;
 	}
+
+
 }
 </style>
 </head>
@@ -147,27 +149,18 @@ body {
 	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 		<span class="navbar-toggler-icon"></span>
 	</button>
+
 	<!-- Collection of nav links, forms, and other content for toggling -->
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
-		<div class="navbar-nav">
-			<a href="/" class="nav-item nav-link active">Home</a>
+		{{-- <div class="navbar-nav">
 			<a href="" class="nav-item nav-link">Add prodcut</a>
-			<div class="nav-item dropdown">
-				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
-				<div class="dropdown-menu">
-					<a href="" class="dropdown-item">Phones and Tablets</a>
-					<a href="" class="dropdown-item">Supermarket</a>
-					<a href="" class="dropdown-item">Electronics</a>
-					<a href="" class="dropdown-item">Fashion</a>
-				</div>
-			</div>
-		</div>
-		<form class="navbar-form form-inline">
-			<div class="input-group search-box">
-				<input type="text" id="search" class="form-control" placeholder="Search by Name">
-				<span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
-			</div>
-		</form>
+		</div> --}}
+        <form class="navbar-form form-inline">
+            <div class=" search-box ">
+                <input type="text" id="search" class="form-control" style="width:290%" placeholder="Search Product by Name">
+            </div>
+        </form>
+
 		<div class="navbar-nav ml-auto">
 			<a href="{{route('cart.index')}}" class="nav-item nav-link notifications"><i class="fa fa-cart-arrow-down" style="font-size: 2em;"></i><span class="badge">{{\Cart::getContent()->count()}}</span></a>
 			<div class="nav-item dropdown">

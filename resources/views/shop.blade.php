@@ -1,11 +1,22 @@
+<div class="row mb-4">
+    <div class="col-md-8">
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-2">
+    </div>
+</div>
+<br>
 @include('layouts.app')
 <!--Section: Block Content-->
 <section>
-
     <!--Carousel Wrapper-->
-    <div class="container-fluid">
-        <div class="row mb-1">
-            <div class="col-md-12">
+    <div class="container-fluid float-left">
+        <div class="row mb-5">
+            @include('mengamenu')
+            <div class="col-md-9 float-center">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -14,24 +25,19 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://www.beiersdorf.com/~/media/Beiersdorf/brands/overview/Beiersdorf-NIVEA-Body-range.jpg?rx=0&ry=0&rw=940&rh=528&mw=940&hash=4BDC710355B9E68650A9995EE426E2D1870CEDA6" class="d-block w-100" height="350px" alt="" />
+                        <img src="https://ke.jumia.is/cms/2021/W16/KE_JAS_RB_S.jpg" class="d-block w-100" height="350px" alt="" />
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://www.adruby.com/sites/default/files/image-extra/Fanta-Idiots-Are-Amazing-ads-af04.jpg" class="d-block w-100" height="350px"  alt="" />
+                        <img src="https://ke.jumia.is/cms/2021/W16/CP/KE_Cross_BrandsWk_Generic_0421_S.jpg" class="d-block w-100" height="350px"  alt="" />
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://images.mmorpg.com/images/heroes/features/12274.jpg" class="d-block w-100" height="350px"  alt="" />
+                        <img src="https://ke.jumia.is/cms/2021/SubCampaigns/W16/Fashion/KE_Phones_BrandWk_Nokia_0421_S.jpg" class="d-block w-100" height="350px"  alt="" />
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+
                         </div>
                     </div>
                 </div>
@@ -53,13 +59,16 @@
   <!--Section: Block Content-->
 
     </div>
-    @include('layouts.navbar')
-    <br>
     @include('product.product_view')
 
     @include('product.product_category')
 
     @include('product.Best_products')
+    @include('product.Product_layout1')
+    <br>
+    @include('product.Product_layout2')
+    @include('product.product_layout3')
+    @include('product.product_layout4')
 
     @include('product.Details_view')
     <br>
