@@ -206,38 +206,25 @@ button:active {
       <div class="container-fluid mt-5 mb-5">
        <div class="row g-2">
            <div class="col-md-3">
+
                <div class="t-products p-2">
                    <h6 class="text-uppercase">Phones & Tablets</h6>
                    <div class="p-lists">
-                       <div class="d-flex justify-content-between mt-2"> <span> <a href="{{route('samsung_tablets')}}">Samsung tablets</a></span> <span>23</span> </div>
-                       <div class="d-flex justify-content-between mt-2">  <a href="{{route('xiaomi')}}"><span>Xiaomi</span> </a> <span>46</span> </div>
-                       <div class="d-flex justify-content-between mt-2">  <a href="{{route('lenovo')}}"><span>Lenovo</span></a> <span>13</span> </div>
-                       <div class="d-flex justify-content-between mt-2">  <a href="{{route('huwawei')}}"><span>Huwawei</span></a> <span>33</span> </div>
-                       <div class="d-flex justify-content-between mt-2">  <a href="{{route('nokia')}}"><span>Nokia</span> </a> <span>12</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <a href="{{route('kidstablet')}}"><span>kids_tablets</span></a> <span>23</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <a href="{{route('samsung_tablets')}}"><span>Sumsung_tablets</span></a> <span>46</span> </div>
-                       <div class="d-flex justify-content-between mt-2"> <a href="{{route('tcl_tab')}}"><span>Tcl_tablets</span></a> <span>13</span> </div>
-                   </div>
+                   @foreach ($category->product as $category)
+                   <div class="d-flex justify-content-between mt-2"> <span> <a href="{{route('product.related',$category->slug)}}">{{$category->subcat_name}}</a></span> <span>({{App\Models\Product::where('category_id',$category->id)->count()}})</span> </div>
+                   @endforeach
+                </div>
                </div>
                <div class="processor p-2">
                    <div class="heading d-flex justify-content-between align-items-center">
                        <h6 class="text-uppercase">Processor</h6> <span>--</span>
                    </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault"> Intel Core i7 </label> </div> <span>3</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Core i6 </label> </div> <span>4</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Core i3 </label> </div> <span>14</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Centron </label> </div> <span>8</span>
-                   </div>
-                   <div class="d-flex justify-content-between mt-2">
-                       <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> Intel Pentinum </label> </div> <span>14</span>
-                   </div>
+                   <?php {{$cats = DB::table('sub_categories')->orderby('subcat_name', 'ASC')->get();}}?>
+                   @foreach($cats as $cat)
+                   <li class="brandLi"><input type="checkbox" id="brandId" value="{{$cat->id}}" class="try"/>
+                <span class="pull-right">({{App\Models\Product::where('category_id',$cat->id)->count()}})</span>
+                 <b>  {{ucwords($cat->subcat_name)}}</b></li>
+                  @endforeach
                </div>
                <div class="brand p-2">
                    <div class="heading d-flex justify-content-between align-items-center">
@@ -281,31 +268,50 @@ button:active {
                </div>
            </div>
            <div class="col-md-9">
-
+                    @if(session()->has('cart'))
+                    <div class="alert alert-success">
+                        {{ session()->get('cart') }}
+                    </div>
+                @endif
                <div class="row g-2">
                    <br>
+                   @foreach ($subcategories as $product)
                    <div class="col-md-3 mb-4">
+
                     <div class="card">
-                        <img class="card-img-top" src="https://cdn.sharafdg.com/cdn-cgi/image/width=600,height=600,fit=pad/assets/c/1/8/9/c189a5aec57a4c2f3462b3699497b489a4943104_S100541190_1.jpg" alt="" />
-                        <div class="card-body">
-                            <p class="h6"><small class="text-muted">xiaomi redmi 9t</small></p>
-                            <p class="h5 m-0">$782.00</p>
+                       <a href="{{route('product.related',$product->slug)}}"> <img class="card-img-top" src="https://cdn.sharafdg.com/cdn-cgi/image/width=600,height=600,fit=pad/assets/c/1/8/9/c189a5aec57a4c2f3462b3699497b489a4943104_S100541190_1.jpg" alt="" />
+                        </a><div class="card-body">
+                            <p class="h6"><small class="text-muted">{{$product->subcat_name}}</small></p>
+                            <p class="h5 m-0"></p>
                         </div>
                         <div class="card-footer p-0">
-                            <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-light">
-                                    <i class="fa fa-cart-plus"></i>
-                                    <span>Add Cart</span>
-                                </button>
-                                {{-- <button type="button" class="btn btn-light">
-                                    <i class="fa fa-shopping-cart"></i>
-                                </button> --}}
-                                <button type="button" class="btn btn-light">
-                                    <i class="fa fa-heart"></i>
-                                </button>
-                            </div>
+                            <form action="{{route('add.cart',$product->id)}}" method="GET">
+                                {{ csrf_field() }}
+                                <input type="hidden" value="{{ $product->id }}" id="id" name="id">
+                                <input type="hidden" value="{{ $product->name }}" id="naame" name="naame">
+                                <input type="hidden" value="{{ $product->price }}" id="price" name="price">
+                                <input type="hidden" value="{{ $product->image_path }}" id="img" name="img">
+                                <input type="hidden" value="{{ $product->slug }}" id="slug" name="slug">
+                                <input type="hidden" value="1" id="quantity" name="quantity">
+                                {{-- <button class="btn btn-primary text-uppercase">Add to cart</button> --}}
+                                <div class="btn-group" role="group">
+                                    <button type="submit" class="btn btn-light">
+                                        <i class="fa fa-cart-plus"></i>
+                                        <span>Add Cart</span>
+                                    </button>
+                                    {{-- <button type="button" class="btn btn-light">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </button> --}}
+                                    <button type="button" class="btn btn-light">
+                                        <i class="fa fa-heart"></i>
+                                    </button>
+                                </div>
+                            </form>
+
                         </div>
                     </div>
+                </div>
+                @endforeach
                 </div>
 
                </div>
@@ -313,3 +319,31 @@ button:active {
            </div>
        </div>
    </div>
+   <script>
+       $('.try').click(function(){
+
+        //alert('hardeep');
+
+        var brand = [];
+        $('.try').each(function(){
+            if($(this).is(":checked")){
+
+                brand.push($(this).val());
+            }
+        });
+       // console.log(brand);
+        Finalbrand  = brand.toString();
+        //console.log(Finalbrand);
+        $.ajax({
+                type: 'get',
+                dataType: 'html',
+                url: '',
+                data: "brand=" + Finalbrand,
+                success: function (response) {
+                    console.log(response);
+                    $('#updateDiv').html(response);
+                }
+            });
+
+});
+   </script>

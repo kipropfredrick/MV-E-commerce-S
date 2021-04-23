@@ -9,7 +9,7 @@ class Supermarket extends Controller
     //supermarket
     public function allgrocery()
     {
-
+           
         return view('categories.Supermarket.Grocery.allgrocery');
     }
     //drinks

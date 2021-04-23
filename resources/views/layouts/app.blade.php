@@ -152,9 +152,10 @@ body {
 
 	<!-- Collection of nav links, forms, and other content for toggling -->
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
-		{{-- <div class="navbar-nav">
-			<a href="" class="nav-item nav-link">Add prodcut</a>
-		</div> --}}
+		<div class="navbar-nav">
+						<a href="{{route('create.product')}}" class="nav-item nav-link">Add prodcut</a>
+
+		</div>
         <form class="navbar-form form-inline">
             <div class=" search-box ">
                 <input type="text" id="search" class="form-control" style="width:290%" placeholder="Search Product by Name">

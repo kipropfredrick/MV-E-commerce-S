@@ -25,7 +25,12 @@ Route::get('/cart', 'CartController@cart')->name('cart.index');
 Route::post('/update', 'CartController@update')->name('cart.update');
 Route::post('/remove', 'CartController@remove')->name('cart.remove');
 Route::post('/clear', 'CartController@clear')->name('cart.clear');
-
+Route::resource('product', 'ProductController');
+Route::get('cart/slug/{slug}','ProductController@slugg')->name('home.slug');
+Route::get('/data/related/{slug}', 'ProductController@productsubcategory')->name('product.related');
+Route::get('category','ProductController@getCategories')->name('create.product');
+Route::get('category/subcategory/{id}/','ProductController@getSubcategory');
+Route::get('products','ProductController@allproducts')->name('all');
 //checkout routes
 Route::get('/checkout', 'CartController@create')->name('checkout')->middleware('auth');
 //orders routes
@@ -58,7 +63,7 @@ Route::get('tcl_tab','PhonesTabletsController@tcl_tab')->name('tcl_tab');
 
 //supermarket
 //Grocery
-Route::get('allgrocery','Supermarket@allgrocery')->name('allgrocery');
+Route::get('allgrocery/{slug}','Supermarket@allgrocery')->name('allgrocery');
 //Drinks
 Route::get('Drinks','supermarket@Drinks')->name('Drinks');
 Route::get('beers','supermarket@beers')->name('beers');

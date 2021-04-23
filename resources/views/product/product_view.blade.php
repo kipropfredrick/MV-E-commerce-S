@@ -14,52 +14,27 @@
 
             <div class="card-body">
                 <div class="row">
+                    @foreach ($subcategories->take(6) as $product)
                     <div class="col-md-2">
                         <div class="card">
-                            <img class="card-img-top" src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/68/971813/1.jpg?6713" alt="" />
-                            <p class="h6"><small class="text-muted"> Butterflies Hand composite</small></p>
-                            <p class="h5 m-1"> $782.00</p>
+                            <a href="{{route('product.related',$product->slug)}}">
+                                <img class="card-img-top" src="/images/{{$product->image_path}}" alt="" />
+                            </a>
+                            <p class="h6"><small class="text-muted">{{$product->subcat_name}}</small></p>
+                            <p class="h5 m-1"> {{$product->price}}</p>
+                             <form action="{{route('add.cart',$product->id)}}" method="GET">
+                            {{ csrf_field() }}
+                            <input type="hidden" value="{{ $product->id }}" id="id" name="id">
+                            <input type="hidden" value="{{ $product->name }}" id="naame" name="naame">
+                            <input type="hidden" value="{{ $product->price }}" id="price" name="price">
+                            <input type="hidden" value="{{ $product->image_path }}" id="img" name="img">
+                            <input type="hidden" value="{{ $product->slug }}" id="slug" name="slug">
+                            <input type="hidden" value="1" id="quantity" name="quantity">
+                            {{-- <button class="btn btn-primary text-uppercase">Add to cart</button> --}}
+                            </form>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <div class="card">
-                            <img class="card-img-top" src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/09/391992/1.jpg?7676" alt="" />
-
-                            <p class="h6"><small class="text-muted"> Butterflies Hand composite</small></p>
-                            <p class="h5 m-1">$782.00</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card">
-                            <img class="card-img-top" src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/06/871813/1.jpg?6659" alt="" />
-                            <p class="h6"><small class="text-muted"> Butterflies Hand composite</small></p>
-                            <p class="h5 m-1">$782.00</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card">
-                            <img class="card-img-top" src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/27/713803/1.jpg?5248" alt="" />
-                            <p class="h6"><small class="text-muted"> Butterflies Hand composite</small></p>
-                            <p class="h5 m-1">$782.00</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card">
-                            <img class="card-img-top" src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/49/181813/1.jpg?6771" alt="" />
-
-                            <p class="h6"><small class="text-muted"> Butterflies Hand composite</small></p>
-                            <p class="h5 m-1">$782.00</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card">
-                            <img class="card-img-top" src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/79/717043/1.jpg?9598" alt="" />
-
-                            <p class="h6"><small class="text-muted"> Butterflies Hand composite</small></p>
-                            <p class="h5 m-1">$782.00</p>
-
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

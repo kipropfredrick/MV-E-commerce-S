@@ -207,7 +207,6 @@ button:active {
     </div>
 
      {{-- end of navigation bar --}}
-
       <div class="container-fluid mt-5 mb-5">
        <div class="row g-2">
            <div class="col-md-3">
@@ -284,30 +283,41 @@ button:active {
 
                <div class="row g-2">
                    <br>
+                   @foreach ($sproduct->product as $item)
                    <div class="col-md-3 mb-4">
                     <div class="card">
-                        <img class="card-img-top" src="https://media.extra.com/s/aurora/100142445_800/Samsung-Galaxy-Tab-S6-105-Inch-Book-Cover-Keyboard-Arabic-and-English-Gray?locale=en-GB,en-*,*" alt="" />
-                        <div class="card-body">
-                            <p class="h6"><small class="text-muted">Samsung Galaxy Tab S6, 10.5 Inch Book Cover Keyboard</small></p>
-                            <p class="h5 m-0">$782.00</p>
+                        <a href="{{route('product.show',$item->id)}}"><img class="card-img-top" src="https://media.extra.com/s/aurora/100142445_800/Samsung-Galaxy-Tab-S6-105-Inch-Book-Cover-Keyboard-Arabic-and-English-Gray?locale=en-GB,en-*,*" alt="" />
+                        </a><div class="card-body">
+                            <p class="h6"><small class="text-muted">{{$item->name}}</small></p>
+                            <p class="h5 m-0">${{$item->price}}</p>
                         </div>
                         <div class="card-footer p-0">
-                            <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-light">
-                                    <i class="fa fa-cart-plus"></i>
-                                    <span>Add Cart</span>
-                                </button>
-                                {{-- <button type="button" class="btn btn-light">
-                                    <i class="fa fa-shopping-cart"></i>
-                                </button> --}}
-                                <button type="button" class="btn btn-light">
-                                    <i class="fa fa-heart"></i>
-                                </button>
-                            </div>
+                            <form action="{{route('add.cart',$item->id)}}" method="GET">
+                                {{ csrf_field() }}
+                                <input type="hidden" value="{{ $item->id }}" id="id" name="id">
+                                <input type="hidden" value="{{ $item->name }}" id="naame" name="naame">
+                                <input type="hidden" value="{{ $item->price }}" id="price" name="price">
+                                <input type="hidden" value="{{ $item->image_path }}" id="img" name="img">
+                                <input type="hidden" value="{{ $item->slug }}" id="slug" name="slug">
+                                <input type="hidden" value="1" id="quantity" name="quantity">
+                                {{-- <button class="btn btn-primary text-uppercase">Add to cart</button> --}}
+                                <div class="btn-group" role="group">
+                                    <button type="submit" class="btn btn-light">
+                                        <i class="fa fa-cart-plus"></i>
+                                        <span>Add Cart</span>
+                                    </button>
+                                    {{-- <button type="button" class="btn btn-light">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </button> --}}
+                                    <button type="button" class="btn btn-light">
+                                        <i class="fa fa-heart"></i>
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-
+                   @endforeach
                </div>
 
            </div>

@@ -22,6 +22,11 @@ class ProductController extends Controller
         $products = Product::all();
         return view('product.product_view',compact('products'));
     }
+    public function allproducts(){
+        $allproducts=Product::get();
+
+        return view('product.allproducts',compact('allproducts'));
+    }
 
     public function productbread(){
         return view('product.product_bread');
@@ -101,7 +106,7 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         //
-        // $subcategory=Sub_category::with(relations:'product')->first();
+        $subcategory=Sub_category::with(relations:'product')->first();
 
         //dd($subcategory->toArray());
         return view('product.product-details')->with('product',$product);
@@ -142,13 +147,16 @@ class ProductController extends Controller
         //
     }
     public function slugg($slug){
+
+        $subcategories=Sub_category::get();
         $category=Categories::with(relations:'product')->where('slug',$slug)->first();
-        return view('categories.computing.index',compact('category'));
+        return view('categories.phoneandtablets.Phonestablets',compact(['category','subcategories']));
     }
     public function productsubcategory($slug){
-        $sproduct=sub_category::with(relations:['product'])->where('slug',$slug)->first();
+        $subcategories=Sub_category::get();
+        $sproduct=Sub_category::with(relations:['product'])->where('slug',$slug)->first();
         //dd($sproduct->toArray());
-        return view('product.product_bread',compact('sproduct'));
+        return view('categories.phoneandtablets.Tablets.Tablets.samsung_tablets',compact('sproduct'));
 
     }
 

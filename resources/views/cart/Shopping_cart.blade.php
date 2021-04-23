@@ -88,24 +88,24 @@
 							</td>
 							<td data-th="Price">${{ $item->price }}</td>
 							<td data-th="Quantity">
-								<input type="number" class="form-control text-center" value="1">
-							</td>
+                                <form action="{{ route('cart.update') }}" method="POST">
+                                    {{ csrf_field() }}
+                                    <div class="col-lg-4">
+                                        <input type="hidden" value="{{ $item->id}}" id="id" name="id">
+                                        <input type="number" class="form-control form-control-sm" value="{{ $item->quantity }}"
+                                               id="quantity" name="quantity" style="width: 70px; margin-right: 10px;">
+                                        <button class="btn btn-secondary btn-sm" style="margin-right: 25px;"><i class="fa fa-edit"></i></button>
+                                    </div>
+                                </form>							</td>
 							<td data-th="Subtotal" class="text-center">${{ \Cart::get($item->id)->getPriceSum() }}</td>
 							@if(count($cartCollection)>0)
                             <td class="actions" data-th="">
-                                <form action="{{ route('cart.clear') }}" method="POST">
+                                <form action="{{ route('cart.remove') }}" method="POST">
                                     {{ csrf_field() }}
-                               <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-							</form>
-                            <form action="{{ route('cart.update') }}" method="POST">
-                                {{ csrf_field() }}
-                            <a href=""><button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></a>
-                        </form>
+                                    <input type="hidden" value="{{ $item->id }}" id="id" name="id">
+                                    <button class="btn btn-dark btn-sm" style="margin-right: 10px;"><i class="fa fa-trash"></i></button>
+                                </form>
                             </td>
-                             {{-- <form action="{{route('cart.update',$item->id)}}">
-                                <input name="quantity" type="number" min="{{$item->quantity}}" value="{{$item->quantity}}">
-                                <input type="submit" value="Save">
-                            </form> --}}
                             @endif
                             @endforeach
 						</tr>
