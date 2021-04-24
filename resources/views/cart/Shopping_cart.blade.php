@@ -57,6 +57,16 @@
 
 
 <div class="box">
+            @if(session()->has('update'))
+                <div class="alert alert-success">
+                    {{ session()->get('update') }}
+                </div>
+            @endif
+            @if(session()->has('delete'))
+                <div class="alert alert-danger">
+                    {{ session()->get('delete') }}
+                </div>
+            @endif
         <table id="cart" class="table table-hover table-condensed">
     				<thead>
 						<tr>
@@ -80,7 +90,9 @@
 						<tr>
 							<td data-th="Product">
 								<div class="row">
-									<div class="col-sm-3 hidden-xs"><img src="/images/{{ $item->attributes->image }}"/></div>
+									<div class="col-sm-3 hidden-xs"><img src="/images/{{ $item->attributes->image }}"
+                         style="width: 50px; height: 50px;"
+                    ></div>
 									<div class="col-sm-5">
 										<h4 class="nomargin">{{ $item->name }}</h4>
 									</div>
@@ -92,9 +104,9 @@
                                     {{ csrf_field() }}
                                     <div class="col-lg-4">
                                         <input type="hidden" value="{{ $item->id}}" id="id" name="id">
-                                        <input type="number" class="form-control form-control-sm" value="{{ $item->quantity }}"
+                                        <input type="number" max="12" min="{{ $item->quantity }}" class="form-control form-control-sm" value="{{ $item->quantity }}"
                                                id="quantity" name="quantity" style="width: 70px; margin-right: 10px;">
-                                        <button class="btn btn-secondary btn-sm" style="margin-right: 25px;"><i class="fa fa-edit"></i></button>
+                                        <button style="color:purple" class="btn btn-secondary btn-sm" style="margin-right: 25px;"><i  class="btn-update fa fa-refresh"></i></button>
                                     </div>
                                 </form>							</td>
 							<td data-th="Subtotal" class="text-center">${{ \Cart::get($item->id)->getPriceSum() }}</td>
@@ -109,6 +121,13 @@
                             @endif
                             @endforeach
 						</tr>
+                        <div class="col-lg-2">
+                            <form action="{{ route('cart.clear') }}" method="POST">
+                                {{ csrf_field() }}
+                                <button class="btn btn-secondary btn-sm"><i class="fa fa-trash"></i>Clear cart</button>
+                            </form>
+                        </div>
+                    </div>
 					</tbody>
 					<tfoot>
                         @if(count($cartCollection)>0)

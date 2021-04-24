@@ -48,7 +48,9 @@ public function add(Product $product){
         'name' => $product->name,
         'price' => $product->price,
         'quantity' => 1,
-        'attributes' => array(),
+        'attributes' => array(
+            'img'=>$product->image_path,
+        ),
         'associatedModel' => $product
         ));
         return back()->with('cart', 'Product added to cart successfully');
@@ -56,7 +58,7 @@ public function add(Product $product){
 }
 public function remove(Request $request){
     \Cart::remove($request->id);
-    return redirect()->route('cart.index')->with('success_msg', 'Item is removed!');
+    return back()->with('delete', 'Product removed from cart');
 }
 public function update(Request $request){
     \Cart::update($request->id,
@@ -66,7 +68,7 @@ public function update(Request $request){
                 'value' => $request->quantity
             ),
     ));
-    return redirect()->route('cart.index')->with('success_msg', 'Cart is Updated!');
+    return back()->with('update', 'cart updated successfully');
 }
 public function clear(){
     \Cart::clear();
@@ -75,5 +77,4 @@ public function clear(){
 public function Checkout(){
     return view('checkout.checkout');
 }
-
 }

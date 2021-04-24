@@ -31,10 +31,15 @@ Route::get('/data/related/{slug}', 'ProductController@productsubcategory')->name
 Route::get('category','ProductController@getCategories')->name('create.product');
 Route::get('category/subcategory/{id}/','ProductController@getSubcategory');
 Route::get('products','ProductController@allproducts')->name('all');
+
 //checkout routes
 Route::get('/checkout', 'CartController@create')->name('checkout')->middleware('auth');
 //orders routes
 Route::resource('orders', 'OrderController')->middleware('auth');
+
+//shop related routes
+Route::resource('shop', 'Shop');
+Route::resource('shops', 'ShopController');
 //Route::post('/oders/store', 'OrderController@store')->name('orders.store');
 //ROUTES FOR PRODUCTS
 //product related routes

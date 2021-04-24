@@ -144,6 +144,11 @@ body {
 </style>
 </head>
 <body>
+                  @if(session()->has('cart'))
+                    <div class="alert alert-success">
+                        {{ session()->get('cart') }}
+                    </div>
+                    @endif
 <nav class="navbar navbar-expand-xl sticky-top navbar-light bg-warning">
 	<a href="/" class="navbar-brand"> <img src="/images/i.png"  width="60px;" height="60px" alt=""> Brand<b>Name</b></a>
 	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -153,9 +158,11 @@ body {
 	<!-- Collection of nav links, forms, and other content for toggling -->
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 		<div class="navbar-nav">
-						<a href="{{route('create.product')}}" class="nav-item nav-link">Add prodcut</a>
-
+		<a href="{{route('create.product')}}" class="nav-item nav-link">Add prodcut</a>
 		</div>
+        <div class="navbar-nav">
+            <a href="{{route('shops.create')}}" class="nav-item nav-link">Sell</a>
+            </div>
         <form class="navbar-form form-inline">
             <div class=" search-box ">
                 <input type="text" id="search" class="form-control" style="width:290%" placeholder="Search Product by Name">

@@ -39,11 +39,11 @@ class OrderController extends Controller
         //dd($request->all());
         $request->validate([
             'shipping_fullname' => 'required',
-            'shipping_state' => 'required',
-            'shipping_city' => 'required',
+            // 'shipping_state' => 'required',
+            // 'shipping_city' => 'required',
             'shipping_address' => 'required',
             'shipping_phone' => 'required',
-            'shipping_zipcode' => 'required',
+            // 'shipping_zipcode' => 'required',
             // 'payment_method' => 'required',
         ]);
 
@@ -53,28 +53,28 @@ class OrderController extends Controller
         $order->order_number = uniqid('OrderNumber-');
         $order->shop_id=auth()->id();
         $order->shippping_fullname = $request->input('shipping_fullname');
-        $order->shippping_state = $request->input('shipping_state');
-        $order->shippping_city = $request->input('shipping_city');
+        // $order->shippping_state = $request->input('shipping_state');
+        // $order->shippping_city = $request->input('shipping_city');
         $order->shippping_address = $request->input('shipping_address');
         $order->shippping_phone = $request->input('shipping_phone');
-        $order->shippping_zipcode = $request->input('shipping_zipcode');
+        // $order->shippping_zipcode = $request->input('shipping_zipcode');
         // $order->shippping_email=$request->input('shipping_email');
         // $order->notes=$request->input('notes');
 
         if(!$request->has('billing_fullname')) {
             $order->billing_fullname = $request->input('shipping_fullname');
-            $order->billing_state = $request->input('shipping_state');
-            $order->billing_city = $request->input('shipping_city');
+            // $order->billing_state = $request->input('shipping_state');
+            // $order->billing_city = $request->input('shipping_city');
             $order->billing_address = $request->input('shipping_address');
             $order->billing_phone = $request->input('shipping_phone');
-            $order->billing_zipcode = $request->input('shipping_zipcode');
+            // $order->billing_zipcode = $request->input('shipping_zipcode');
         }else {
             $order->billing_fullname = $request->input('billing_fullname');
-            $order->billing_state = $request->input('billing_state');
-            $order->billing_city = $request->input('billing_city');
+            // $order->billing_state = $request->input('billing_state');
+            // $order->billing_city = $request->input('billing_city');
             $order->billing_address = $request->input('billing_address');
             $order->billing_phone = $request->input('billing_phone');
-            $order->billing_zipcode = $request->input('billing_zipcode');
+            // $order->billing_zipcode = $request->input('billing_zipcode');
         }
 
 
@@ -104,8 +104,7 @@ class OrderController extends Controller
         // }
 
         \Cart::clear();
-
-        return redirect()->route('home')->withMessage('Order has been placed');
+        return redirect()->route('home')->with('order', 'Product added to cart successfully');
 
     }
 

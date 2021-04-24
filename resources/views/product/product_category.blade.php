@@ -117,7 +117,11 @@ button:active {
                    <hr>
                    <div class="p-lists">
                 @foreach ($category as $cat)
-                <div class="d-flex justify-content-between mt-2"> <span><a href="{{route('home.slug',$cat->slug)}}">{{$cat->cat_name}}</a></span> <span>23</span> </div>
+                <div class="d-flex justify-content-between mt-2"> <span><a href="{{route('home.slug',$cat->slug)}}">{{$cat->cat_name}}</a></span>
+                <span>
+                    {{-- ({{App\Models\Sub_category::where('subcat_id',$cat->id)->count()}}) --}}
+                </span>
+            </div>
                 @endforeach
                 </div>
                </div>
@@ -131,7 +135,7 @@ button:active {
 <div class="col-md-3 mb-4">
     <div class="card">
         <a href="{{route('home.slug',$subcat->slug)}}">
-        <img class="card-img-top" src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/06/871813/1.jpg?6659" alt="" />
+        <img class="card-img-top" src="{{ asset('/images/'.$subcat->image_path) }}" alt="" />
         </a>
         <div class="card-body">
             <p class="h6"><small class="text-muted"> Butterflies Hand composite</small></p>

@@ -167,13 +167,13 @@ button:active {
                             <a class="nav-link" href="/">Home / </a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{route('phonestablets')}}">Phones&Tablets</a>
+                            <a class="nav-link" href="">Phones&Tablets</a>
                         </li>
                         {{-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                             </a>
-                            <div class="dropdown-menu">
+                            <div class="dropdown-myenu">
                                 <a class="dropdown-item" href="#"></a>
                                 <a class="dropdown-item" href="#"></a>
                                 <a class="dropdown-item" href="#"></a>
@@ -211,19 +211,22 @@ button:active {
                    <h6 class="text-uppercase">Phones & Tablets</h6>
                    <div class="p-lists">
                    @foreach ($category->product as $category)
-                   <div class="d-flex justify-content-between mt-2"> <span> <a href="{{route('product.related',$category->slug)}}">{{$category->subcat_name}}</a></span> <span>({{App\Models\Product::where('category_id',$category->id)->count()}})</span> </div>
+                   <div class="d-flex justify-content-between mt-2"> <span> <a href="{{route('product.related',$category->slug)}}">{{$category->subcat_name}}</a></span>
+                   <span>
+                    {{-- ({{App\Models\Sub_category::where('subcat_id',$category->id)->count()}}) --}}
+                </span> </div>
                    @endforeach
                 </div>
                </div>
                <div class="processor p-2">
                    <div class="heading d-flex justify-content-between align-items-center">
-                       <h6 class="text-uppercase">Processor</h6> <span>--</span>
+                       <h6 class="text-uppercase">Processor</h6> <span></span>
                    </div>
                    <?php {{$cats = DB::table('sub_categories')->orderby('subcat_name', 'ASC')->get();}}?>
                    @foreach($cats as $cat)
-                   <li class="brandLi"><input type="checkbox" id="brandId" value="{{$cat->id}}" class="try"/>
+                   <ul class="brandLi"><input type="checkbox" id="brandId" value="{{$cat->id}}" class="try"/>
                 <span class="pull-right">({{App\Models\Product::where('category_id',$cat->id)->count()}})</span>
-                 <b>  {{ucwords($cat->subcat_name)}}</b></li>
+                 <b>  {{ucwords($cat->subcat_name)}}</b></ul>
                   @endforeach
                </div>
                <div class="brand p-2">
@@ -272,14 +275,14 @@ button:active {
                     <div class="alert alert-success">
                         {{ session()->get('cart') }}
                     </div>
-                @endif
+                    @endif
                <div class="row g-2">
                    <br>
-                   @foreach ($subcategories as $product)
+                   @foreach ($category->product as $product)
                    <div class="col-md-3 mb-4">
 
                     <div class="card">
-                       <a href="{{route('product.related',$product->slug)}}"> <img class="card-img-top" src="https://cdn.sharafdg.com/cdn-cgi/image/width=600,height=600,fit=pad/assets/c/1/8/9/c189a5aec57a4c2f3462b3699497b489a4943104_S100541190_1.jpg" alt="" />
+                       <a href="{{route('product.show',$product->id)}}"> <img class="card-img-top" src="https://cdn.sharafdg.com/cdn-cgi/image/width=600,height=600,fit=pad/assets/c/1/8/9/c189a5aec57a4c2f3462b3699497b489a4943104_S100541190_1.jpg" alt="" />
                         </a><div class="card-body">
                             <p class="h6"><small class="text-muted">{{$product->subcat_name}}</small></p>
                             <p class="h5 m-0"></p>
@@ -310,6 +313,8 @@ button:active {
 
                         </div>
                     </div>
+
+
                 </div>
                 @endforeach
                 </div>

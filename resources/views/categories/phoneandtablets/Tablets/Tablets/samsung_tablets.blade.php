@@ -167,13 +167,13 @@ button:active {
                             <a class="nav-link" href="/">Home / </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('phonestablets')}}">Phones&Tablets / </a>
+                            <a class="nav-link" href="">Phones&Tablets / </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('tablets')}}">Tablets</a>
+                            <a class="nav-link" href="">Tablets</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{route('samsung_tablets')}}">Sumsung Tablets</a>
+                            <a class="nav-link" href="">Sumsung Tablets</a>
                         </li>
                         {{-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home, Living</a>
@@ -286,7 +286,7 @@ button:active {
                    @foreach ($sproduct->product as $item)
                    <div class="col-md-3 mb-4">
                     <div class="card">
-                        <a href="{{route('product.show',$item->id)}}"><img class="card-img-top" src="https://media.extra.com/s/aurora/100142445_800/Samsung-Galaxy-Tab-S6-105-Inch-Book-Cover-Keyboard-Arabic-and-English-Gray?locale=en-GB,en-*,*" alt="" />
+                        <a href="{{route('product.show',$item->id)}}"><img class="card-img-top" src="/images/{{$item->image_path}}" alt="" />
                         </a><div class="card-body">
                             <p class="h6"><small class="text-muted">{{$item->name}}</small></p>
                             <p class="h5 m-0">${{$item->price}}</p>

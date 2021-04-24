@@ -66,13 +66,13 @@ class ProductController extends Controller
             $imagePath = $request->file('file');
             $imageName = $imagePath->getClientOriginalName();
 
-            $path = $request->file('file')->storeAs('images', $imageName, 'public');
+            $path = $request->file('file')->storeAs('upload', $imageName, 'public');
           }
 
             $product->name = $imageName;
             $product->slug=Str::random(12);
-            $product->image_path = $imageName;
-            //$product->image_path = '/storage/'.$path;
+            //$product->image_path = $imageName;
+            $product->image_path = '/storage/'.$path;
             $product->name=$request->input('name');
             $product->price=$request->input('price');
             $product->oprice=$request->input('oprice');
@@ -82,7 +82,7 @@ class ProductController extends Controller
             $product->brand_id=$request->input('subcategory');
             $product->save();
 
-          return back()->with('success', 'Product uploaded successfully');
+          return redirect()->route('shops.index')->with('success', 'Product uploaded successfully');
 
     }
     public function getCategories()

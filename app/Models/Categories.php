@@ -13,7 +13,7 @@ class Categories extends Model
     return $this->hasMany('Product');
 }
 public function product(){
-  return $this->hasMany(related:'App\Models\Sub_category' ,foreignKey:'subcat_id' , localKey:'id');
+  return $this->hasMany(related:'App\Models\Sub_category' ,foreignKey:'subcat_id');
 
 }
 

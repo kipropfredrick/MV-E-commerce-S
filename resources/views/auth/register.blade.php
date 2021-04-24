@@ -51,7 +51,8 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                        </div>  <div class="form-group">
+                        </div>
+                        <div class="form-group">
                                                     <label for="exampleInputEmail1" class="text-uppercase">Email</label>
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                                 @error('email')
@@ -59,7 +60,16 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="text-uppercase">phone</label>
+                                <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+                                @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                        </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1" class="text-uppercase">Password</label>
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">

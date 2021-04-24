@@ -261,8 +261,8 @@ label.radio input:checked+span::before {
                     <div class="demo">
                         <ul id="lightSlider">
                             <li data-thumb="https://dream2000.com/pub/media/catalog/product/cache/9b6394f59e15b10e6dd47471b29c7ca4/x/i/xiaomi_poco_m3_4gb_128gb_yellow-1.jpg"> <img class="p-image" src="/images/{{$product->image_path}}" /> </li>
-                            <li data-thumb="/images/{{$product->image_path}}"> <img  class="p-image" src="/images/{{$product->image_path}}" /> </li>
-                            <li data-thumb="/images/{{$product->image_path}}"> <img class="p-image" src="/images/{{$product->image_path}}" /> </li>
+                            {{-- <li data-thumb="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_009-1.png"> <img  class="p-image" src="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_009-1.png" /> </li>
+                            <li data-thumb="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_008.png"> <img class="p-image" src="https://www.kibotek.com/wp-content/uploads/2020/11/kiboTEK_poco_m3_008.png" /> </li> --}}
 
                         </ul>
                     </div>
@@ -334,16 +334,10 @@ label.radio input:checked+span::before {
                         </div> --}}
                     </div>
                 </div>
-                <?php
-                $cats = DB::table('products')->orderby('name', 'ASC')->where('category_id',$product->id)->get();
-                //dd($cats->toArray())
-                ?>
-                @if ($cats->isEmpty())
-
-                @else
                 <div class="card mt-2"> <span>Similar items:</span>
+
                     <div class="similar-products mt-2 d-flex flex-row">
-                        @foreach ($cats as $item)
+                        @foreach ($product as $item)
                         <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://www.gizmochina.com/wp-content/uploads/2019/09/Xiaomi-Redmi-Note-8-1-500x500.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h6 class="card-title">$1,999</h6>
@@ -352,7 +346,6 @@ label.radio input:checked+span::before {
                         @endforeach
                     </div>
                 </div>
-                @endif
             </div>
         </div>
     </div>
