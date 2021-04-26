@@ -39,6 +39,7 @@ Route::resource('orders', 'OrderController')->middleware('auth');
 
 //shop related routes
 Route::resource('shop', 'Shop');
+Route::resource('pay', 'paymentController');
 Route::resource('shops', 'ShopController');
 //Route::post('/oders/store', 'OrderController@store')->name('orders.store');
 //ROUTES FOR PRODUCTS

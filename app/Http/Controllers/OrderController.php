@@ -44,12 +44,12 @@ class OrderController extends Controller
             'shipping_address' => 'required',
             'shipping_phone' => 'required',
             // 'shipping_zipcode' => 'required',
-            // 'payment_method' => 'required',
+            'paymentMethod' => 'required',
         ]);
 
         $order = new Order();
         $order->notes="to be delivered";
-        //$order->payment_methods="online";
+        $order->payment_methods=$request->input('paymentMethod');;
         $order->order_number = uniqid('OrderNumber-');
         $order->shop_id=auth()->id();
         $order->shippping_fullname = $request->input('shipping_fullname');
@@ -77,7 +77,8 @@ class OrderController extends Controller
             // $order->billing_zipcode = $request->input('billing_zipcode');
         }
 
-
+        $cartItem = \Cart::getContent();
+        if (count($cartItem)>0) {
         $order->grant_total = \Cart::getTotal();
         $order->item_count = \Cart::getContent()->count();
 
@@ -89,24 +90,22 @@ class OrderController extends Controller
 
         $order->save();
 
+
         $cartItems = \Cart::getContent();
 
         foreach($cartItems as $item) {
             $order->items()->attach($item->id, ['price'=> $item->price, 'quantityy'=> $item->quantity]);
         }
 
-        //$order->generateSubOrders();
-
-        // if (request('payment_method') == 'paypal') {
-
-        //     return redirect()->route('paypal.checkout', $order->id);
-
-        // }
-
         \Cart::clear();
-        return redirect()->route('home')->with('order', 'Product added to cart successfully');
+        return redirect()->route('home')->with('success', 'Your order placed successfully and order number is:'.$order->order_number);
+    }
+    else{
+        return back()->with('empty-order', 'your cart is empty,please add products to place order');
+        }
 
     }
+
 
     /**
      * Display the specified resource.

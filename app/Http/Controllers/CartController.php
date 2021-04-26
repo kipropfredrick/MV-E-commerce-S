@@ -13,7 +13,7 @@ class CartController extends Controller
     public function shop()
     {
 
-            $product=Product::where('price','>',500)->inRandomOrder()->take(6)->get();
+            $product=Product::where('price','>',500)->inRandomOrder()->get();
             $sales = \DB::table('products')
                 ->leftJoin('order__items','products.id','=','order__items.product_id')
                 ->selectRaw('products.*, COALESCE(count(order__items.product_id)) total')
@@ -40,7 +40,7 @@ class CartController extends Controller
     public function cart()  {
         $cartCollection = \Cart::getContent();
         //dd($cartCollection);
-        return view('cart.shopping_cart')->withTitle('SHOPILYV | SHOP')->with(['cartCollection' => $cartCollection]);;
+        return view('cart.payment')->withTitle('SHOPILYV | SHOP')->with(['cartCollection' => $cartCollection]);;
 }
 public function add(Product $product){
     \Cart::add(array(

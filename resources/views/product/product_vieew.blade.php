@@ -198,14 +198,14 @@ h2::after {
                         <div class="carousel-inner w-100" role="listbox">
                             @if (count($products)>0)
                            @foreach ($products as $product)
-                           <div class="carousel-item {{$product['id']==1 ? 'active':''}}">
-                            <div class="col-lg-2">
+                            <div class="carousel-item {{$product['id']==1 ? 'active':''}}">
+                             <div class="col-lg-2">
                                 <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://www.gizmochina.com/wp-content/uploads/2019/09/Xiaomi-Redmi-Note-8-1-500x500.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h6 class="card-title">$1,999</h6>
                                     </div>
-                                </div>
-                        </div>
+                            </div>
+                            </div>
                            @endforeach
                             @endif
                         </div>
@@ -224,6 +224,10 @@ h2::after {
 	</div>
 </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 <script>
     $('#myCarousel').carousel({
   interval: 10000
@@ -247,7 +251,4 @@ $('.carousel .carousel-item').each(function(){
       }
 });
 </script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>

@@ -334,7 +334,7 @@ label.radio input:checked+span::before {
                         </div> --}}
                     </div>
                 </div>
-                <div class="card mt-2"> <span>Similar items:</span>
+                {{-- <div class="card mt-2"> <span>Similar items:</span>
 
                     <div class="similar-products mt-2 d-flex flex-row">
                         @foreach ($product as $item)
@@ -345,11 +345,12 @@ label.radio input:checked+span::before {
                         </div>
                         @endforeach
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
     <br>
+    @include('product.product-related-slider')
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
     <script src='https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js'></script>
     <script>

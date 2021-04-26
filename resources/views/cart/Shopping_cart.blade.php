@@ -92,7 +92,8 @@
 								<div class="row">
 									<div class="col-sm-3 hidden-xs"><img src="/images/{{ $item->attributes->image }}"
                          style="width: 50px; height: 50px;"
-                    ></div>
+                    >
+                </div>
 									<div class="col-sm-5">
 										<h4 class="nomargin">{{ $item->name }}</h4>
 									</div>

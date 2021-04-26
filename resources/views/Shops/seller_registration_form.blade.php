@@ -40,7 +40,7 @@
 	<div class="row">
         <div class="col-md-4 login-sec">
             <h2 class="text-center">Register Now</h2>
-                    <form method="POST" action="{{ route('shops.store') }}">
+                    <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group">
