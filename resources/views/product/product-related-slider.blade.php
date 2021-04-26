@@ -83,23 +83,13 @@
 }
 </style>
 <body>
-        <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <h3>Product Slider</h3>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 hidden-xs">
-                <div class="controls pull-right">
-                    <a class="left fa fa-chevron-left btn btn-info " href="#carousel-example" data-slide="prev"></a>
-                    <a class="right fa fa-chevron-right btn btn-info" href="#carousel-example" data-slide="next"></a>
-                </div>
-            </div>
-        </div>
+
         <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel" data-type="multi">
             <div class="carousel-inner">
                 <div class="item active">
                     <div class="row">
                         <div class="col-md-3 col-sm-3 col-xs-12">
-                            <div class="slider-item">
+                            <div class="slider-item active">
                                 <div class="slider-image">
                                     <img src="https://dummyimage.com/250x200/#cccccc/1f1b1f.png" class="img-responsive" alt="a" />
                                 </div>
@@ -308,6 +298,17 @@
                 </div>
             </div>
         </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <h3>Product Slider</h3>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6 hidden-xs">
+        <div class="controls pull-right">
+            <a class="left fa fa-chevron-left btn btn-info " href="#carousel-example" data-slide="prev"></a>
+            <a class="right fa fa-chevron-right btn btn-info" href="#carousel-example" data-slide="next"></a>
+        </div>
+    </div>
 </div>
 </body>
 </html>

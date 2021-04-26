@@ -334,18 +334,7 @@ label.radio input:checked+span::before {
                         </div> --}}
                     </div>
                 </div>
-                {{-- <div class="card mt-2"> <span>Similar items:</span>
 
-                    <div class="similar-products mt-2 d-flex flex-row">
-                        @foreach ($product as $item)
-                        <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://www.gizmochina.com/wp-content/uploads/2019/09/Xiaomi-Redmi-Note-8-1-500x500.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title">$1,999</h6>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                </div> --}}
             </div>
         </div>
     </div>
