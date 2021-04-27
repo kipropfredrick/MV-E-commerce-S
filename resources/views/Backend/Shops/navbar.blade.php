@@ -596,15 +596,15 @@ footer
 		  </li>
 		  <li class="">
 		  <a class="nav-link text-left"  role="button" >
-              <a href="">
+              <a href="{{route('shops.index')}}">
           <i class="flaticon-bar-chart-1"></i> Orders
 		  </li></a>
 
-		 <li class="">
-		  <a class="nav-link text-left"  role="button" >
-       <i class="flaticon-bar-chart-1"></i> invoice
-         </a>
-		  </li>
+          <li class="">
+            <a class="nav-link text-left"  role="button" >
+                <a href="{{route('shops.index')}}">
+            <i class="flaticon-bar-chart-1"></i> Products
+            </li></a>
 		<li class="">
 		  <a class="nav-link text-left"  role="button" >
        <i class="flaticon-bar-chart-1"></i>  Bank
@@ -673,7 +673,7 @@ footer
 
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline navbar-search">
+          {{-- <form class="d-none d-sm-inline-block form-inline navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light " placeholder="Search for..." aria-label="Search">
               <div class="input-group-append">
@@ -682,7 +682,7 @@ footer
                 </button>
               </div>
             </div>
-          </form>
+          </form> --}}
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -711,7 +711,7 @@ footer
 							<a class="nav-icon dropdown" href="#" id="alertsDropdown" data-toggle="dropdown" aria-expanded="false">
 								<div class="position-relative">
 									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell align-middle"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-									<span class="indicator">4</span>
+									<span class="indicator">{{count($ordersPerDay)}}</span>
 								</div>
 							</a>
 							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right py-0" aria-labelledby="alertsDropdown">

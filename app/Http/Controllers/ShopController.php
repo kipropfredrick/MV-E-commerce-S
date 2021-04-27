@@ -2,8 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
+use App\Models\Product;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\Models\Shop;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+
 class ShopController extends Controller
 {
     /**
@@ -13,7 +20,8 @@ class ShopController extends Controller
      */
     public function index()
     {
-        return view('Backend.Shops.index');
+       $ordersPerDay=Order::whereDate('created_at', Carbon::today())->get();
+        return view('Backend.Shops.index',compact('ordersPerDay'));
         //
     }
 
@@ -24,7 +32,7 @@ class ShopController extends Controller
      */
     public function create()
     {
-        return view('Shops.seller_registration_form');
+        return view('Shops.auth.register');
         //
     }
 
@@ -37,15 +45,17 @@ class ShopController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'vendor'=>'required',
-            'password'=>'required',
-            'email'=>'required'
-       ]);
-       $shop= new Shop();
-       $shop->name=$request->input('vendor');
-       $shop->email=$request->input('email');
-       $shop->password=$request->input('password');
-       $shop->save();
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+            'password_confirmation' => 'required',
+        ]);
+
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
        return redirect()->route('shops.index');
         //
     }
@@ -93,5 +103,35 @@ class ShopController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function login()
+    {
+
+      return view('Shops.auth.login');
+    }
+
+    public function authenticate(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|string|email',
+            'password' => 'required|string',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return redirect()->route('shops.index');
+        }
+
+        return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
+    }
+
+    public function logout() {
+      Auth::logout();
+
+      return redirect()->route('login');
+    }
+    public function getsellerProduct(){
+        return view('Backend.Shops.products');
     }
 }

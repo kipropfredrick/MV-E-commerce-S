@@ -36,11 +36,20 @@ Route::get('products','ProductController@allproducts')->name('all');
 Route::get('/checkout', 'CartController@create')->name('checkout')->middleware('auth');
 //orders routes
 Route::resource('orders', 'OrderController')->middleware('auth');
+Route::get('orders/thankyou', 'OrderController@thankyou')->name('orders.thankyou')->middleware('auth');
+
+Route::get('orders/thankyou', 'OrderController@thankyou')->name('orders.thankyou')->middleware('auth');
 
 //shop related routes
+Route::get('shop', 'ShopController@index')->name('shop.index');
+Route::post('g','ShopController@store')->name('g');
+Route::resource('shops', 'ShopController');
+Route::post('shops', 'ShopController@login')->name('shops.login');
+Route::post('registers', 'ShopController@storeUser')->name('storeuser');
 Route::resource('shop', 'Shop');
 Route::resource('pay', 'paymentController');
-Route::resource('shops', 'ShopController');
+
+Route::get('payment', 'MpesaController@payment')->name('payment');
 //Route::post('/oders/store', 'OrderController@store')->name('orders.store');
 //ROUTES FOR PRODUCTS
 //product related routes

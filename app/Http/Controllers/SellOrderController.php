@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Payment;
+use App\Models\Order;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Session;
-class paymentController extends Controller
+
+class SellOrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +15,14 @@ class paymentController extends Controller
     public function index()
     {
         //
+        if(request()->ajax()) {
+            return datatables()->of(Order::select('*'))
+            ->addColumn('action', 'DataTables.action')
+            ->rawColumns(['action'])
+            ->addIndexColumn()
+            ->make(true);
+        }
+        return view('list');
     }
 
     /**
@@ -25,9 +33,6 @@ class paymentController extends Controller
     public function create()
     {
         //
-        $cartCollection = \Cart::getContent();
-
-        return view('cart.payment',compact('cartCollection'));
     }
 
     /**
@@ -38,26 +43,7 @@ class paymentController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
-
-        $request->validate([
-            'shipping_phone'=>'required',
-            'paymentMethod'=>'required'
-        ]);
-            if ($request->input("paymentMethod") =='mpesa' && $request->input("shipping_phone") !=='') {
-            return redirect()->route('payment');
-            $paid=new Payment();
-            $paid->user_id=auth()->id();
-            $paid->grant_total=\Cart::getTotal();
-            $paid->phone=$request->input('shipping_phone');
-            $paid->save();
-            return redirect()->route('orders.create')->with('paid', 'Payment successfull!');
-
-            }
-            else{
-                echo 'please pay first for order placement';
-            }
-
+        //
     }
 
     /**

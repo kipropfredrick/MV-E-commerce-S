@@ -11,9 +11,9 @@
 
 
 <div class="container">
-    @if(session()->has('empty-order'))
+    @if(session()->has('paid'))
                 <div class="alert alert-success">
-                    {{ session()->get('empty-order') }}
+                    {{ session()->get('paid') }}
                 </div>
             @endif
       <br>
@@ -44,8 +44,13 @@
             @foreach($cartCollection as $item)
             <li class="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
-                <img src="https://www.phonestablets.co.ke/images/products/2093/Mi-Smart-Band-5-2.jpg" width="30px"  height="30px" alt="Productimage">
-                </div>
+                    <?php $data=App\Models\Product::where('id',$item->id)->get();
+                    // echo $data;
+                     ?>
+                     @foreach ($data as $itemm)
+                     <img src="/images/{{$itemm->image_path}}" width="60px"  height="60px" alt="Productimage">
+
+                     @endforeach                </div>
                 <h6 class="my-0">Product name</h6>
                 <form action="{{ route('cart.update') }}" method="POST">
                     {{ csrf_field() }}
@@ -82,23 +87,23 @@
       </div>
       <div class="col-md-4 order-md-1">
         <h4 class="mb-3">Adress</h4>
-        <form action="{{route('orders.store')}}" method="POST" class="needs-validation" novalidate>
+        <form action="{{route('pay.store')}}" method="POST" class="needs-validation" novalidate>
             {{ csrf_field() }}
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="shipping_fullname">User Name<span class="text-muted"></span></label>
-                <input type="text" class="form-control" name="shipping_fullname" id="name" value="{{auth()->user()->name}}" placeholder="your name">
+                <input type="text" class="form-control" name="shipping_fullname" id="name" value="" placeholder="your name">
                 <div class="invalid-feedback">
                   Please enter a valid email address for shipping updates.
                 </div>
-              </div>
+              </div> --}}
 
-          <div class="mb-3">
+          {{-- <div class="mb-3">
             <label for="email">Email <span class="text-muted">(Optional)</span></label>
             <input type="email" class="form-control" id="email" placeholder="you@example.com">
             <div class="invalid-feedback">
               Please enter a valid email address for shipping updates.
             </div>
-          </div>
+          </div> --}}
 
           <div class="mb-3">
             <label for="address">Address</label>
@@ -127,7 +132,7 @@
             <strong>Ksh {{ \Cart::getTotal() }}</strong>
           </li>
           <hr class="mb-4">
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Place Order</button>
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Make Payment</button>
         </form>
       </div>
     </div>

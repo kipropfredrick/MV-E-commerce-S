@@ -291,7 +291,8 @@ button:active {
                             <form action="{{route('add.cart',$product->id)}}" method="GET">
                                 {{ csrf_field() }}
                                 <input type="hidden" value="{{ $product->id }}" id="id" name="id">
-                                <input type="hidden" value="{{ $product->name }}" id="naame" name="naame">
+                                <input type="hidden" value="{{ $product->shop_id }}" id="shop" name="shop">
+                                <input type="hidden" value="{{ $product->name }}" id="name" name="name">
                                 <input type="hidden" value="{{ $product->price }}" id="price" name="price">
                                 <input type="hidden" value="{{ $product->image_path }}" id="img" name="img">
                                 <input type="hidden" value="{{ $product->slug }}" id="slug" name="slug">

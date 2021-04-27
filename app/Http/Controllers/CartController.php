@@ -48,6 +48,7 @@ public function add(Product $product){
         'name' => $product->name,
         'price' => $product->price,
         'quantity' => 1,
+        'img'=>$product->image_path,
         'attributes' => array(
             'img'=>$product->image_path,
         ),

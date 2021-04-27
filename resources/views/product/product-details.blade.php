@@ -339,6 +339,9 @@ label.radio input:checked+span::before {
         </div>
     </div>
     <br>
+    <?php
+    $data=App\Models\Product::where('category_id',$product->id)->get();
+    ?>
     @include('product.product-related-slider')
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
     <script src='https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js'></script>

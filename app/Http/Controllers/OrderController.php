@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
-use Illuminate\Http\Request;
-
+//use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request as Request;
 class OrderController extends Controller
 {
     /**
@@ -22,9 +23,17 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
+        $cartCollection = \Cart::getContent();
+        //dd($cartCollection);
+        //$data= $request->input('shipping_phone');
+        //dd($data);
+        return view('cart.Shopping_cart')->withTitle('SHOPILYV | SHOP')->with(['cartCollection' => $cartCollection]);;
+    }
+    public function pay(){
+        return view('auth.login');
     }
 
     /**
@@ -36,7 +45,7 @@ class OrderController extends Controller
     public function store(Request $request)
     {
 
-        //dd($request->all());
+
         $request->validate([
             'shipping_fullname' => 'required',
             // 'shipping_state' => 'required',
@@ -150,6 +159,9 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         //
+    }
+    public function tahnkyou(){
+        return view('thankyou');
     }
 
 }
