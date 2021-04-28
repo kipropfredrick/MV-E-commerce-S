@@ -87,7 +87,7 @@
                                 <div class="d-md-flex align-items-center">
                                     <div>
                                         <h4 class="card-title">My Store</h4>
-                                        <h5 class="card-subtitle">ALL PRODUCTS</h5>
+                                        <h5 class="card-subtitle">Orders On Transit</h5>
                                     </div>
                                     {{-- <div class="ml-auto">
                                         <div class="dl">
@@ -100,10 +100,10 @@
                                         </div>
                                     </div> --}}
                                 </div>
-                                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                                    {{-- <h1 class="h3 mb-0 text-gray-800"></h1> data-toggle="modal" data-target="#add_product_modal" --}}
+                                {{-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                    <h1 class="h3 mb-0 text-gray-800"></h1> data-toggle="modal" data-target="#add_product_modal"
                                     <a href="{{route('create.product')}}"  class="btn btn-primary btn-sm">Add Product</a>
-                                  </div>
+                                  </div> --}}
                                   {{-- adding product modal --}}
                                   <div class="modal fade" id="add_product_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">

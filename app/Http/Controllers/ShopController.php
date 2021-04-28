@@ -35,7 +35,7 @@ class ShopController extends Controller
     public function completed($itemid){
         $affected = \DB::table('orders')
         ->where('id', $itemid)
-        ->update(['status' => 'completed']);
+        ->update(['status' => 'delivery on progress']);
         return back();
     }
     public function processedorders(){

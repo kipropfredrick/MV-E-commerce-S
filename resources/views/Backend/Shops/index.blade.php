@@ -87,7 +87,7 @@
                                 <div class="d-md-flex align-items-center">
                                     <div>
                                         <h4 class="card-title">My Store</h4>
-                                        <h5 class="card-subtitle">ALL PRODUCTS</h5>
+                                        <h5 class="card-subtitle">ALL Orders</h5>
                                     </div>
                                     {{-- <div class="ml-auto">
                                         <div class="dl">
@@ -219,7 +219,7 @@
                                             <td>
                                             <a href=""></a>
                                             <form action="{{route('order.update',$item->id)}}" method="POST">
-                                                {{ csrf_field() }} 
+                                                {{ csrf_field() }}
                                                 <button type="submit" class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Process order"><i class="fa fa-edit">Process order</i></button>
                                             </form>
                                                 {{-- <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button> --}}
