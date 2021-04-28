@@ -27,12 +27,26 @@ class ShopController extends Controller
         //
     }
     public function updateo($itemid){
-        $affected = \DB::table('orders')
+        $affected=\DB::table('orders')
         ->where('id', $itemid)
-        ->update(['status' => 'processing']);
-    return back();
+        ->where('status','pending')
+        ->where('id', 'delivery on progress')
+        ->get();
+        if (!$affected) {
+            \DB::table('orders')
+            ->where('id', $itemid)
+            ->where('status','pending')
+            ->where('id', 'delivery on progress')
+            ->update(['status' => 'processing']);
+        return back();
+        }
+        else{
+            return back();
+        }
+
     }
     public function completed($itemid){
+
         $affected = \DB::table('orders')
         ->where('id', $itemid)
         ->update(['status' => 'delivery on progress']);
@@ -40,11 +54,14 @@ class ShopController extends Controller
     }
     public function processedorders(){
         $orders=Order::where('shop_id',auth()->id())
-                         ->where('status','processing')
+                         ->where('status','delivery on progress')
                          ->get();
+        $totalorder=Order::count();
         $order=count($orders);
+        $percent=$order/$totalorder*100;
+
        $ordersPerDay=Order::whereDate('created_at', Carbon::today())->get();
-        return view('Backend.Shops.processed-orders',compact('ordersPerDay','orders','order'));
+        return view('Backend.Shops.processed-orders',compact('percent','ordersPerDay','orders','order'));
     }
 
     /**
@@ -155,5 +172,8 @@ class ShopController extends Controller
     public function getsellerProduct(){
         $sellerproducts=Product::where('shop_id',auth()->id())->get();
         return view('Backend.Shops.products',compact('sellerproducts'));
+    }
+    public function profile(){
+        return view('Backend.Shops.profile');
     }
 }

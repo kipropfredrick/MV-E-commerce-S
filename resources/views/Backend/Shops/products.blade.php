@@ -187,7 +187,7 @@
                                             <th class="border-top-0">O-Price</th>
                                             <th class="border-top-0">Price</th>
                                             <th class="border-top-0">Status</th>
-                                            <th class="border-top-0">Edit</th>
+                                            {{-- <th class="border-top-0">Edit</th> --}}
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -200,7 +200,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td><img src="https://www.phonesarena.co.ke/wp-content/uploads/2019/07/Samsung-Galaxy-A10.png"width="30px" height="30px" alt=""></td>
+                                            <td><img src="{{$item->image_path}}"width="30px" height="30px" alt=""></td>
                                             <td>500</td>
                                             <td>
                                                 <label class="label label-danger">{{$item->price}}</label>
@@ -208,10 +208,10 @@
                                             <td>
                                                 <a href="#" class="btn btn-success btn-sm active" tabindex="-1" role="button" aria-disabled="true">Active</a>
                                             </td>
-                                            <td>
+                                            {{-- <td>
                                                 <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
                                                 <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
-                                            </td>
+                                            </td> --}}
                                         </tr>
                                         @endforeach
                                     </tbody>

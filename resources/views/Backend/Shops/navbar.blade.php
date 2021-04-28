@@ -571,7 +571,7 @@ footer
          </a>
 		  </li>
 
-       <li class="has-sub">
+       {{-- <li class="has-sub">
 		  <a class="nav-link collapsed text-left" href="#collapseExample2" role="button" data-toggle="collapse" >
         <i class="flaticon-user"></i>Profile
          </a>
@@ -597,7 +597,7 @@ footer
 						</div>
 		     </div>
 		  </div>
-		  </li>
+		  </li> --}}
 		  <li class="">
 		  <a class="nav-link text-left"  role="button" >
               <a href="{{route('dashboard')}}">
@@ -759,9 +759,9 @@ footer
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
+              <a class="nav-link dropdown-toggle" href="{{route('profile')}}" id="userDropdown" role="button" data-toggle="dropdown">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
-                <img class="img-profile rounded-circle" src="http://www.goodmorningimagesdownload.com/wp-content/uploads/2019/12/Profile-Picture-4.jpg">
+                <img  class="img-profile rounded-circle" src="http://www.goodmorningimagesdownload.com/wp-content/uploads/2019/12/Profile-Picture-4.jpg">
               </a>
             </li>
 

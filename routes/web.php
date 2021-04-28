@@ -46,6 +46,7 @@ Route::post('g','ShopController@store')->name('g');
 Route::resource('shops', 'ShopController');
 Route::get('shops', 'ShopController@loginn')->name('shops.login');
 Route::get('seller/products', 'ShopController@getsellerProduct')->name('getproducts');
+Route::get('sell/seller/profile', 'ShopController@profile')->name('profile');
 Route::get('sell/dashboard', 'ShopController@seller')->name('dashboard');
 Route::get('sell/processed/orders', 'ShopController@processedorders')->name('processedorders');
 Route::post('sell/completed/orders/{itemid}', 'ShopController@completed')->name('completed');
