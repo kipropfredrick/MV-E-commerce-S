@@ -44,11 +44,15 @@ Route::get('orders/thankyou', 'OrderController@thankyou')->name('orders.thankyou
 Route::get('shop', 'ShopController@index')->name('shop.index');
 Route::post('g','ShopController@store')->name('g');
 Route::resource('shops', 'ShopController');
-Route::post('shops', 'ShopController@login')->name('shops.login');
+Route::get('shops', 'ShopController@loginn')->name('shops.login');
+Route::get('sell/dashboard', 'ShopController@seller')->name('dashboard');
+Route::post('auth/seller', 'ShopController@authenticate')->name('authenticate');
+Route::post('home', 'ShopController@logout')->name('slogout');
 Route::post('registers', 'ShopController@storeUser')->name('storeuser');
 Route::resource('shop', 'Shop');
 Route::resource('pay', 'paymentController');
 
+//payments
 Route::get('payment', 'MpesaController@payment')->name('payment');
 //Route::post('/oders/store', 'OrderController@store')->name('orders.store');
 //ROUTES FOR PRODUCTS

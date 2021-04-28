@@ -168,7 +168,7 @@ body {
 		<a href="{{route('create.product')}}" class="nav-item nav-link">Add prodcut</a>
 		</div>
         <div class="navbar-nav">
-            <a href="{{route('shops.create')}}" class="nav-item nav-link">Sell</a>
+            <a href="{{route('shops.login')}}" class="nav-item nav-link">Sell</a>
             </div>
         <form class="navbar-form form-inline">
             <div class=" search-box ">

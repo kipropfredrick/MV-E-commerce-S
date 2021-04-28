@@ -18,7 +18,7 @@ class ShopController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function seller()
     {
        $ordersPerDay=Order::whereDate('created_at', Carbon::today())->get();
         return view('Backend.Shops.index',compact('ordersPerDay'));
@@ -56,7 +56,7 @@ class ShopController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-       return redirect()->route('shops.index');
+       return redirect()->route('dashboard');
         //
     }
 
@@ -104,7 +104,7 @@ class ShopController extends Controller
     {
         //
     }
-    public function login()
+    public function loginn()
     {
 
       return view('Shops.auth.login');
@@ -120,7 +120,7 @@ class ShopController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->route('shops.index');
+            return redirect()->route('dashboard');
         }
 
         return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
@@ -128,7 +128,6 @@ class ShopController extends Controller
 
     public function logout() {
       Auth::logout();
-
       return redirect()->route('login');
     }
     public function getsellerProduct(){

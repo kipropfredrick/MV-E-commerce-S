@@ -551,7 +551,7 @@ footer
         <!-- Sidebar -->
     <nav class="fixed-top align-top" id="sidebar-wrapper" role="navigation">
        <div class="simplebar-content" style="padding: 0px;">
-				<a class="sidebar-brand" href="{{route('home')}}">
+				<a class="sidebar-brand" href="{{route('slogout')}}">
           <span class="align-middle">Brand Name</span>
         </a>
 
@@ -596,13 +596,13 @@ footer
 		  </li>
 		  <li class="">
 		  <a class="nav-link text-left"  role="button" >
-              <a href="{{route('shops.index')}}">
+              <a href="{{route('dashboard')}}">
           <i class="flaticon-bar-chart-1"></i> Orders
 		  </li></a>
 
           <li class="">
             <a class="nav-link text-left"  role="button" >
-                <a href="{{route('shops.index')}}">
+                <a href="{{route('dashboard')}}">
             <i class="flaticon-bar-chart-1"></i> Products
             </li></a>
 		<li class="">
