@@ -15,6 +15,10 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 		 <link rel="stylesheet" href="font/font/flaticon.css">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+         <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+         <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
   </head>
 
 
@@ -602,9 +606,14 @@ footer
 
           <li class="">
             <a class="nav-link text-left"  role="button" >
-                <a href="{{route('dashboard')}}">
+                <a href="{{route('getproducts')}}">
             <i class="flaticon-bar-chart-1"></i> Products
             </li></a>
+            <li class="">
+                <a class="nav-link text-left"  role="button" >
+                    <a href="{{route('processedorders')}}">
+                <i class="flaticon-bar-chart-1"></i>Placed Orders
+                </li></a>
 		<li class="">
 		  <a class="nav-link text-left"  role="button" >
        <i class="flaticon-bar-chart-1"></i>  Bank
@@ -711,7 +720,7 @@ footer
 							<a class="nav-icon dropdown" href="#" id="alertsDropdown" data-toggle="dropdown" aria-expanded="false">
 								<div class="position-relative">
 									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell align-middle"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-									<span class="indicator">{{count($ordersPerDay)}}</span>
+									<span class="indicator"></span>
 								</div>
 							</a>
 							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right py-0" aria-labelledby="alertsDropdown">

@@ -62,7 +62,7 @@ class OrderController extends Controller
         $order->order_number = uniqid('OrderNumber-');
         $order->shop_id=auth()->id();
         $order->shippping_fullname = $request->input('shipping_fullname');
-        // $order->shippping_state = $request->input('shipping_state');
+        //$order->image_path = $request->input('shipping_state');
         // $order->shippping_city = $request->input('shipping_city');
         $order->shippping_address = $request->input('shipping_address');
         $order->shippping_phone = $request->input('shipping_phone');
@@ -90,7 +90,7 @@ class OrderController extends Controller
         if (count($cartItem)>0) {
         $order->grant_total = \Cart::getTotal();
         $order->item_count = \Cart::getContent()->count();
-
+        
         $order->user_id = auth()->id();
 
         // if (request('payment_method') == 'paypal') {

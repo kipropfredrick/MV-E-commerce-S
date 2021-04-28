@@ -20,9 +20,31 @@ class ShopController extends Controller
      */
     public function seller()
     {
+        $orders=Order::where('shop_id',auth()->id())->get();
+        $order=count($orders);
        $ordersPerDay=Order::whereDate('created_at', Carbon::today())->get();
-        return view('Backend.Shops.index',compact('ordersPerDay'));
+        return view('Backend.Shops.index',compact('ordersPerDay','orders','order'));
         //
+    }
+    public function updateo($itemid){
+        $affected = \DB::table('orders')
+        ->where('id', $itemid)
+        ->update(['status' => 'processing']);
+    return back();
+    }
+    public function completed($itemid){
+        $affected = \DB::table('orders')
+        ->where('id', $itemid)
+        ->update(['status' => 'completed']);
+        return back();
+    }
+    public function processedorders(){
+        $orders=Order::where('shop_id',auth()->id())
+                         ->where('status','processing')
+                         ->get();
+        $order=count($orders);
+       $ordersPerDay=Order::whereDate('created_at', Carbon::today())->get();
+        return view('Backend.Shops.processed-orders',compact('ordersPerDay','orders','order'));
     }
 
     /**
@@ -131,6 +153,7 @@ class ShopController extends Controller
       return redirect()->route('login');
     }
     public function getsellerProduct(){
-        return view('Backend.Shops.products');
+        $sellerproducts=Product::where('shop_id',auth()->id())->get();
+        return view('Backend.Shops.products',compact('sellerproducts'));
     }
 }

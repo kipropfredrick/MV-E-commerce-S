@@ -71,7 +71,7 @@ class ProductController extends Controller
 
             $product->name = $imageName;
             $product->slug=Str::random(12);
-            //$product->image_path = $imageName;
+            $product->shop_id = auth()->id();
             $product->image_path = '/storage/'.$path;
             $product->name=$request->input('name');
             $product->price=$request->input('price');
@@ -82,7 +82,7 @@ class ProductController extends Controller
             $product->brand_id=$request->input('subcategory');
             $product->save();
 
-          return redirect()->route('shops.index')->with('success', 'Product uploaded successfully');
+          return redirect()->route('getproducts')->with('success', 'Product uploaded successfully');
 
     }
     public function getCategories()
