@@ -64,9 +64,9 @@
 										<div class="card" style="background-color: #e9383888; ">
 											<div class="card-body">
 												<h6 class="card-title mb-4"><i class="fa fa-cart-arrow-down fa-3x" aria-hidden="true"></i> <b>Orders</b> </h6>
-												<h1 class="display-5 mt-1 mb-3">{{$order}}</h1>
+												<h1 class="display-5 mt-1 mb-3"></h1>
 												<div class="mb-1">
-													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> {{$percent}}% </span>
+													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> </span>
 													<span class="text-muted">Since last week</span>
 												</div>
 											</div>
@@ -216,14 +216,14 @@
                                                 <a href="#" class="btn btn-success btn-sm active" tabindex="-1" role="button" aria-disabled="true">{{$item->status}}</a>
                                             </td>
 
-                                            <td>
+                                            {{-- <td>
                                             <a href=""></a>
-                                            <form action="{{route('onprogress',$item->id)}}" method="POST">
+                                            <form action="{{route('completed',$item->id)}}" method="POST">
                                                 {{ csrf_field() }}
                                                 <button type="submit" class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Process order"><i class="fa fa-edit">Process order</i></button>
                                             </form>
-                                                {{-- <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button> --}}
-                                            </td>
+                                                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                                            </td> --}}
                                         </tr>
                                         @endforeach
                                     </tbody>

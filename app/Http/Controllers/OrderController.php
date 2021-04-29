@@ -45,7 +45,9 @@ class OrderController extends Controller
     public function store(Request $request)
     {
 
-
+          $name=$request->input('proname');
+          $image=$request->input('image');
+          //dd($nam);
         $request->validate([
             'shipping_fullname' => 'required',
             // 'shipping_state' => 'required',
@@ -59,7 +61,7 @@ class OrderController extends Controller
         $order = new Order();
         $order->notes="to be delivered";
         $order->payment_methods=$request->input('paymentMethod');;
-        $order->order_number = uniqid('OrderNumber-');
+        $order->order_number = $this->randomString();
         $order->shop_id=auth()->id();
         $order->shippping_fullname = $request->input('shipping_fullname');
         //$order->image_path = $request->input('shipping_state');
@@ -87,19 +89,18 @@ class OrderController extends Controller
         }
 
         $cartItem = \Cart::getContent();
+
         if (count($cartItem)>0) {
         $order->grant_total = \Cart::getTotal();
         $order->item_count = \Cart::getContent()->count();
-        
-        $order->user_id = auth()->id();
 
+        $order->user_id = auth()->id();
+        $order->product_name=$name;
+        $order->image_path=$image;
         // if (request('payment_method') == 'paypal') {
         //     $order->payment_method = 'paypal';
         // }
-
         $order->save();
-
-
         $cartItems = \Cart::getContent();
 
         foreach($cartItems as $item) {
@@ -162,6 +163,16 @@ class OrderController extends Controller
     }
     public function tahnkyou(){
         return view('thankyou');
+    }
+    function randomString($length = 9) {
+        $str = "";
+        $characters = array_merge(range('A','Z'), range('a','z'), range('0','9'));
+        $max = count($characters) - 1;
+        for ($i = 0; $i < $length; $i++) {
+            $rand = mt_rand(0, $max);
+            $str .= $characters[$rand];
+        }
+        return $str;
     }
 
 }

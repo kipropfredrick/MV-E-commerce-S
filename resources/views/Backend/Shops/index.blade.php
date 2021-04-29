@@ -196,8 +196,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    
                                         @foreach ($orders as $item)
                                         <tr>
+                                        {{auth()->id()}}
                                             <input type="hidden" value="{{$item->id}}">
                                             <td>
                                                 <div class="d-flex align-items-center">

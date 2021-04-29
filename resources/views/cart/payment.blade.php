@@ -51,7 +51,7 @@
                      <img src="/images/{{$itemm->image_path}}" width="60px"  height="60px" alt="Productimage">
 
                      @endforeach                </div>
-                <h6 class="my-0">Product name</h6>
+                <h6 name="proname" class="my-0">{{$itemm->name}}</h6>
                 <form action="{{ route('cart.update') }}" method="POST">
                     {{ csrf_field() }}
                 <input type="hidden" value="{{ $item->id}}" id="id" name="id">

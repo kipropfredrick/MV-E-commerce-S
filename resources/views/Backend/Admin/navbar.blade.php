@@ -15,10 +15,6 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 		 <link rel="stylesheet" href="font/font/flaticon.css">
-         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
-         <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
-         <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-
   </head>
 
 
@@ -555,7 +551,7 @@ footer
         <!-- Sidebar -->
     <nav class="fixed-top align-top" id="sidebar-wrapper" role="navigation">
        <div class="simplebar-content" style="padding: 0px;">
-				<a class="sidebar-brand" href="{{route('slogout')}}">
+				<a class="sidebar-brand" href="index.html">
           <span class="align-middle">Brand Name</span>
         </a>
 
@@ -565,19 +561,19 @@ footer
 						Pages
 					</li>
 	<li class="">
-		  <a class="nav-link text-left active"  role="button"
+		  <a href="{{route('adashboard')}}"class="nav-link text-left active"  role="button"
 		  aria-haspopup="true" aria-expanded="false">
        <i class="flaticon-bar-chart-1"></i>  Dashboard
          </a>
 		  </li>
 
-       {{-- <li class="has-sub">
-		  <a class="nav-link collapsed text-left" href="#collapseExample2" role="button" data-toggle="collapse" >
+       <li class="has-sub">
+		  {{-- <a class="nav-link collapsed text-left" href="#collapseExample2" role="button" data-toggle="collapse" >
         <i class="flaticon-user"></i>Profile
-         </a>
+         </a> --}}
 		  <div class="collapse menu mega-dropdown" id="collapseExample2">
-        <div class="dropmenu" aria-labelledby="navbarDropdown">
-		<div class="container-fluid ">
+        {{-- <div class="dropmenu" aria-labelledby="navbarDropdown">
+		    <div class="container-fluid ">
 							<div class="row">
 								<div class="col-lg-12 px-2">
 									<div class="submenu-box">
@@ -600,28 +596,18 @@ footer
 		  </li> --}}
 		  <li class="">
 		  <a class="nav-link text-left"  role="button" >
-              <a href="{{route('dashboard')}}">
+              <a href="{{route('allorders')}}">
           <i class="flaticon-bar-chart-1"></i> Orders
 		  </li></a>
 
-          <li class="">
-            <a class="nav-link text-left"  role="button" >
-                <a href="{{route('getproducts')}}">
-            <i class="flaticon-bar-chart-1"></i> Products
-            </li></a>
-            <li class="">
-                <a class="nav-link text-left"  role="button" >
-                    <a href="{{route('processedorders')}}">
-                <i class="flaticon-bar-chart-1"></i>Placed Orders
-            </li></a>
-            <li class="">
-                    <a class="nav-link text-left"  role="button" >
-                        <a href="{{route('completed')}}">
-                    <i class="flaticon-bar-chart-1"></i>Completed Orders
-            </li></a>
+		 <li class="">
+		  <a href="{{route('allproducts')}}"class="nav-link text-left"  role="button" >
+       <i class="flaticon-bar-chart-1"></i> Products
+         </a>
+		  </li>
 		<li class="">
-		  <a href="{{route('transaction')}}" class="nav-link text-left"  role="button" >
-       <i class="flaticon-bar-chart-1"></i>Transactions
+		  <a href="{{route('shops')}}"class="nav-link text-left"  role="button" >
+       <i class="flaticon-bar-chart-1"></i> Shops
          </a>
 		  </li>
 		   <li class="sidebar-header">
@@ -699,12 +685,6 @@ footer
           </form> --}}
 
           <!-- Topbar Navbar -->
-          @if(session()->has('success'))
-                <div class="alert alert-success">
-                    {{ session()->get('success') }}
-                </div>
-            @endif
-          {{-- {{auth()->user()->name}} --}}
           <ul class="navbar-nav ml-auto">
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
@@ -731,7 +711,7 @@ footer
 							<a class="nav-icon dropdown" href="#" id="alertsDropdown" data-toggle="dropdown" aria-expanded="false">
 								<div class="position-relative">
 									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell align-middle"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-									<span class="indicator"></span>
+									<span class="indicator">4</span>
 								</div>
 							</a>
 							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right py-0" aria-labelledby="alertsDropdown">
@@ -770,9 +750,9 @@ footer
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="{{route('profile')}}" id="userDropdown" role="button" data-toggle="dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
-                <img  class="img-profile rounded-circle" src="http://www.goodmorningimagesdownload.com/wp-content/uploads/2019/12/Profile-Picture-4.jpg">
+                <img class="img-profile rounded-circle" src="http://www.goodmorningimagesdownload.com/wp-content/uploads/2019/12/Profile-Picture-4.jpg">
               </a>
             </li>
 

@@ -49,7 +49,9 @@ Route::get('seller/products', 'ShopController@getsellerProduct')->name('getprodu
 Route::get('sell/seller/profile', 'ShopController@profile')->name('profile');
 Route::get('sell/dashboard', 'ShopController@seller')->name('dashboard');
 Route::get('sell/processed/orders', 'ShopController@processedorders')->name('processedorders');
-Route::post('sell/completed/orders/{itemid}', 'ShopController@completed')->name('completed');
+Route::post('sell/completed/orders/{itemid}', 'ShopController@onprogress')->name('onprogress');
+Route::get('seller/transactions/', 'ShopController@transaction')->name('transaction');
+Route::get('seller/completed/orders', 'ShopController@completed')->name('completed');
 Route::post('order/update/{itemid}', 'ShopController@updateo')->name('order.update');
 Route::post('auth/seller', 'ShopController@authenticate')->name('authenticate');
 Route::post('home', 'ShopController@logout')->name('slogout');
@@ -57,6 +59,18 @@ Route::post('registers', 'ShopController@storeUser')->name('storeuser');
 Route::resource('shop', 'Shop');
 Route::resource('pay', 'paymentController');
 
+//admin routes
+Route::get('admin/dashboard', 'AdminController@index')->name('adashboard');
+Route::get('admin/dashboard/all/orders', 'AdminController@getAllorders')->name('allorders');
+Route::get('admin/dashboard/all/products', 'AdminController@allproducts')->name('allproducts');
+Route::get('admin/dashboard/all/shops', 'AdminController@shops')->name('shops');
+Route::get('admin/dashboard/all/getAllProducts', 'AdminController@getAllProducts');
+Route::post('admin/login','AdminController@adminlogin')->name('adminauthenticate');
+Route::get('admin/register','AdminController@adminregister')->name('adminregister');
+Route::post('admin/auth','AdminController@adminauthenticate')->name('adminauth');
+Route::get('admin/auth','AdminController@adminlogin')->name('adminauthh');
+Route::post('admin/store','AdminController@adminstore')->name('adminstore');
+Route::get('dashboard/admin','AdminController@admin')->name('admin');
 //payments
 Route::get('payment', 'MpesaController@payment')->name('payment');
 //Route::post('/oders/store', 'OrderController@store')->name('orders.store');

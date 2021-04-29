@@ -45,7 +45,7 @@ class ShopController extends Controller
         }
 
     }
-    public function completed($itemid){
+    public function onprogress($itemid){
 
         $affected = \DB::table('orders')
         ->where('id', $itemid)
@@ -62,6 +62,19 @@ class ShopController extends Controller
 
        $ordersPerDay=Order::whereDate('created_at', Carbon::today())->get();
         return view('Backend.Shops.processed-orders',compact('percent','ordersPerDay','orders','order'));
+    }
+    public function completed(){
+        $completed=Order::where('shop_id',auth()->id())
+                          ->where('status','completed')
+                          ->get();
+        return view('Backend.Shops.completed',compact('completed'));
+    }
+    public function transaction(){
+        //
+        $orders=Order::where('shop_id',auth()->id())
+                         ->where('status','delivery on progress')
+                         ->get();
+        return view('Backend.Shops.transactions',compact('orders'));
     }
 
     /**
@@ -89,13 +102,15 @@ class ShopController extends Controller
             'password' => 'required|string|min:8|confirmed',
             'password_confirmation' => 'required',
         ]);
-
-        User::create([
+        $role="seller";
+        $data=User::create([
             'name' => $request->name,
+            'is_admin'=>'seller',
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-       return redirect()->route('dashboard');
+    //dd($data);
+    return redirect()->route('shops.login');
         //
     }
 
@@ -155,15 +170,19 @@ class ShopController extends Controller
             'email' => 'required|string|email',
             'password' => 'required|string',
         ]);
+        $role=User::get('is_admin');
+        if ($role ='seller') {
+            $credentials = $request->only('email', 'password',);
 
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
-            return redirect()->route('dashboard');
+            if (Auth::attempt($credentials)) {
+                //dd(Auth::attempt($credentials));
+                $name= auth()->user()->name;
+                return redirect()->route('dashboard')->with('success', 'Great! welcome to your shop '.$name);
+            }
+           return redirect()->route('shops.login')->with('error', 'Oppes! You have entered invalid credentials');
+        
         }
-
-        return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
-    }
+     }
 
     public function logout() {
       Auth::logout();
