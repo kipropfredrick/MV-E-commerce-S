@@ -47,6 +47,7 @@ class OrderController extends Controller
 
           $name=$request->input('proname');
           $image=$request->input('image');
+          $price=$request->input('price');
           //dd($nam);
         $request->validate([
             'shipping_fullname' => 'required',
@@ -93,7 +94,7 @@ class OrderController extends Controller
         if (count($cartItem)>0) {
         $order->grant_total = \Cart::getTotal();
         $order->item_count = \Cart::getContent()->count();
-
+        $order->price=$price;
         $order->user_id = auth()->id();
         $order->product_name=$name;
         $order->image_path=$image;

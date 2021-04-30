@@ -98,7 +98,8 @@
             {{ csrf_field() }}
             <div class="mb-3">
              <input type="hidden"  name="proname" value="{{$itemm->name}}" <h6 class="my-0"></h6>
-              <input type="hidden"  name="image" value="{{$itemm->image_path}}" <h6 class="my-0"></h6>
+             <input type="hidden"  name="price" value="{{$itemm->price}}" <h6 class="my-0"></h6>
+             <input type="hidden"  name="image" value="{{$itemm->image_path}}" <h6 class="my-0"></h6>
                 <label for="shipping_fullname">User Name<span class="text-muted"></span></label>
                 {{-- value="{{auth()->user()->name}}" --}}
                 <input type="text" class="form-control" name="shipping_fullname"value="{{auth()->user()->name}}" id="name"  placeholder="your name">

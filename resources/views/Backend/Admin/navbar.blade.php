@@ -21,12 +21,12 @@
    <style>
 
 
-body {
+/* body {
     position: relative;
     overflow-x:hidden;
     background: #f7f7fc;
     font-family: 'Roboto', sans-serif;
-}
+} */
 
 a:hover{
   color:white;
@@ -551,7 +551,7 @@ footer
         <!-- Sidebar -->
     <nav class="fixed-top align-top" id="sidebar-wrapper" role="navigation">
        <div class="simplebar-content" style="padding: 0px;">
-				<a class="sidebar-brand" href="index.html">
+				<a class="sidebar-brand" href="{{route('shop')}}">
           <span class="align-middle">Brand Name</span>
         </a>
 

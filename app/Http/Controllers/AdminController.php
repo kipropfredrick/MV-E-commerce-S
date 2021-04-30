@@ -14,7 +14,7 @@ class AdminController extends Controller
 {
     //
     public function index(){
-        $ordersPerDay= count($this->daily_orders());
+        $ordersPerDay= count(Order::whereDate('created_at', Carbon::today())->get());
         $orders=Order::get();
         $dproducts= count($this->dproducts());
         $shops=count($this->allshops());
@@ -23,8 +23,17 @@ class AdminController extends Controller
        return view('Backend.Admin.index',compact(['orders','ordersPerDay','dproducts','allproducts','shops']));
     }
     public function daily_orders(){
-       return Order::whereDate('created_at', Carbon::today())->get();
+        $corders= count(Order::whereDate('created_at', Carbon::today())
+        ->where('status','delivery on progress')
+        ->get());
+       $dorders=Order::whereDate('created_at', Carbon::today())->get();
+       return view('Backend.Admin.todayss_orders',compact(['dorders','corders']));
 
+    }
+    public function deliver($orderid){
+        $orders=Order::where('id',$orderid)
+        ->update(['status' => 'delivery on progress']);
+         return back()->with('delivered','item delivered');
     }
     public function dproducts(){
         return Product::whereDate('created_at',Carbon::today())->get();
@@ -94,8 +103,14 @@ class AdminController extends Controller
         // }
     }
     public function getAllorders(){
+        //$orders=Order::join('order__items','orders.id','=','order__items.order_id')
+        //->get();
+        //dd($orders->toArray(''));
+        //$or=count($orders);
+        //dd($or);
         $orders=Order::get();
-        $corders= count($this->daily_orders());
+        $corders= count(Order::whereDate('created_at', Carbon::today())->get());
+        //$or=count($orders);dd($or);
        // dd($orders);
         return view('Backend.Admin.Oders',compact(['orders','corders']));
 }
@@ -110,7 +125,7 @@ public function shops(){
 }
 public function adminregister(){
     return view('Backend.Admin.auth.register');
-    
+
 }
 public function adminstore(Request $request){
     $request->validate([
@@ -131,7 +146,7 @@ public function adminstore(Request $request){
 }
 public function adminlogin(){
     return view('Backend.Admin.auth.login');
-    
+
 }
 public function adminauthenticate(Request $request){
     $request->validate([
@@ -147,7 +162,7 @@ public function adminauthenticate(Request $request){
             return redirect()->route('adashboard');
         }
        return redirect()->route('adminauthh')->with('error', 'Oppes! You have entered invalid credentials');
-    
+
      }
 
 }

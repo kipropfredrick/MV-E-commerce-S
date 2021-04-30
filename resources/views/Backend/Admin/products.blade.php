@@ -59,11 +59,11 @@
                                     <div class="col-sm-3">
 										<div class="card" style="background-color: #e9383888; ">
 											<div class="card-body">
-												<h6 class="card-title mb-4"><i class="fa fa-cart-arrow-down fa-3x" aria-hidden="true"></i> <b>Orders</b> </h6>
+												<h6 class="card-title mb-4"><i class="fa fa-cart-arrow-down fa-3x" aria-hidden="true"></i> <b>Products</b> </h6>
 												<h1 class="display-5 mt-1 mb-3">{{$cproducts}}</h1>
 												<div class="mb-1">
-													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span>
-													<span class="text-muted">Since last week</span>
+													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i></span>
+													<span class="text-muted"></span>
 												</div>
 											</div>
 										</div>

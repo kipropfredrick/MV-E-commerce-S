@@ -15,43 +15,16 @@
 									<div class="col-sm-3">
 										<div class="card" style="background-color: #e9383888; ">
 											<div class="card-body">
-												<h6 class="card-title mb-4"><i class="fa fa-cart-arrow-down fa-3x" aria-hidden="true"></i> <b>Shops</b> </h6>
-												<h1 class="display-5 mt-1 mb-3">{{$shops}}</h1>
-												<div class="mb-1">
-													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span>
-													<span class="text-muted">Since last week</span>
-												</div>
-											</div>
-										</div>
-
-									</div>
-                                    <div class="col-sm-3">
-										<div class="card" style="background-color: #e9383888; ">
-											<div class="card-body">
-												<h6 class="card-title mb-4"><i class="fa fa-cart-arrow-down fa-3x" aria-hidden="true"></i> <b>Daily Products</b> </h6>
-												<h1 class="display-5 mt-1 mb-3">{{$dproducts}}</h1>
-												<div class="mb-1">
-													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span>
-													<span class="text-muted">Since last week</span>
-												</div>
-											</div>
-										</div>
-
-									</div>
-                                    <div class="col-sm-3">
-										<div class="card" style="background-color: #e9383888; ">
-											<div class="card-body">
-												<h6 class="card-title mb-4"><i class="fa fa-cart-arrow-down fa-3x" aria-hidden="true"></i> <b>Daily Orders</b> </h6>
-												<h1 class="display-5 mt-1 mb-3">{{$ordersPerDay}}</h1>
+												<h6 class="card-title mb-4"><i class="fa fa-cart-arrow-down fa-3x" aria-hidden="true"></i> <b>Orders</b> </h6>
+												<h1 class="display-5 mt-1 mb-3">{{$corders}}</h1>
 												<div class="mb-1">
 													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i></span>
-													<span class="text-muted"></span>
+													<span class="text-muted">Order On delivery</span>
 												</div>
 											</div>
 										</div>
 
 									</div>
-
 
 
 								</div>
@@ -168,34 +141,49 @@
                                         <tr class="bg-light">
                                             <th class="border-top-0">Products</th>
                                             <th class="border-top-0">Image</th>
-                                            <th class="border-top-0">O-Price</th>
+                                            <th class="border-top-0">Quantity</th>
                                             <th class="border-top-0">Price</th>
+                                            {{-- <th class="border-top-0">Grant Total</th> --}}
+                                            <th class="border-top-0">Total Charges</th>
+                                            <th class="border-top-0">Payment</th>
                                             <th class="border-top-0">Status</th>
-                                            <th class="border-top-0">Edit</th>
+
+                                            <th class="border-top-0">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                       @foreach ($dorders as $item)
+                                            <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <div class="">
-                                                        <h4 class="m-b-0 font-16"># Nike shoes</h4>
+                                                        <h4 class="m-b-0 font-16">{{$item->product_name}}</h4>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td><img src="https://slimages.macys.com/is/image/MCY/products/8/optimized/9235488_fpx.tif?op_sharpen=1&wid=500&hei=613&fit=fit,1&$filtersm$" width="30px" height="30px"alt=""></td>
-                                            <td>500</td>
+                                            <td><img src="/images/{{$item->image_path}}" width="60px" height="60px"alt=""></td>
+                                            <td>{{$item->item_count}}</td>
                                             <td>
-                                                <label class="label label-danger">450</label>
+                                                <label class="label label-danger">{{$item->price}}</label>
                                             </td>
+                                            {{-- <td>
+                                                <label class="label label-danger"></label>
+                                            </td> --}}
+                                            <td>{{$item->grant_total}}</td>
+                                            <td>Paid</td>
                                             <td>
-                                                <span class="badge badge-secondary"> UnAvailable </span>
+                                                <span class="badge badge-secondary">{{$item->status}}</span>
                                             </td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm rounded-0 "data-toggle="modal" data-target="#add_product_modal" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
+                                             <td>
+                                                 <form action="{{route('deliver',$item->id)}}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    <button type="submit" class="btn btn-success btn-sm rounded-0 type="button" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-edit"></i>Deliver</button>
+                                                 </form>
+                                               {{--
                                                 <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
-                                            </td>
+                                            </td> --}}
                                         </tr>
+                                       @endforeach
                                     </tbody>
                                 </table>
                             </div>

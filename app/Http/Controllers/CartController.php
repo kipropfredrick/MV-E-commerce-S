@@ -43,7 +43,7 @@ class CartController extends Controller
         return view('cart.payment')->withTitle('SHOPILYV | SHOP')->with(['cartCollection' => $cartCollection]);;
 }
 public function add(Product $product){
-    \Cart::add(array(
+        \Cart::add(array(
         'id' => $product->id,
         'name' => $product->name,
         'price' => $product->price,
