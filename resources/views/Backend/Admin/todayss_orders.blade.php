@@ -136,7 +136,7 @@
                                 <!-- title -->
                             </div>
                             <div class="table-responsive">
-                                <table class="table v-middle">
+                                <table id="tablet" class="table v-middle">
                                     <thead>
                                         <tr class="bg-light">
                                             <th class="border-top-0">Products</th>
@@ -274,4 +274,9 @@
         <!-- /#page-content-wrapper -->
 
     </div>
+    <script>
+        $(document).ready(function() {
+        $('#tablet').DataTable();
+        } );
+    </script>
     <!-- /#wrapper -->

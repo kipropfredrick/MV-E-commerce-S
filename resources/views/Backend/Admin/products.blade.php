@@ -1,4 +1,5 @@
 @include('Backend.Admin.navbar')
+@include('Backend.Admin.datatables')
         <!-- Begin Page Content -->
         <div class="container-fluid px-lg-4">
         <div class="row">
@@ -179,7 +180,7 @@
                                 <!-- title -->
                             </div>
                             <div class="table-responsive">
-                                <table class="table v-middle">
+                                <table id="tablep" class="table v-middle">
                                     <thead>
                                         <tr class="bg-light">
                                             <th class="border-top-0">Products</th>
@@ -216,6 +217,9 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                <div class="float-right">
+                                    {{-- {{$allproducts->links()}} --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -223,7 +227,13 @@
         </div>
 		</div>
         <!-- /#page-content-wrapper -->
-
     </div>
 
     <!-- /#wrapper -->
+    {{-- datatables --}}
+    <script>
+        $(document).ready(function() {
+        $('#tablep').DataTable();
+        } );
+    </script>
+

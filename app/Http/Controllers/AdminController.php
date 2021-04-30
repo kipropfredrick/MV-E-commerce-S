@@ -43,6 +43,7 @@ class AdminController extends Controller
     }
     public function getAllProducts(){
         return Product::get();
+        // return Product::paginate(5);
         // try {
         //     // -- START DEFAULT DATATABLE QUERY PARAMETER
         //     $draw = $request->input('draw');

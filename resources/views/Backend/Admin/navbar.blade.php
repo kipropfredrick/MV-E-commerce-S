@@ -15,6 +15,7 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 		 <link rel="stylesheet" href="font/font/flaticon.css">
+         <link rel="stylesheet" href="{{asset('assets/css/dataTables.min.css')}}">
   </head>
 
 
@@ -599,6 +600,11 @@ footer
               <a href="{{route('allorders')}}">
           <i class="flaticon-bar-chart-1"></i> Orders
 		  </li></a>
+          <li class="">
+            <a class="nav-link text-left"  role="button" >
+                <a href="{{route('daily')}}">
+            <i class="flaticon-bar-chart-1"></i>Today's Orders
+            </li></a>
 
 		 <li class="">
 		  <a href="{{route('allproducts')}}"class="nav-link text-left"  role="button" >
@@ -765,9 +771,10 @@ footer
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{asset('assets/js/jquery-3.5.1.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/dataTables.min.js')}}"></script>
+    @yield('scripts')
 
  <script>
 

@@ -1,4 +1,5 @@
 @include('Backend.Admin.navbar')
+@include('Backend.Admin.datatables')
         <!-- Begin Page Content -->
         <div class="container-fluid px-lg-4">
         <div class="row">
@@ -179,14 +180,14 @@
                                 <!-- title -->
                             </div>
                             <div class="table-responsive">
-                                <table class="table v-middle">
+                                <table id="tables" class="table v-middle">
                                     <thead>
                                         <tr class="bg-light">
-                                            <th class="border-top-0">Products</th>
-                                            <th class="border-top-0">Image</th>
-                                            <th class="border-top-0">O-Price</th>
-                                            <th class="border-top-0">Price</th>
+                                            <th class="border-top-0">Name</th>
+                                            <th class="border-top-0">Email</th>
                                             <th class="border-top-0">Status</th>
+                                            {{-- <th class="border-top-0">Price</th>
+                                            <th class="border-top-0">Status</th> --}}
                                             {{-- <th class="border-top-0">Edit</th> --}}
                                         </tr>
                                     </thead>
@@ -200,10 +201,10 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td><img src="/images/{{$item->image_path}}"width="30px" height="30px" alt=""></td>
-                                            <td>500</td>
+                                            {{-- <td><img src="/images/{{$item->image_path}}"width="30px" height="30px" alt=""></td>
+                                            <td>500</td> --}}
                                             <td>
-                                                <label class="label label-danger">{{$item->price}}</label>
+                                                <label class="label label-danger">{{$item->email}}</label>
                                             </td>
                                             <td>
                                                 <a href="#" class="btn btn-success btn-sm active" tabindex="-1" role="button" aria-disabled="true">Active</a>
@@ -227,3 +228,8 @@
     </div>
 
     <!-- /#wrapper -->
+    <script>
+        $(document).ready(function() {
+        $('#tables').DataTable();
+        } );
+    </script>

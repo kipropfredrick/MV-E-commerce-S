@@ -60,7 +60,7 @@ Route::resource('shop', 'Shop');
 Route::resource('pay', 'paymentController');
 
 //admin routes
-Route::get('admin/dashboard', 'AdminController@index')->name('adashboard');
+Route::get('admin/dashboard', 'AdminController@index')->name('adashboard')->middleware('auth');
 Route::get('admin/dashboard/all/orders', 'AdminController@getAllorders')->name('allorders');
 Route::get('admin/dashboard/all/products', 'AdminController@allproducts')->name('allproducts');
 Route::get('admin/dashboard/all/shops', 'AdminController@shops')->name('shops');
