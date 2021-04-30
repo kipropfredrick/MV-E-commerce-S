@@ -163,7 +163,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td><img src="/images/{{$item->image_path}}" width="60px" height="60px"alt=""></td>
+                                            <td><img src="/public/img/{{$item->image_path}}" width="60px" height="60px"alt=""></td>
                                             <td>{{$item->item_count}}</td>
                                             <td>
                                                 <label class="label label-danger">{{$item->price}}</label>
@@ -176,7 +176,7 @@
                                             <td>
                                                 <span class="badge badge-secondary">{{$item->status}}</span>
                                             </td>
-                                            
+
                                                 {{-- <button class="btn btn-success btn-sm rounded-0 "data-toggle="modal" data-target="#add_product_modal" type="button" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-edit"></i>Deliver</button> --}}
                                                {{--
                                                 <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>

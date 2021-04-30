@@ -1,5 +1,6 @@
 
 @include('Backend.Shops.navbar')
+@include('Backend.Admin.datatables')
 
 <style>
     /*---------------------------------
@@ -182,7 +183,7 @@ footer.footer ul {
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td><img src="https://image.dhgate.com/0x0s/f2-albu-g10-M00-B7-B3-rBVaVlxRFY-AX3RUAAWhyhni9cY170.jpg/women-dresses-lace-evening-dress-classic.jpg" width="30px" height="30px" alt=""></td>
+                                            <td><img src="/public/img/{{$item->image_path}}" width="30px" height="30px" alt=""></td>
                                             <td>500</td>
                                             <td>
                                                 <label class="label label-danger">450</label>

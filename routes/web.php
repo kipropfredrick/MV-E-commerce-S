@@ -26,6 +26,7 @@ Route::post('/update', 'CartController@update')->name('cart.update');
 Route::post('/remove', 'CartController@remove')->name('cart.remove');
 Route::post('/clear', 'CartController@clear')->name('cart.clear');
 Route::resource('product', 'ProductController');
+Route::post('store/product', 'ProductController@pstore')->name('product.store');
 Route::get('cart/slug/{slug}','ProductController@slugg')->name('home.slug');
 Route::get('/data/related/{slug}', 'ProductController@productsubcategory')->name('product.related');
 Route::get('category','ProductController@getCategories')->name('create.product');
@@ -60,7 +61,8 @@ Route::resource('shop', 'Shop');
 Route::resource('pay', 'paymentController');
 
 //admin routes
-Route::get('admin/dashboard', 'AdminController@index')->name('adashboard')->middleware('auth');
+
+Route::get('admin/dashboard', 'AdminController@index')->name('adashboard');
 Route::get('admin/dashboard/all/orders', 'AdminController@getAllorders')->name('allorders');
 Route::get('admin/dashboard/all/products', 'AdminController@allproducts')->name('allproducts');
 Route::get('admin/dashboard/all/shops', 'AdminController@shops')->name('shops');

@@ -1,4 +1,5 @@
 @include('Backend.Shops.navbar')
+@include('Backend.Admin.datatables')
         <!-- Begin Page Content -->
         <div class="container-fluid px-lg-4">
         <div class="row">
@@ -183,7 +184,7 @@
                                 <!-- title -->
                             </div>
                             <div class="table-responsive">
-                                <table class="table v-middle">
+                                <table id="tables" class="table v-middle">
                                     <thead>
                                         <tr class="bg-light">
                                             <th class="border-top-0">Products</th>
@@ -206,7 +207,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td><img src="https://www.phonesarena.co.ke/wp-content/uploads/2019/07/Samsung-Galaxy-A10.png"width="30px" height="30px" alt=""></td>
+                                            <td><img src="/public/img/{{$item->image_path}}"width="30px" height="30px" alt=""></td>
                                             <td>{{$item->grant_total}}</td>
                                             <td>
                                                 <label class="label label-danger">{{$item->item_count}}</label>
@@ -238,5 +239,10 @@
         <!-- /#page-content-wrapper -->
 
     </div>
+    <script>
+        $(document).ready(function() {
+        $('#tables').DataTable();
+        } );
+    </script>
 
     <!-- /#wrapper -->

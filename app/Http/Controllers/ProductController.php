@@ -48,7 +48,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function pstore(Request $request)
     {
         //
         $request->validate([
@@ -64,15 +64,18 @@ class ProductController extends Controller
 
           if ($request->file('file')) {
             $imagePath = $request->file('file');
-            $imageName = $imagePath->getClientOriginalName();
+            $destinationPath = 'public/img/';
+            $originalFile = $imagePath->getClientOriginalName();
+            $imagePath->move($destinationPath, $originalFile);
+            //$imageName = $imagePath->getClientOriginalName();
 
-            $path = $request->file('file')->storeAs('upload', $imageName, 'public');
+            //$path = $request->file('file')->storeAs('upload', $imageName, 'public');
           }
 
-            $product->name = $imageName;
+            //$product->name = $originalFile;
             $product->slug=Str::random(12);
             $product->shop_id = auth()->id();
-            $product->image_path = '/storage/'.$path;
+            $product->image_path = $originalFile;
             $product->name=$request->input('name');
             $product->price=$request->input('price');
             $product->oprice=$request->input('oprice');

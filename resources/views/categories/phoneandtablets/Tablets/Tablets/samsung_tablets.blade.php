@@ -286,7 +286,7 @@ button:active {
                    @foreach ($sproduct->product as $item)
                    <div class="col-md-3 mb-4">
                     <div class="card">
-                        <a href="{{route('product.show',$item->id)}}"><img class="card-img-top" src="/images/{{$item->image_path}}" alt="" />
+                        <a href="{{route('product.show',$item->id)}}"><img class="card-img-top" src="/public/img/{{$item->image_path}}" alt="" />
                         </a><div class="card-body">
                             <p class="h6"><small class="text-muted">{{$item->name}}</small></p>
                             <p class="h5 m-0">${{$item->price}}</p>

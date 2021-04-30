@@ -282,7 +282,7 @@ button:active {
                    <div class="col-md-3 mb-4">
 
                     <div class="card">
-                       <a href="{{route('product.show',$product->id)}}"> <img class="card-img-top" src="https://cdn.sharafdg.com/cdn-cgi/image/width=600,height=600,fit=pad/assets/c/1/8/9/c189a5aec57a4c2f3462b3699497b489a4943104_S100541190_1.jpg" alt="" />
+                       <a href="{{route('product.show',$product->id)}}"> <img class="card-img-top" src="/public/img/{{$product->image_path}}" alt="" />
                         </a><div class="card-body">
                             <p class="h6"><small class="text-muted">{{$product->subcat_name}}</small></p>
                             <p class="h5 m-0"></p>

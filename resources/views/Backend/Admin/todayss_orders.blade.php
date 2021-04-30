@@ -161,7 +161,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td><img src="/images/{{$item->image_path}}" width="60px" height="60px"alt=""></td>
+                                            <td><img src="/public/img/{{$item->image_path}}" width="60px" height="60px"alt=""></td>
                                             <td>{{$item->item_count}}</td>
                                             <td>
                                                 <label class="label label-danger">{{$item->price}}</label>

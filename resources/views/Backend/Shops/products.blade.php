@@ -1,4 +1,5 @@
 @include('Backend.Shops.navbar')
+@include('Backend.Admin.datatables')
         <!-- Begin Page Content -->
         <div class="container-fluid px-lg-4">
         <div class="row">
@@ -179,7 +180,7 @@
                                 <!-- title -->
                             </div>
                             <div class="table-responsive">
-                                <table class="table v-middle">
+                                <table id="tablepr" class="table v-middle">
                                     <thead>
                                         <tr class="bg-light">
                                             <th class="border-top-0">Products</th>
@@ -200,7 +201,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td><img src="{{$item->image_path}}"width="30px" height="30px" alt=""></td>
+                                            <td><img src="/public/img/{{$item->image_path}}"width="30px" height="30px" alt=""></td>
                                             <td>500</td>
                                             <td>
                                                 <label class="label label-danger">{{$item->price}}</label>
@@ -225,5 +226,9 @@
         <!-- /#page-content-wrapper -->
 
     </div>
-
+    <script>
+        $(document).ready(function() {
+        $('#tablepr').DataTable();
+        } );
+    </script>
     <!-- /#wrapper -->
